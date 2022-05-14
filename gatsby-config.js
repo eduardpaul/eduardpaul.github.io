@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Eduard Paul Lakida`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Eduard Paul Lakida`,
+      summary: `Lead Solutions Architect at NTT DATA Europe & LATAM`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Eduard Paul Lakida personal site and blog.`,
+    siteUrl: `https://www.eduardpaul.work/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `eduapauldev`,
     },
   },
   plugins: [
@@ -51,12 +51,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `G-P24QVRYGWR`,
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -105,7 +105,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "Eduard Paul Lakida site RSS Feed",
           },
         ],
       },
@@ -113,8 +113,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Eduard Paul Lakida site`,
+        short_name: `Eduard Paul`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
@@ -124,9 +124,12 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-postcss`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+  pathPrefix: "/",
 }
