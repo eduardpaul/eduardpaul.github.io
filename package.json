@@ -1,19 +1,22 @@
 {
-  "name": "eduardpaul.github.io",
+  "name": "eduard-paul-lakida",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "description": "eduard-paul-lakida",
+  "author": "Eduard Paul",
+  "keywords": [
+    "gatsby"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eduardpaul/eduardpaul.github.io.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/eduardpaul/eduardpaul.github.io/issues"
-  },
-  "homepage": "https://github.com/eduardpaul/eduardpaul.github.io#readme"
+  "dependencies": {
+    "gatsby": "^4.24.4",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
 }
