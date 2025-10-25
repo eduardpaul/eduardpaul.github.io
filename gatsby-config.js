@@ -4,9 +4,18 @@
 module.exports = {
   siteMetadata: {
     title: `Eduard Paul Lakida`,
+    author: {
+      name: `Eduard Paul Lakida`,
+      summary: `who lives and works in the Philippines building useful things.`,
+    },
+    description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://eduardpaul.work`,
+    social: {
+      twitter: `@eduapauldev`,
+    },
   },
-  plugins: [`gatsby-plugin-image`,
+  plugins: [
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -29,6 +38,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 630,
+              linkImagesToOriginal: false,
             },
           },
           {
@@ -109,7 +119,8 @@ module.exports = {
         ],
       },
     },
+    // gatsby-plugin-offline should be listed after gatsby-plugin-manifest
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`, // This should be the last plugin.
   ],
 }
