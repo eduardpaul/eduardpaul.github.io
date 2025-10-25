@@ -10,6 +10,7 @@ module.exports = {
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://eduardpaul.work`,
+    image: `/src/images/icon.png`,
     social: {
       twitter: `@eduapauldev`,
     },
@@ -33,6 +34,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        remarkPlugins: [
+          // Add GitHub Flavored Markdown (GFM) support
+          require(`remark-gfm`),
+        ],
+        rehypePlugins: [],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -40,10 +46,8 @@ module.exports = {
               maxWidth: 630,
             },
           },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-          },
-          `gatsby-remark-prismjs`,
+          `gatsby-remark-responsive-iframe`,
+          `gatsby-remark-prismjs`, // It needs to be the last one
         ],
       },
     },
@@ -176,6 +180,7 @@ module.exports = {
           })),
       },
     },
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`, // This should be the last plugin.
   ],

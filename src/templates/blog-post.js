@@ -13,16 +13,17 @@ const BlogPostTemplate = ({
   const siteTitle = site.siteMetadata?.title || `Title`
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} >
       <article
         itemScope
         itemType="http://schema.org/Article"
+
       >
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
-        <section itemProp="articleBody">{children}</section>
+        <section itemProp="articleBody" className="prose lg:prose-xl">{children}</section>
         <hr />
         <footer>
           <Bio />
