@@ -31,25 +31,22 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 630,
-              linkImagesToOriginal: false,
             },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
-            options: {},
           },
           `gatsby-remark-prismjs`,
         ],
       },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-feed`,
@@ -68,10 +65,10 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.nodes.map(node => {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
-                  description: node.excerpt,
+                  description: node.excerpt, // You might want to use node.body here for MDX
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
@@ -80,10 +77,9 @@ module.exports = {
               })
             },
             query: `{
-              allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+              allMdx(sort: {frontmatter: {date: DESC}}) {
                 nodes {
                   excerpt
-                  html
                   fields {
                     slug
                   }
@@ -95,7 +91,7 @@ module.exports = {
               }
             }`,
             output: "/rss.xml",
-            title: "Eduard Paul Lakida RSS Feed",
+            title: "Eduard Paul Lakida's RSS Feed",
           },
         ],
       },
@@ -119,7 +115,67 @@ module.exports = {
         ],
       },
     },
-    // gatsby-plugin-offline should be listed after gatsby-plugin-manifest
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'pages',
+        engine: 'flexsearch',
+        engineOptions: {
+          encode: "icase", // Ignore case
+          tokenize: "forward", // Search for prefixes, e.g., "prog" matches "progress"
+          // resolution: 9,
+          minlength: 1, // Search for queries of at least this length
+        },
+        query: `
+          {
+            allMdx {
+              nodes {
+                id
+                frontmatter {
+                  title
+                  date(formatString: "MMMM DD, YYYY")
+                  description
+                }
+                excerpt
+                fields {
+                  slug
+                }
+              }
+            }
+          }
+        `,
+
+        // Field used as the reference value for each document.
+        // Default: 'id'.
+        ref: 'id',
+
+        // List of keys to index. The values of the keys are taken from the
+        // normalizer function below.
+        // Default: all fields
+        index: ['title', 'excerpt'],
+
+        // List of keys to store and make available in your UI. The values of
+        // the keys are taken from the normalizer function below.
+        // Default: all fields.
+        store: ['id', 'fields', 'frontmatter', 'excerpt'],
+
+        // Function used to map the result from the GraphQL query. This should
+        // return an array of items to index in the form of flat objects
+        // containing properties to index. The objects must contain the `ref`
+        // field above (default: 'id'). This is required.
+        normalizer: ({ data }) =>
+          data.allMdx.nodes.map(node => ({
+            id: node.id, // from GraphQL
+            fields: { slug: node.fields.slug }, // Mimic GraphQL structure
+            frontmatter: { // Mimic GraphQL structure
+              title: node.frontmatter.title,
+              description: node.frontmatter.description,
+              date: node.frontmatter.date,
+            },
+            excerpt: node.excerpt
+          })),
+      },
+    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`, // This should be the last plugin.
   ],
