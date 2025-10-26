@@ -1,7 +1,19 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-module.exports = {
+
+import { dirname } from "path"
+import { fileURLToPath } from "url"
+
+import remarkFrontmatter from 'remark-frontmatter'
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
+import remarkGfm from 'remark-gfm'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+export default {
   siteMetadata: {
     title: `Eduard Paul Lakida`,
     author: {
@@ -34,11 +46,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        remarkPlugins: [
-          // Add GitHub Flavored Markdown (GFM) support
-          require(`remark-gfm`),
-        ],
-        rehypePlugins: [],
+        extensions: [`.mdx`],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -49,6 +57,13 @@ module.exports = {
           `gatsby-remark-responsive-iframe`,
           `gatsby-remark-prismjs`, // It needs to be the last one
         ],
+        // // When you provide mdxOptions, you override the defaults.
+        // // You must include plugins for frontmatter and GFM.
+        // mdxOptions: {
+        //   remarkPlugins: [
+        //     remarkFrontmatter, remarkMdxFrontmatter
+        //   ]
+        // }
       },
     },
     `gatsby-plugin-sharp`,
