@@ -1,37 +1,67 @@
-
 import React from 'react';
-// import { SOCIAL_LINKS, PROFILE } from '../constants';
-import SocialIcon from './socialicon';
+import {
+    Linkedin,
+    Github,
+    Twitter,
+    Book,
+} from 'lucide-react';
+import { useStaticQuery, graphql } from 'gatsby';
 
-export const PROFILE = {
-    name: "Eduard Paul Lakida",
-    title: "Lead Solutions Architect",
-    location: "Madrid, Spain",
-    image: "https://i.imgur.com/example.jpg" // Placeholder from CV
+const iconMap = {
+    linkedin: <Linkedin className="w-6 h-6" />,
+    github: <Github className="w-6 h-6" />,
+    twitter: <Twitter className="w-6 h-6" />,
+    stackoverflow: <Book className="w-6 h-6" />,
 };
 
-export const SOCIAL_LINKS = [
-    { name: 'Email', url: 'mailto:aaa@outlook.com', text: 'aaa@outlook.com' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/eduardpaul', text: 'linkedin.com/in/eduardpaul' },
-    { name: 'Skype', url: 'skype:aaaa?call', text: 'aaa' },
-    { name: 'Mobile', url: 'tel:+aaaa', text: '(+34) aaa' },
-];
-
 const Footer = () => {
+
+    const { cvJson: { aboutMe: { profile }, careerPreferences: { contact: { publicProfiles: links } } } } = useStaticQuery(
+        graphql`
+query {
+  cvJson {
+    aboutMe {
+      profile {
+        name
+        surnames
+      }
+    }
+    careerPreferences { 
+      contact {
+        publicProfiles {
+          URL
+          type
+        }
+      }
+    }
+  }
+}
+`)
+
     return (
-        <footer className="bg-slate-800 text-slate-300">
-            <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-center space-x-6 mb-8">
-                    {SOCIAL_LINKS.map((link) => (
-                        <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
-                            <span className="sr-only">{link.name}</span>
-                            <SocialIcon name={link.name} className="h-6 w-6" />
+        <footer id="contact" className="bg-slate-800 text-white py-20">
+            <div className="container mx-auto px-6 text-center">
+                <h2 className="text-3xl md:text-4xl font-bold">Let's Connect</h2>
+                <p className="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.
+                </p>
+                <div className="mt-8 flex justify-center space-x-6">
+                    {links.map((link) => (
+                        <a
+                            key={link.type}
+                            href={link.URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-slate-300 hover:text-blue-400 transform hover:-translate-y-1 transition-all duration-300"
+                            aria-label={`Visit my ${link.type} profile`}
+                        >
+                            {iconMap[link.type] || <span className="capitalize">{link.type}</span>}
                         </a>
                     ))}
                 </div>
-                <p className="text-center text-base text-slate-400">
-                    &copy; {new Date().getFullYear()} {PROFILE.name}. All rights reserved.
-                </p>
+                <div className="mt-16 border-t border-slate-700 pt-8">
+                    <p className="text-slate-400">&copy; {new Date().getFullYear()} {profile.name} {profile.surnames}. All rights reserved.</p>
+                </div>
             </div>
         </footer>
     );

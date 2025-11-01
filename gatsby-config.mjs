@@ -44,6 +44,14 @@ export default {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/cv/cv.json`,
+        name: `cv`,
+      },
+    },
+    `gatsby-transformer-json`,
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`],

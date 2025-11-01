@@ -17,18 +17,20 @@ const Layout = ({ location, title, children }) => {
     )
   } else {
     header = (
-      <Link to="/">
-        {title}
-      </Link>
+      <Link to="/">{title}</Link>
     )
   }
 
   return (
-    <div data-is-root-path={isRootPath} className="bg-slate-50 text-slate-700 antialiased">
-      <Header/>
-      <main className="flex-grow">{children}</main>
- 
- <Footer />
+    <div data-is-root-path={isRootPath} className="bg-gray-50 text-gray-800 antialiased">
+
+      <Header />
+
+      <div className="min-h-screen bg-slate-50 text-slate-800">
+        <main className="flex-grow">{children}</main>
+      </div>
+      
+      <Footer />
 
     </div>
   )

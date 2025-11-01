@@ -1,0 +1,669 @@
+{
+  "$schema": "https://raw.githubusercontent.com/getmanfred/mac/v0.5/schema/schema.json",
+  "settings": {
+    "language": "EN",
+    "MACVersion": "0.5"
+  },
+  "aboutMe": {
+    "profile": {
+      "name": "Eduard",
+      "surnames": "Paul Lakida",
+      "title": "Lead Solutions Architect at NTT DATA Europe & LATAM",
+      "description": "As a Lead Solutions Architect with nearly a decade of IT and software consulting experience, I specialize in architecting and delivering high-impact solutions for clients across diverse industries, sizes, and countries. My expertise centers on the Microsoft ecosystem—particularly SharePoint, Microsoft 365, and Azure—where I translate complex business needs into scalable, effective technologies.\n\nIn addition to technical proficiency, I provide strong leadership in methodology, project management, and team guidance, fostering collaborative environments through mentorship and knowledge sharing. As a sociable, empathetic, and flexible professional, I am always eager to contribute both technically and personally. My core values—collaboration, proactivity, generosity, autonomy, organization, and clear communication—drive me to build mutually supportive teams that achieve outstanding results.",
+      "avatar": {
+        "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/22/10/06/ee2b48c6-9692-434e-96b4-e67bedd73167_avatar.jpg",
+        "alt": "avatar.jpg"
+      },
+      "location": {
+        "notes": "Autocompleted using Google Maps API (id: ChIJgTwKgJcpQg0RaSKMYcHeNsQ)",
+        "country": "España",
+        "region": "Comunidad de Madrid",
+        "municipality": "Madrid"
+      }
+    },
+    "interestingFacts": [
+      {
+        "topic": "DevOps & Automation skills",
+        "fact": "- **CI/CD:** Pipeline automation using **Azure DevOps** and Jenkins.\n- **Scripting:** Advanced **PowerShell** (PnPPowerShell, M365 CLI) to automate administrative tasks for both On-Premise and M365.\n- **Containerization:** Creation of Docker containers for development environments.\n"
+      },
+      {
+        "topic": "Application Development & Modernization skills",
+        "fact": "- **M365 Development:** Custom solutions for SharePoint Online (SPFx) and MS Teams using Power Platform, Graph API, & CSOM.\n- **Migration & Modernization:** Proven experience migrating and modernizing SharePoint On-Premise solutions to SharePoint Online.\n- **Backend:** .NET & .NET Core (C#), ASP.NET MVC, Node.js (JavaScript/TypeScript), and REST API development.\n- **Frontend:** Single Page Application (SPA) development using React/TypeScript; IONIC web components (React/Angular).\n- **AI & Chatbots:** Architecting enterprise-grade RAG (Retrieval-Augmented Generation) solutions using Copilot Studio, Azure OpenAI Service, Azure AI Search (Vector Search), and Azure AI Foundry.\n- **Polyglot Experience:** Working knowledge of PHP, Go, and Java."
+      },
+      {
+        "topic": "Cloud & Infrastructure Architecture skills",
+        "fact": "- **Microsoft 365:** Tenant-level administration, including licensing, security hardening, and compliance configuration.\n- **Microsoft Azure:** Deployment and management of cloud resources using **Bicep** and **ARM templates**.\n- **SharePoint On-Premise:** Expert-level farm architecture (2016/2019), performance optimization, and advanced troubleshooting.\n- **Identity & Access (IAM):** Configuration of SAML, OAuth, & OIDC protocols using Azure AD, ADFS, PingFederate, Keycloak, and Oracle OAM.\n- **Networking & Web:** Advanced configuration and deployment of on-premise load balancers (GLB), firewalls, and IIS web servers."
+      },
+      {
+        "topic": "Leadership & Project Management skills",
+        "fact": "- **Project Management:** 5+ years leading the full project lifecycle (planning, execution, monitoring, and closing).\n- **Stakeholder Management:** Coordinating deliverables between IT, security, and business areas to ensure project alignment.\n- **Methodology:** Deep practical application of **Agile** and **DevOps** principles."
+      }
+    ],
+    "relevantLinks": [
+      {
+        "type": "linkedin",
+        "URL": "https://www.linkedin.com/in/eduardpaul"
+      },
+      {
+        "type": "github",
+        "URL": "https://github.com/eduardpaul"
+      },
+      {
+        "type": "twitter",
+        "URL": "https://twitter.com/eduapauldev"
+      },
+      {
+        "type": "stackoverflow",
+        "URL": "https://stackoverflow.com/users/3178041/eduard-paul-lakida"
+      }
+    ]
+  },
+  "experience": {
+    "jobs": [
+      {
+        "organization": {
+          "name": "NTT DATA Europe & LATAM"
+        },
+        "roles": [
+          {
+            "name": "Lead Solutions Architect",
+            "startDate": "2021-09-01",
+            "challenges": [
+              {
+                "description": "- Provide **technical leadership and mentorship** to development teams, guiding the translation of complex stakeholder requirements into scalable Microsoft 365 and Azure Cloud architectures.\n- Serve as the key **pre-sales technical authority** in the sales cycle, securing new business by architecting PoCs, validating project scopes, and presenting solutions to C-level stakeholders.\n- Pioneer the enterprise adoption of Generative AI, leveraging Azure OpenAI and RAG methodologies to enhance internal team efficiency and develop **new AI-driven service offerings**."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "organization": {
+          "name": "everis"
+        },
+        "roles": [
+          {
+            "name": "Project Manager",
+            "startDate": "2016-09-01",
+            "finishDate": "2021-09-01",
+            "challenges": [
+              {
+                "description": "- Managed the **end-to-end project lifecycle** for complex **Digital Workplace and Employee Experience** solutions, coordinating multidisciplinary and geographically distributed teams.\n- Oversaw all project phases, including planning, resource allocation, and monitoring, while leveraging a deep technical background to **mentor staff** and conduct architectural reviews.\n- Ensured all project deliverables met high-quality standards and were built on **scalable, maintainable architectures.**"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "organization": {
+          "name": "everis"
+        },
+        "roles": [
+          {
+            "name": "Senior Consultant",
+            "startDate": "2014-09-01",
+            "finishDate": "2016-09-01",
+            "challenges": [
+              {
+                "description": "- Analyzed, designed, and estimated end-to-end business solutions on Microsoft SharePoint, balancing complex business requirements against **usability, performance, and cost.**\n- Led and executed complex **SharePoint 2007 to SharePoint 2013 migration** projects.\n- Acted as team leader, **mentoring colleagues and delivering internal training** to reinforce development best practices. Conducted **.NET and SharePoint solution audits** to identify performance bottlenecks and enforce coding standards."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "organization": {
+          "name": "everis"
+        },
+        "roles": [
+          {
+            "name": "Software Developer",
+            "startDate": "2012-07-01",
+            "finishDate": "2014-09-01",
+            "challenges": [
+              {
+                "description": "- Developed, maintained, and customized SharePoint and ASP.NET applications, leveraging the full range of platform models including **SSOM, CSOM, REST**, and Sandbox solutions.\n- Managed the configuration and extension of key third-party tools, including **Nintex Workflows 2010** and the SharePoint 2010 FBA Pack.\n- Authored comprehensive functional and technical documentation and provided direct end-user support, ensuring solution adoption and stability."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "publicArtifacts": [
+      {
+        "details": {
+          "name": "Bizz Summit ES - Rockstar Speaker 2024",
+          "description": "Rockstar Speaker is a speaker who stands out exceptionally in their presentations, who manages to inspire, captivate, and leave a lasting impression on the audience.",
+          "URL": "https://eu.badgr.com/public/assertions/iQgCp3-BSN6hJ4tSzKv0Tg?identity__email=eduardpaul@outlook.com",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/25/10/31/5ff7276d-1785-4a72-a521-0d8ed6aa78f7_assertion-iqgcp3-bsn.png",
+            "alt": "assertion-iQgCp3-BSN6hJ4tSzKv0Tg.png"
+          }
+        },
+        "type": "achievement",
+        "publishingDate": "2024-10-01",
+        "relatedCompetences": [
+          {
+            "name": "Microsoft Power Plataform",
+            "type": "technology"
+          }
+        ]
+      },
+      {
+        "details": {
+          "name": "Community Contributor 2022/2023/2024",
+          "description": "Community Contributor badge earners contributed to one or more M365 Platform Community (PnP) initiatives by completing at least one contribution to a PnP initiative.",
+          "URL": "https://www.credly.com/badges/023ad512-a4bd-4931-9c39-e39ebdfed024?source=linked_in_profile",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/25/10/31/c47fd8f8-65e5-4c22-a809-94af96b9898b_image.png",
+            "alt": "image.png"
+          }
+        },
+        "type": "achievement",
+        "publishingDate": "2022-07-01",
+        "relatedCompetences": [
+          {
+            "name": ".NET",
+            "type": "technology"
+          },
+          {
+            "name": ".Net Core",
+            "type": "technology"
+          },
+          {
+            "name": "Microsoft Office 365",
+            "type": "technology"
+          },
+          {
+            "name": "Microsoft Sharepoint",
+            "type": "technology"
+          }
+        ]
+      },
+      {
+        "details": {
+          "name": "MAP 2014 (Microsoft Active Professional 2014)",
+          "description": "This distinction is given to less than 5% of the professionals population , with in order to recognize their active participation in the community and commitment to keep in touch with the progress of our technologies.",
+          "URL": "https://www.credly.com/badges/023ad512-a4bd-4931-9c39-e39ebdfed024?source=linked_in_profile"
+        },
+        "type": "achievement",
+        "publishingDate": "2014-04-01",
+        "relatedCompetences": [
+          {
+            "name": "Microsoft",
+            "type": "technology"
+          }
+        ]
+      },
+      {
+        "details": {
+          "name": "Excellent achievement in Vocational Training",
+          "description": "The award is given to the students with the higher grades of the graduating class."
+        },
+        "type": "achievement",
+        "publishingDate": "2012-07-01",
+        "relatedCompetences": [
+          {
+            "name": ".NET",
+            "type": "technology"
+          },
+          {
+            "name": "CSS",
+            "type": "technology"
+          },
+          {
+            "name": "HTML",
+            "type": "technology"
+          },
+          {
+            "name": "Java",
+            "type": "technology"
+          },
+          {
+            "name": "JavaScript",
+            "type": "technology"
+          }
+        ]
+      }
+    ]
+  },
+  "knowledge": {
+    "languages": [
+      {
+        "name": "EN",
+        "fullName": "Inglés",
+        "level": "Full professional proficiency"
+      },
+      {
+        "name": "ES",
+        "fullName": "Español",
+        "level": "Native or bilingual proficiency"
+      },
+      {
+        "name": "RU",
+        "fullName": "Ruso",
+        "level": "Full professional proficiency"
+      }
+    ],
+    "hardSkills": [
+      {
+        "skill": {
+          "name": ".NET",
+          "type": "technology"
+        }
+      },
+      {
+        "skill": {
+          "name": ".Net Core",
+          "type": "technology"
+        }
+      },
+      {
+        "skill": {
+          "name": "Azure",
+          "type": "technology"
+        }
+      },
+      {
+        "skill": {
+          "name": "JavaScript",
+          "type": "technology"
+        }
+      },
+      {
+        "skill": {
+          "name": "Microsoft Active Directory",
+          "type": "technology"
+        }
+      },
+      {
+        "skill": {
+          "name": "Microsoft Office 365",
+          "type": "technology"
+        }
+      },
+      {
+        "skill": {
+          "name": "Microsoft Sharepoint",
+          "type": "technology"
+        }
+      },
+      {
+        "skill": {
+          "name": "React",
+          "type": "technology"
+        }
+      },
+      {
+        "skill": {
+          "name": "TypeScript",
+          "type": "technology"
+        }
+      }
+    ],
+    "studies": [
+      {
+        "studyType": "certification",
+        "degreeAchieved": false,
+        "name": "Azure AI Engineer Associate (AI-102)",
+        "startDate": "2025-06-01",
+        "institution": {
+          "name": "Microsoft",
+          "description": "Diseñe e implemente una solución de Azure AI mediante servicios de Azure AI, Búsqueda de Azure AI y Azure Open AI.",
+          "URL": "https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/B67C6AD893482526?sharingId=7C350C787AFD611C",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/25/11/01/85f2724a-8bf0-4846-98e3-73613b24591e_microsoft-certified-.svg",
+            "alt": "microsoft-certified-associate-badge.svg"
+          }
+        }
+      },
+      {
+        "studyType": "certification",
+        "degreeAchieved": false,
+        "name": "Azure AI Fundamentals (AI-900)",
+        "startDate": "2022-02-01",
+        "institution": {
+          "name": "Microsoft",
+          "description": "Earners of the Azure AI Fundamentals certification have demonstrated foundational knowledge of machine learning (ML) and artificial intelligence (AI) concepts and related Microsoft Azure services.",
+          "URL": "https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/704B5E9288E1AFB9?sharingId=7C350C787AFD611C",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/25/10/27/a955c3e3-598f-4588-bebd-c6f6538c2ceb_microsoft-certified-.svg",
+            "alt": "microsoft-certified-fundamentals-badge.svg"
+          }
+        }
+      },
+      {
+        "studyType": "certification",
+        "degreeAchieved": false,
+        "name": "Azure Developer Associate (AZ-204)",
+        "startDate": "2022-03-01",
+        "institution": {
+          "name": "Microsoft",
+          "description": "Earning Azure Developer Associate certification validates the skills and knowledge to design, build, test, and maintain cloud applications and services on Microsoft Azure. Candidates participate in all phases of cloud development from requirements definition and design, to development, deployment, and maintenance.",
+          "URL": "https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/92670A2859E0331C?sharingId=7C350C787AFD611C",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/22/10/06/6649bc81-3993-4a31-addd-1de5d6a7568c_azure-developer-asso.png",
+            "alt": "azure-developer-associate-600x600.png"
+          }
+        }
+      },
+      {
+        "studyType": "certification",
+        "degreeAchieved": false,
+        "name": "Azure Fundamentals (AZ-900)",
+        "startDate": "2020-10-01",
+        "institution": {
+          "name": "Microsoft",
+          "description": "Earners of the Azure Fundamentals certification have demonstrated foundational level knowledge of cloud services and how those services are provided with Microsoft Azure.",
+          "URL": "https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/45354E7739111838?sharingId=7C350C787AFD611C",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/25/10/27/330a1e4f-a7a9-4c67-92c0-e652522e7eab_microsoft-certified-.svg",
+            "alt": "microsoft-certified-fundamentals-badge.svg"
+          }
+        },
+        "linkedCompetences": [
+          {
+            "name": "Azure",
+            "type": "technology"
+          }
+        ]
+      },
+      {
+        "studyType": "certification",
+        "degreeAchieved": false,
+        "name": "DevOps Engineer Expert (AZ-400)",
+        "startDate": "2023-09-01",
+        "institution": {
+          "name": "Microsoft",
+          "description": "Designing and implementing strategies for collaboration, code, infrastructure, source control, security, compliance, continuous integration, testing, delivery, monitoring, and feedback.",
+          "URL": "https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/442AE42560346E7?sharingId=7C350C787AFD611C",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/25/10/31/4691fde3-d307-434c-98b2-64edcff96d7e_microsoft-certified-.svg",
+            "alt": "microsoft-certified-expert-badge.svg"
+          }
+        },
+        "linkedCompetences": [
+          {
+            "name": "Azure DevOps",
+            "type": "technology"
+          }
+        ]
+      },
+      {
+        "studyType": "certification",
+        "degreeAchieved": false,
+        "name": "DevOps Foundation® Certification",
+        "startDate": "2021-01-01",
+        "institution": {
+          "name": "DevOps Institute",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/22/10/06/282e4397-7509-4b23-a855-d2738e9c9618_devopsfoundationbadg.png",
+            "alt": "DevOpsFoundationBadge.png"
+          }
+        }
+      },
+      {
+        "studyType": "officialDegree",
+        "degreeAchieved": true,
+        "name": "Higher Technician in Multi-platform Applications Development",
+        "startDate": "2010-04-01",
+        "institution": {
+          "name": "IES Virgen de la Paloma",
+          "description": "Developing, installing, documenting and maintaining multi-platform computer applications, using technologies and specific development environments, guaranteeing secure access to data and complying with «usability» and quality criteria required by established standards."
+        },
+        "finishDate": "2012-07-01",
+        "linkedCompetences": [
+          {
+            "name": ".NET",
+            "type": "technology"
+          },
+          {
+            "name": "Java",
+            "type": "technology"
+          },
+          {
+            "name": "PHP",
+            "type": "technology"
+          },
+          {
+            "name": "SQL",
+            "type": "technology"
+          }
+        ]
+      },
+      {
+        "studyType": "certification",
+        "degreeAchieved": false,
+        "name": "MCSA: Web Applications - Certified 2016",
+        "startDate": "2016-09-01",
+        "institution": {
+          "name": "Microsoft",
+          "description": "Earners of the MCSA: Web Applications certification have demonstrated the skills required to implement modern web apps. They are qualified for a position as a web developer or web administrator.",
+          "URL": "https://www.credly.com/badges/9dea252b-458c-4347-856a-d6e61b4e6c71",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/22/10/06/a5602c33-61d2-4276-8f0b-5aaa64e65314_mcsa_web_application.png",
+            "alt": "MCSA_Web_Applications-01.png"
+          }
+        }
+      },
+      {
+        "studyType": "certification",
+        "degreeAchieved": false,
+        "name": "MCSD: App Builder — Certified 2016",
+        "startDate": "2016-09-01",
+        "institution": {
+          "name": "Microsoft",
+          "description": "Earners of the MCSD: App Builder certification have demonstrated the skills required to build modern mobile and/or web applications and services. Earning this certification qualifies an individual for a position as an application developer.",
+          "URL": "https://www.credly.com/badges/f7b5b5fc-a22f-46c3-ad34-16d6a2f4ecef",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/22/10/06/a3c993ac-7375-4f0e-8ae8-3fde3b3d3524_mcsd_app_builder-01.png",
+            "alt": "MCSD_App_Builder-01.png"
+          }
+        }
+      },
+      {
+        "studyType": "certification",
+        "degreeAchieved": false,
+        "name": "Microsoft 365 Developer Associate (MS-600)",
+        "startDate": "2020-11-01",
+        "institution": {
+          "name": "Microsoft",
+          "description": "Earning the Microsoft 365 Certified: Teams Application Developer Associate certification validates the skills and knowledge to design, build, test, and maintain applications and solutions that are optimized for the productivity and collaboration needs of organizations using the Microsoft 365 platform.",
+          "URL": "https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/C6438294C98D58B0?sharingId=7C350C787AFD611C",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/22/10/06/12cb55c9-bbdc-4a00-962f-79222dfad834_cert-associate-micro.png",
+            "alt": "CERT-Associate-Microsoft365-Developer.png"
+          }
+        },
+        "linkedCompetences": [
+          {
+            "name": "Microsoft Office 365",
+            "type": "technology"
+          },
+          {
+            "name": "Microsoft Sharepoint",
+            "type": "technology"
+          }
+        ]
+      },
+      {
+        "studyType": "certification",
+        "degreeAchieved": false,
+        "name": "Microsoft 365 Fundamentals (MS-900)",
+        "startDate": "2021-04-01",
+        "institution": {
+          "name": "Microsoft",
+          "description": "Earning the Microsoft 365 Fundamentals certification demonstrates an understanding of the options available in Microsoft 365 and the benefits of adopting cloud services, the Software as a Service (SaaS) cloud model, and implementing Microsoft 365 cloud service.",
+          "URL": "https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/92DDBF3EF0B5AA47?sharingId=7C350C787AFD611C",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/25/10/27/665b950b-28e6-4bd1-9f50-34cd0cca4ee7_microsoft-certified-.svg",
+            "alt": "microsoft-certified-fundamentals-badge.svg"
+          }
+        },
+        "linkedCompetences": [
+          {
+            "name": "Azure",
+            "type": "technology"
+          },
+          {
+            "name": "Microsoft Office 365",
+            "type": "technology"
+          }
+        ]
+      },
+      {
+        "studyType": "certification",
+        "degreeAchieved": false,
+        "name": "Professional Scrum Master I",
+        "startDate": "2019-06-01",
+        "institution": {
+          "name": "Scrum.org",
+          "description": "Those who earn the globally recognized Professional Scrum Master I (PSM I) certification have demonstrated a fundamental level of Scrum mastery, including the concepts of applying Scrum, and proven an understanding of Scrum as described in the Scrum Guide. This individual has also demonstrated a consistent use of terminology and approach to Scrum.",
+          "URL": "https://www.credly.com/badges/440ae803-d2a3-4d4e-83eb-a64428cd7d4a/public_url",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/25/10/27/1aa16f45-5fa4-4fb6-a204-12ddca074f69_asset_44psmi_0.png",
+            "alt": "asset_44psmi_0.png"
+          }
+        }
+      },
+      {
+        "studyType": "certification",
+        "degreeAchieved": false,
+        "name": "Security, Compliance, and Identity (SC-900)",
+        "startDate": "2022-02-01",
+        "institution": {
+          "name": "Microsoft",
+          "description": "Earners of the Security, Compliance, and Identity Fundamentals demonstrate a functional understanding of security, compliance, and identity (SCI) across cloud-based and related Microsoft services.",
+          "URL": "https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/691268CEB82DF9F2?sharingId=7C350C787AFD611C",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/22/10/06/86b95bbb-c0b5-4536-a478-5032d1c1092c_security-compliance-.png",
+            "alt": "security-compliance-and-identity-fundamentals-600x600.png"
+          }
+        },
+        "linkedCompetences": [
+          {
+            "name": "Microsoft",
+            "type": "technology"
+          }
+        ]
+      }
+    ],
+    "softSkills": [
+      {
+        "skill": {
+          "name": "Analytical thinking",
+          "type": "practice"
+        }
+      },
+      {
+        "skill": {
+          "name": "Listening ability",
+          "type": "practice"
+        }
+      },
+      {
+        "skill": {
+          "name": "Proactivity",
+          "type": "practice"
+        }
+      }
+    ]
+  },
+  "careerPreferences": {
+    "contact": {
+      "publicProfiles": [
+        {
+          "URL": "https://www.linkedin.com/in/eduardpaul",
+          "type": "linkedin"
+        },
+        {
+          "URL": "https://stackoverflow.com/users/3178041/eduard-paul-lakida",
+          "type": "stackoverflow"
+        },
+        {
+          "URL": "https://github.com/eduardpaul",
+          "type": "github"
+        },
+        {
+          "URL": "https://twitter.com/eduapauldev",
+          "type": "twitter"
+        }
+      ]
+    },
+    "preferences": {
+      "preferredCompetences": [
+        {
+          "name": ".NET",
+          "type": "technology"
+        },
+        {
+          "name": ".Net Core",
+          "type": "technology"
+        },
+        {
+          "name": "Azure",
+          "type": "technology"
+        },
+        {
+          "name": "JavaScript",
+          "type": "technology"
+        },
+        {
+          "name": "Microsoft",
+          "type": "technology"
+        },
+        {
+          "name": "Microsoft Active Directory",
+          "type": "technology"
+        },
+        {
+          "name": "Microsoft Office 365",
+          "type": "technology"
+        }
+      ],
+      "discardedCompetences": [
+        {
+          "name": "Java",
+          "type": "technology"
+        },
+        {
+          "name": "PL/SQL",
+          "type": "technology"
+        }
+      ],
+      "preferredRoles": [
+        "Engineering Management",
+        "Software Architect",
+        "Tech Lead"
+      ]
+    },
+    "status": "openToOffers",
+    "requirements": {
+      "contractTypes": []
+    }
+  },
+  "manfredSpecificData": {
+    "mainStackTechs": [
+      {
+        "name": ".NET",
+        "type": "technology"
+      },
+      {
+        "name": "Azure",
+        "type": "technology"
+      },
+      {
+        "name": "Microsoft Active Directory",
+        "type": "technology"
+      },
+      {
+        "name": "Microsoft Office 365",
+        "type": "technology"
+      },
+      {
+        "name": "React",
+        "type": "technology"
+      }
+    ],
+    "desiredJobDescription": "I highly value working in a product-oriented team with a medium and long-term commitment where quality and business value are equally important. "
+  }
+}
