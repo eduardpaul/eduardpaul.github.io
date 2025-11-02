@@ -6,8 +6,8 @@
 
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-
-
+const { createRemoteFileNode } = require("gatsby-source-filesystem");
+const crypto = require("crypto");
 
 // Define the template for blog post
 const blogPost = path.resolve(`./src/templates/blog-post.js`)
@@ -70,8 +70,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 /**
  * @type {import('gatsby').GatsbyNode['onCreateNode']}
  */
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+exports.onCreateNode = async ({ node, actions, createNodeId, store, cache, getCache, getNode, reporter }) => {
+  const { createNode, createNodeField, deleteNode } = actions
 
   if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode })
@@ -81,6 +81,72 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     })
+  }
+
+
+  // Check if the node is the cv.json data
+  if (node.internal.type === 'CvJson') {
+
+    const newNode = JSON.parse(JSON.stringify(node)); // deep clone (breaks immutability)
+
+    // Helper function to process external images
+    const processExternalImageLink = async (imageObject, parentNodeId) => {
+      if (imageObject && imageObject.link) {
+        try {
+          console.log(`Downloading image ${imageObject.link}`);
+          const fileNode = await createRemoteFileNode({
+            url: imageObject.link,
+            parentNodeId: parentNodeId,
+            createNode,
+            createNodeId,
+            cache,
+            store,
+            reporter,
+          });
+          // If the file was created successfully, link it to the original node.
+          if (fileNode) {
+            reporter.info(`image ${imageObject.link} downloaded ${fileNode.id}`);
+            // createNodeField({ node, name: "localFile_" + fileNode.id, value: fileNode })
+            // Use the '___NODE' convention to create a link between nodes
+            imageObject.localFile___NODE = fileNode.id;
+          }
+        } catch (err) {
+          reporter.warn(`Failed to download image ${imageObject.link} with error: ${err}`);
+        }
+      }
+    };
+
+    // Recursively walk any nested structure to find objects with a 'link' key
+    const walk = async (obj, parentId) => {
+      if (Array.isArray(obj)) {
+        await Promise.all(obj.map((v) => walk(v, parentId)));
+      } else if (obj && typeof obj === "object") {
+        if (obj.link && typeof obj.link === "string") {
+          await processExternalImageLink(obj, parentId);
+        }
+        for (const key of Object.keys(obj)) {
+          await walk(obj[key], parentId);
+        }
+      }
+    };
+
+    await walk(newNode, node.id);
+
+    // deleteNode({ node });
+    createNode({
+      ...newNode,
+      id: createNodeId(`${node.id} >>> CvJsonEnhanced`),
+      parent: node.id,
+      children: [],
+      internal: {
+        type: "CvJsonEnhanced",
+        contentDigest: crypto
+          .createHash(`md5`)
+          .update(JSON.stringify(newNode))
+          .digest(`hex`),
+      },
+    });
+    reporter.info(`CvJson node updated with image relationships`);
   }
 }
 

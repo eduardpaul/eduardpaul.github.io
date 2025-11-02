@@ -2,13 +2,14 @@
 import React from 'react';
 import AnimatedSection from './ui/AnimatedSection';
 import { useStaticQuery, graphql } from 'gatsby';
+import CvImage from './core/cvimage';
 
 const Highlights = () => {
 
-    const { cvJson: { experience: { publicArtifacts } } } = useStaticQuery(
+    const { cvJsonEnhanced: { experience: { publicArtifacts } } } = useStaticQuery(
         graphql`
 query {
-  cvJson {
+  cvJsonEnhanced {
     experience {
         publicArtifacts { 
           details {
@@ -16,8 +17,14 @@ query {
             description
             URL
             image {
-              link
               alt
+              link
+              localFile {
+                id
+                childImageSharp {
+                  gatsbyImageData(width: 200, placeholder: BLURRED)
+                }
+              }
             }
           }
           relatedCompetences {
@@ -32,7 +39,7 @@ query {
 `)
 
     return (
-        <section id="projects" className="bg-white py-24 sm:py-32">
+        <section id="projects" className="bg-white py-12">
             <div className="container mx-auto px-6">
                 <AnimatedSection>
                     <div className="text-center mb-16">
@@ -40,7 +47,7 @@ query {
                         <p className="mt-4 text-lg text-slate-600">Recognitions and public contributions to the community.</p>
                     </div>
                 </AnimatedSection>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                     {publicArtifacts.map((artifact, index) => (
                         <AnimatedSection key={index}>
                             <a
@@ -52,12 +59,8 @@ query {
                             >
                                 <div className="bg-slate-50 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-6 h-full flex flex-col">
                                     {artifact.details.image && (
-                                        <div className="aspect-video mb-6 overflow-hidden rounded-lg">
-                                            <img
-                                                src={artifact.details.image.link}
-                                                alt={artifact.details.image.alt}
-                                                className="w-full h-full object-contain"
-                                            />
+                                        <div className="mb-6 overflow-hidden rounded-lg flex items-center justify-center bg-black/5">
+                                            <CvImage imageObject={artifact.details.image} className="max-w-full max-h-full object-contain" />
                                         </div>
                                     )}
                                     <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">

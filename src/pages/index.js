@@ -4,9 +4,8 @@ import { graphql } from "gatsby"
 import Seo from "../components/seo"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
-import Certifications from "../components/certifications"
-import Experience from "../components/experience"
 import Highlights from "../components/highlights"
+import Activity from "../components/activity"
 
 const HomePage = ({ data, location }) => {
     const siteTitle = data.site.siteMetadata?.title || `Title`;
@@ -14,8 +13,7 @@ const HomePage = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
         <Hero />
-        <Certifications/>
-        <Experience/>
+        <Activity/>
         <Highlights/>
     </Layout>
   )

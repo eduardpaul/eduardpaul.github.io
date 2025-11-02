@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from "gatsby"
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -14,12 +15,8 @@ const Header = () => {
     }, []);
 
     const navItems = [
-        { href: '#bio', label: 'Bio' },
-        { href: '#competencies', label: 'Competencies' },
-        { href: '#experience', label: 'Experience' },
-        { href: '#projects', label: 'Projects' },
-        { href: '#certifications', label: 'Certs' },
-        { href: '#contact', label: 'Contact' },
+        { href: '/about', label: 'About me' },
+        { href: '/activity', label: 'Activity' }
     ];
 
     return (
@@ -30,18 +27,12 @@ const Header = () => {
         >
             <nav className="container mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
-                    <a href="#bio" className="text-xl font-bold text-slate-800 hover:text-blue-600 transition-colors">
-                        Eduard Paul Lakida
-                    </a>
+                    <Link to="/" className="text-xl font-bold text-slate-800 hover:text-blue-600 transition-colors">Eduard Paul Lakida</Link>
+
                     <ul className="hidden md:flex items-center space-x-8">
                         {navItems.map((item) => (
                             <li key={item.href}>
-                                <a
-                                    href={item.href}
-                                    className="font-medium text-slate-600 hover:text-blue-600 transition-colors"
-                                >
-                                    {item.label}
-                                </a>
+                                <Link to={item.href} className="font-medium text-slate-600 hover:text-blue-600 transition-colors">{item.label}</Link>
                             </li>
                         ))}
                     </ul>

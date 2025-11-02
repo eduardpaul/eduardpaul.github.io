@@ -2,23 +2,11 @@ import React from 'react';
 import AnimatedSection from './ui/AnimatedSection';
 import ReadMore from './ui/ReadMore';
 import { useStaticQuery, graphql } from 'gatsby';
+import MarkdownParser from './core/markdownparser';
 
 const formatDate = (dateString) => {
   return new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
 };
-
-const MarkdownParser = ({ text }) => {
-  const lines = text.split('\n').filter(line => line.trim() !== '');
-  return (
-    <ul className="space-y-3 list-disc list-inside text-slate-600">
-      {lines.map((line, index) => {
-        const bolded = line.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-800 font-semibold">$1</strong>');
-        return <li key={index} dangerouslySetInnerHTML={{ __html: bolded.replace(/^- /, '') }} />;
-      })}
-    </ul>
-  );
-};
-
 
 const Experience = () => {
   const { cvJson: { experience: { jobs } } } = useStaticQuery(
@@ -45,7 +33,7 @@ query {
 `)
 
   return (
-    <section id="experience" className="py-24 sm:py-32">
+    <section id="experience" className="py-12">
       <div className="container mx-auto px-6">
         <AnimatedSection>
           <div className="text-center mb-16">

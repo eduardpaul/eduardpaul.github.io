@@ -5,7 +5,7 @@ import { useFlexSearch } from "react-use-flexsearch"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const PostsPage = ({ data, location }) => {
+const ActivityPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { localSearchPages } = data
   const { index, store } = localSearchPages
@@ -76,9 +76,9 @@ const PostsPage = ({ data, location }) => {
   )
 }
 
-export default PostsPage
+export default ActivityPage
 
-export const Head = ({ location }) => <Seo title="All posts" pathname={location.pathname} />
+export const Head = ({ location }) => <Seo title="All activity" pathname={location.pathname} />
 
 export const pageQuery = graphql`
   query {
