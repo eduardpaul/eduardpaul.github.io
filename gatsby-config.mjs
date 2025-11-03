@@ -18,9 +18,10 @@ export default {
     title: `Eduard Paul Lakida`,
     author: {
       name: `Eduard Paul Lakida`,
-      summary: `who lives and works in the Philippines building useful things.`,
+      summary: `Architecting and delivering high-impact Microsoft 365 and Azure solutions that turn complex business needs into scalable results.`,
+      position: `Lead Solutions Architect at NTT DATA Europe & LATAM`
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Architecting and delivering high-impact Microsoft 365 and Azure solutions that turn complex business needs into scalable results.`,
     siteUrl: `https://eduardpaul.work`,
     image: `/src/images/icon.png`,
     social: {
@@ -165,6 +166,7 @@ export default {
                   description
                 }
                 excerpt
+                body
                 fields {
                   slug
                 }
@@ -177,16 +179,6 @@ export default {
         // Default: 'id'.
         ref: 'id',
 
-        // List of keys to index. The values of the keys are taken from the
-        // normalizer function below.
-        // Default: all fields
-        index: ['title', 'excerpt'],
-
-        // List of keys to store and make available in your UI. The values of
-        // the keys are taken from the normalizer function below.
-        // Default: all fields.
-        store: ['id', 'fields', 'frontmatter', 'excerpt'],
-
         // Function used to map the result from the GraphQL query. This should
         // return an array of items to index in the form of flat objects
         // containing properties to index. The objects must contain the `ref`
@@ -194,6 +186,10 @@ export default {
         normalizer: ({ data }) =>
           data.allMdx.nodes.map(node => ({
             id: node.id, // from GraphQL
+            title: node.frontmatter.title,
+            date: node.frontmatter.date,
+            description: node.frontmatter.description,
+            body: node.body,
             fields: { slug: node.fields.slug }, // Mimic GraphQL structure
             frontmatter: { // Mimic GraphQL structure
               title: node.frontmatter.title,

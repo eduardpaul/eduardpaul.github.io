@@ -1,0 +1,138 @@
+---
+title: Certificate pinning in .net 8 when using WCF Web Service Reference (C#)
+date: "2024-02-29T22:12:03.284Z"
+description: "Secure your SOAP services in .NET 8 using certificate pinning with WCF Web Service References. Learn how to validate public keys via custom HttpClientHandler and EndpointBehavior. Includes code samples and key security tips."
+external: https://medium.com/@eduardpaul1091/certificate-pinning-in-net-8-when-using-wcf-web-service-reference-c-9e582f0e24bf
+---
+
+In today’s interconnected world, keeping our applications and users safe is more crucial than ever. As developers, we’re constantly on the lookout for ways to protect against cyber threats, especially those targeting the communication channels our apps rely on.
+
+> TL;DR Example implementation: [https://github.com/eduardpaul/blog-code-examples/blob/master/CertPinningExample](https://github.com/eduardpaul/blog-code-examples/blob/master/CertPinningExample)
+
+Certificate pinning stands out as a good-old technique designed to fortify the security of these channels and verify the identity of servers using their public key from issued certificate information. This approach proves especially invaluable in scenarios where clients may be navigating potentially insecure networks, such as mobile apps accessing well-known endpoints via public Wi-Fi.
+
+While there are other situations where certificate pinning is equally important, it’s essential to consider **associated agility costs**, including the time required to identify and update public keys across all client applications, as well as the lack of standardization across different frameworks.
+
+Implementing certificate pinning with a plain HttpClient in.NET Core is straightforward if you follow [TLS/SSL best practices —.NET | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/core/extensions/sslstream-best-practices#certificate-pinning). However, integrating this technique with a WCF Web Service Reference of a SOAP web service, imported via its WSDL description, poses some challenges that require additional steps, which we’ll address in this post.
+
+### Scope of the example:
+
+- Create an HttpClient with a custom server certificate validation
+- Provide the HttpMessageHandler to WCF using EndpointBehavior
+- Only use Certificate pinning for specific set of services
+
+### Out of scope (see References)
+
+- dotnet core dependency injection and WCF / svcutil usage
+
+Begin by creating a method that configures an `HttpClientHandler` instance to perform validation checks for secure communication. This includes verifying the presence of a valid certificate and ensuring SSL/TLS has no errors. Additionally, consider whether public key validation is required for the authority of the request. You may also need to specify whether all authorities should be pinned or only specific ones, which can be provided in a constructor dictionary.
+
+```ts
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
+
+public class CertPinningByAuthorityHttpClientHander(Dictionary<string, string> authorityToPublicKeyMap, bool pinnedOnly = false)
+{
+    public HttpClientHandler CreateHandler()
+    {
+        return new HttpClientHandler
+        {
+            ServerCertificateCustomValidationCallback = (HttpRequestMessage hrqMessage,
+                X509Certificate2? cert, X509Chain? chain, SslPolicyErrors sslPolicyErrors) =>
+            {
+                // If there is something wrong, don't trust it.
+                if (sslPolicyErrors != SslPolicyErrors.None || cert == null)
+                {
+                    return false;
+                }
+
+                // if the authority is in the dictionary (pinned), check the public key
+                var authorityIsPinned = authorityToPublicKeyMap.TryGetValue(hrqMessage.RequestUri?.Authority ?? "", out var expectedPublicKey);
+                if (authorityIsPinned)
+                {
+                    return cert?.GetPublicKeyString().Equals(expectedPublicKey, StringComparison.InvariantCultureIgnoreCase) ?? false;
+                }
+
+                return !pinnedOnly; // certificate is valid and not pinned (other public ws)
+            }
+        };
+    }
+}
+```
+
+Next, proceed to implement the `CertificatePinningEndpointBehavior`, which will utilize the previously created factory method to enforce certificate pinning.
+
+```ts
+using System.ServiceModel.Channels;
+using System.ServiceModel.Description;
+using System.ServiceModel.Dispatcher;
+
+public class CertificatePinningEndpointBehavior : IEndpointBehavior
+{
+    private readonly Func<HttpMessageHandler> _httpHandler;
+
+    public CertificatePinningEndpointBehavior(IHttpMessageHandlerFactory factory) 
+    {
+        _httpHandler = () => factory.CreateHandler();
+    }
+
+    public void AddBindingParameters(ServiceEndpoint endpoint, BindingParameterCollection bindingParameters)
+    {
+        bindingParameters.Add(new Func<HttpClientHandler, HttpMessageHandler>(handler => _httpHandler()));
+    }
+
+    public void ApplyClientBehavior(ServiceEndpoint endpoint, ClientRuntime clientRuntime) { }
+    public void ApplyDispatchBehavior(ServiceEndpoint endpoint, EndpointDispatcher endpointDispatcher) { }
+    public void Validate(ServiceEndpoint endpoint) { }
+}
+```
+
+During application initialization, load the pinned authorities and their public keys. Configure the HttpClient’s PrimaryHttpMessageHandler as follows:
+
+```ts
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+
+using ServiceReference;
+
+// Initialize the HttpClientHandler with the authority and public key to pin
+var httpClientHander = new CertPinningByAuthorityHttpClientHander(
+    // Authority & Publickey
+    new Dictionary<string, string>{ {
+        "www.dataaccess.com", 
+        "3082018A02820181009B51111A2C1CE3FBC26F62D63AC87BD597E22F3A8080467993F278BBC72C3B9B6E325E63CA93480ADAB8D4903D5C039773E3E06C89996EA2080478A6632395DC23480EDE1127256EBA0C943824DF771984C591A7BC390EA79B908D81A261F3AA7835D9EE837A0C7BF3F7B3B7C7054BA643911BB59D857494A3E71ABA44BCE13FAB02361ADFBB277B77C4F1746B75960829CD04BEF6B6552185FED30623659DCDE757D207746A59A5C0D46AFC50FB4EC8DBA3C22E43D1A0AEBFCAB4EDBA699F1012D57913A281BBDADAADCFD0255BDA64114941AB8E5B7A29BF50699A7949915766967D41372804F37984CABA752F0456A85246954F310AEEC9C1385C3AC4AB747BA04BE83ECCE40AD8847A294BBA89B1F460ED4500D7C11A7128DEA5FE9C26131D20C26BD7D4F11702EF6724555C0C553A6C39254265D8E61912A37A649B5642DE997086FC65EBEF3EAE537421D751D532F4B5A479C3844FA5AE6221266F750EC54059D805F088C1B628FD39F715F3484940847CFE942739D9131A6FD6ADDF930203010001"
+    } });
+
+// dotnet host to manage dependencies and lifetime
+using var host = Host.CreateDefaultBuilder()
+.ConfigureServices(services =>
+{
+    services.AddHttpClient().ConfigureHttpClientDefaults(sp => sp.ConfigurePrimaryHttpMessageHandler(() => httpClientHander.CreateHandler()));
+})
+.UseConsoleLifetime().Build();
+
+// later, use DI to get the IHttpMessageHandlerFactory
+var httpMessageHandler = host.Services.GetRequiredService<IHttpMessageHandlerFactory>()!;
+
+var wsClient = new NumberConversionSoapTypeClient(new NumberConversionSoapTypeClient.EndpointConfiguration() { });
+
+// Add the endpoint behavior to the client
+wsClient.Endpoint.EndpointBehaviors.Add(new CertificatePinningEndpointBehavior(httpMessageHandler));
+
+// Call the service (verify that changing the public key will make the call fail)
+var result = await wsClient.NumberToWordsAsync(1234);
+Console.WriteLine(result.Body.NumberToWordsResult);
+
+await host.RunAsync();
+```
+
+**References:**
+
+- Thanks to: [Make SOAP requests using IHttpClientFactory in.NET Core — DEV Community](https://dev.to/nikolicbojan/make-soap-requests-using-ihttpclientfactory-in-net-core-46hk)
+- Long story about public key pinning: [Certificate and Public Key Pinning | OWASP Foundation](https://owasp.org/www-community/controls/Certificate_and_Public_Key_Pinning)
+- WCF socket exhaustion discussion with similar approach: [.net — Can creating a new WCF client for each request in ASP.NET Core lead to socket exhaustion? — Stack Overflow](https://stackoverflow.com/questions/59929665/can-creating-a-new-wcf-client-for-each-request-in-asp-net-core-lead-to-socket-ex)
+- Certificate pinning example for dotnet: [https://learn.microsoft.com/en-us/dotnet/core/extensions/sslstream-best-practices#certificate-pinning](https://learn.microsoft.com/en-us/dotnet/core/extensions/sslstream-best-practices#certificate-pinning)
+- Similar requirement for HttpClient Only: [How to enable certificate pinning in your application with the WebClient or HttpRequest object? — How To? Directory](https://howto.one/knowledgebase/how-to-enable-certificate-pinning-in-your-application-with-the-webclient-or-httprequest-object/)
+- Very good explanation of HttpClient & HttpClientFactory: [https://andrewlock.net/exporing-the-code-behind-ihttpclientfactory/](https://andrewlock.net/exporing-the-code-behind-ihttpclientfactory/)
+- How to use HttpMessageHandlerFactory: [https://blog.stackademic.com/understanding-ihttpmessagehandlerfactory-and-ioptions-in-net-core-5d7b0729b86a](https://blog.stackademic.com/understanding-ihttpmessagehandlerfactory-and-ioptions-in-net-core-5d7b0729b86a)
+- dotnet discussion about WCF and http client: [https://github.com/dotnet/wcf/issues/2400](https://github.com/dotnet/wcf/issues/2400)

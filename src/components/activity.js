@@ -20,7 +20,6 @@ const Activity = () => {
     allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {
         id
-        excerpt
         fields {
           slug
         }
@@ -28,6 +27,7 @@ const Activity = () => {
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          external
         }
       }
     }
@@ -79,7 +79,7 @@ const Activity = () => {
           {posts.map(post => {
             const title = post.frontmatter?.title || post.title
             const slug = post.fields?.slug || post.slug
-            const description = post.frontmatter?.description || post.excerpt
+            const description = post.frontmatter?.description || post.description
             const date = post.frontmatter?.date || post.date
 
             return (
@@ -97,98 +97,26 @@ const Activity = () => {
                       dangerouslySetInnerHTML={{ __html: description }}
                       itemProp="description"
                     />
+                    <div
+                      class="mt-4 inline-flex items-center text-blue-600 font-medium hover:underline"
+                    >
+                      View post
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        class="w-4 h-4 ml-1"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                      </svg>
+                    </div>
                   </section>
                 </article>
               </Link>
             )
           })}
-
-          <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-5 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="text-lg font-semibold text-slate-900">Building scalable SharePoint architectures</h3>
-                <span class="text-xs bg-blue-100 text-blue-600 font-medium px-2 py-1 rounded-full">Post</span>
-              </div>
-              <p class="text-slate-600 text-sm mt-1">
-                Shared insights on designing efficient document management structures using modern SharePoint.
-              </p>
-            </div>
-            <a
-              href="#"
-              target="_blank"
-              class="mt-4 inline-flex items-center text-blue-600 font-medium hover:underline"
-            >
-              Read more
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="w-4 h-4 ml-1"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-              </svg>
-            </a>
-          </div>
-
-          <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-5 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="text-lg font-semibold text-slate-900">Repost: Azure DevOps best practices</h3>
-                <span class="text-xs bg-green-100 text-green-600 font-medium px-2 py-1 rounded-full">Repost</span>
-              </div>
-              <p class="text-slate-600 text-sm mt-1">
-                Highlighting key automation and CI/CD principles from Microsoft’s latest DevOps updates.
-              </p>
-            </div>
-            <a
-              href="#"
-              target="_blank"
-              class="mt-4 inline-flex items-center text-blue-600 font-medium hover:underline"
-            >
-              View post
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="w-4 h-4 ml-1"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-              </svg>
-            </a>
-          </div>
-
-          <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-5 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="text-lg font-semibold text-slate-900">GitHub: Power Automate templates</h3>
-                <span class="text-xs bg-purple-100 text-purple-600 font-medium px-2 py-1 rounded-full">Project</span>
-              </div>
-              <p class="text-slate-600 text-sm mt-1">
-                Open-source Power Automate flows for integrating SharePoint Online metadata updates.
-              </p>
-            </div>
-            <a
-              href="#"
-              target="_blank"
-              class="mt-4 inline-flex items-center text-blue-600 font-medium hover:underline"
-            >
-              Explore on GitHub
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="w-4 h-4 ml-1"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-              </svg>
-            </a>
-          </div>
         </div>
       </div>
     </section>

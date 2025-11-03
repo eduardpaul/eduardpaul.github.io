@@ -83,7 +83,6 @@ exports.onCreateNode = async ({ node, actions, createNodeId, store, cache, getCa
     })
   }
 
-
   // Check if the node is the cv.json data
   if (node.internal.type === 'CvJson') {
 
@@ -161,11 +160,13 @@ exports.createSchemaCustomization = ({ actions }) => {
       author: Author
       siteUrl: String
       social: Social
+      description: String
     }
 
     type Author {
       name: String
       summary: String
+      position: String
     }
 
     type Social {
@@ -181,6 +182,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       date: Date @dateformat
+      external: String
     }
 
     type Fields {

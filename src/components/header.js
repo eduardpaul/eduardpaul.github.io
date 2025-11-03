@@ -7,9 +7,7 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10);
-        };
+        const handleScroll = () => setIsScrolled(window.scrollY > 10);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -21,8 +19,7 @@ const Header = () => {
 
     return (
         <header
-            className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled || isMenuOpen ? 'bg-white/95 shadow-md backdrop-blur-sm' : 'bg-transparent'
-                }`}
+            className={`not-prose sticky top-0 z-50 transition-all duration-300 ${isScrolled || isMenuOpen ? 'bg-white/95 shadow-md backdrop-blur-sm' : 'bg-transparent'}`}
             aria-label="Main Navigation"
         >
             <nav className="container mx-auto px-6 py-4">
@@ -57,13 +54,14 @@ const Header = () => {
                     <ul className="flex flex-col items-center space-y-6">
                         {navItems.map((item) => (
                             <li key={item.href}>
-                                <a
-                                    href={item.href}
+                                <Link
+                                    to={item.href}
                                     className="font-medium text-slate-600 hover:text-blue-600 transition-colors text-lg"
-                                    onClick={() => setIsMenuOpen(false)} // Close menu on link click
+                                    activeClassName="text-blue-700 font-semibold"
+                                    onClick={() => setIsMenuOpen(false)}
                                 >
                                     {item.label}
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>
