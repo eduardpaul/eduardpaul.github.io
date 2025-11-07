@@ -23,7 +23,7 @@ export default {
     },
     description: `Architecting and delivering high-impact Microsoft 365 and Azure solutions that turn complex business needs into scalable results.`,
     siteUrl: `https://eduardpaul.work`,
-    image: `/src/images/icon.png`,
+    image: `/src/images/favicon.svg`,
     social: {
       twitter: `@eduapauldev`,
     },
