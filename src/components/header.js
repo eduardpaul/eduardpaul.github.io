@@ -24,12 +24,12 @@ const Header = () => {
         >
             <nav className="container mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
-                    <Link to="/" className="text-xl font-bold text-slate-800 hover:text-blue-600 transition-colors">Eduard Paul Lakida</Link>
+                    <Link to="/" className="text-xl font-bold text-gray-800 hover:text-primary-600 transition-colors">Eduard Paul Lakida</Link>
 
                     <ul className="hidden md:flex items-center space-x-8">
                         {navItems.map((item) => (
                             <li key={item.href}>
-                                <Link to={item.href} className="font-medium text-slate-600 hover:text-blue-600 transition-colors">{item.label}</Link>
+                                <Link to={item.href} className="font-medium text-gray-600 hover:text-primary-600 transition-colors">{item.label}</Link>
                             </li>
                         ))}
                     </ul>
@@ -38,7 +38,7 @@ const Header = () => {
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             aria-controls="mobile-menu"
                             aria-expanded={isMenuOpen}
-                            className="text-slate-800 p-2 rounded-md hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="text-gray-800 p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
                         >
                             <span className="sr-only">Open main menu</span>
                             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -56,8 +56,8 @@ const Header = () => {
                             <li key={item.href}>
                                 <Link
                                     to={item.href}
-                                    className="font-medium text-slate-600 hover:text-blue-600 transition-colors text-lg"
-                                    activeClassName="text-blue-700 font-semibold"
+                                    className="font-medium text-gray-600 hover:text-primary-600 transition-colors text-lg"
+                                    activeClassName="text-primary-700 font-semibold"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     {item.label}
