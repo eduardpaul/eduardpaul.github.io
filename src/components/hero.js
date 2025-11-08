@@ -33,17 +33,17 @@ query {
 `)
 
     return (
-        <section id="bio" className="container mx-auto px-6 py-12">
+        <section id="bio" className="container mx-auto px-6 py-16">
             <AnimatedSection>
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
-                    <div className="md:col-span-2 flex justify-center">
-                        <CvImage imageObject={profile.avatar} className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-xl ring-4 ring-white"/>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                    <div className="md:col-span-5 lg:col-span-4 flex justify-center md:justify-start">
+                        <CvImage imageObject={profile.avatar} className="w-56 h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover shadow-xl ring-4 ring-white"/>
                     </div>
-                    <div className="md:col-span-3 text-center md:text-left">
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                    <div className="md:col-span-7 lg:col-span-8 text-left">
+                        <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight">
                             {profile.name} {profile.surnames}
                         </h1>
-                        <h2 className="mt-2 text-xl md:text-2xl font-semibold text-blue-600">
+                        <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-blue-600">
                             {profile.title}
                         </h2>
                         <ReadMore initialMaxHeight="max-h-40">

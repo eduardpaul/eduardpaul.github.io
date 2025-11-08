@@ -9,7 +9,7 @@ const AnimatedSection = ({ children, className }) => {
     <div
       ref={ref}
       className={`transition-all duration-1000 ease-out ${className} ${
-        isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
       }`}
     >
       {children}

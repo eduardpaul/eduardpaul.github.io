@@ -23,6 +23,8 @@ const CvImage = ({ imageObject, className = "h-24 w-24 mx-auto mb-4 object-conta
         src={imageObject.localFile.publicURL}
         alt={imageObject.alt || ""}
         className={className}
+        loading="lazy"
+        decoding="async"
       />
     );
   }
@@ -34,6 +36,8 @@ const CvImage = ({ imageObject, className = "h-24 w-24 mx-auto mb-4 object-conta
         src={imageObject.link}
         alt={imageObject.alt || ""}
         className={className}
+        loading="lazy"
+        decoding="async"
       />
     );
   }
