@@ -3,7 +3,7 @@ import Seo from "../components/seo"
 
 const DeepInfantPage = () => (
   <iframe
-    src="/deepinfant/index.html"
+    src="/deepinfant-app/index.html"
     title="DeepInfant — Baby Cry Classifier"
     allow="microphone"
     style={{
