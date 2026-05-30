@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1120" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>DeepInfant — Baby Cry Classifier</title>
+  <style>
+    /* ─────────────────────────────────────────────────────────────────
+       DESIGN TOKENS
+    ───────────────────────────────────────────────────────────────── */
+    :root {
+      --bg:         #0b1120;
+      --surface:    #131e30;
+      --surface2:   #1a2740;
+      --border:     #1e3055;
+      --blue:       #38bdf8;
+      --blue-dim:   #0ea5e9;
+      --green:      #22c55e;
+      --red:        #ef4444;
+      --amber:      #f59e0b;
+      --text:       #e2e8f0;
+      --muted:      #64748b;
+      --radius:     0.75rem;
+      --radius-sm:  0.4rem;
+
+      /* Fluid spacing — tighter on mobile, more generous on desktop */
+      --pad-page:   1rem;
+      --pad-card:   1rem;
+      --gap-card:   0.75rem;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────
+       RESET & BASE
+    ───────────────────────────────────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /* prevent 300 ms tap delay on older mobile browsers */
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      /* Fallback → system-ui picks the best native font on every platform */
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100svh;                /* svh = small viewport height (iOS Safari safe) */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* Safe-area padding for notch/home-bar devices */
+      padding-bottom: env(safe-area-inset-bottom);
+      padding-left:  env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+    }
+
+    /* ─────────────────────────────────────────────────────────────────
+       PAGE WRAPPER  (mobile-first, wider on larger screens)
+    ───────────────────────────────────────────────────────────────── */
+    .page {
+      width: 100%;
+      max-width: 860px;
+      padding: var(--pad-page);
+      padding-bottom: calc(var(--pad-page) * 3);
+    }
+
+    @media (min-width: 480px) {
+      :root { --pad-page: 1.25rem; --pad-card: 1.25rem; }
+    }
+    @media (min-width: 768px) {
+      :root { --pad-page: 2rem; --pad-card: 1.5rem; --gap-card: 1.25rem; }
+    }
+
+    /* ─────────────────────────────────────────────────────────────────
+       HEADER
+    ───────────────────────────────────────────────────────────────── */
+    header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      padding-top: 1rem;
+    }
+
+    .logo {
+      font-size: clamp(2.25rem, 8vw, 3.5rem);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+      /* prevent emoji being cropped on some Android versions */
+      display: block;
+    }
+
+    header h1 {
+      font-size: clamp(1.4rem, 5vw, 1.9rem);
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    header p {
+      color: var(--muted);
+      margin-top: 0.35rem;
+      font-size: clamp(0.8rem, 3vw, 0.95rem);
+      line-height: 1.4;
+    }
+
+    .badges {
+      display: flex;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .badge.model-badge          { color: var(--blue);  border-color: var(--blue-dim); }
+    .badge.model-badge.loaded   { color: var(--green); border-color: var(--green);    }
+
+    /* ─────────────────────────────────────────────────────────────────
+       CARDS
+    ───────────────────────────────────────────────────────────────── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--pad-card);
+      margin-bottom: var(--gap-card);
+    }
+
+    .card-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.875rem;
+      /* allow emoji + label to sit on one line */
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────
+       BUTTONS  (mobile-first: full-width stacked, then inline on wider)
+    ───────────────────────────────────────────────────────────────── */
+    .btn-row {
+      display: grid;
+      /* All buttons full-width by default (mobile) */
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+    }
+
+    /* Two columns on medium+ screens */
+    @media (min-width: 400px) {
+      .btn-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Three side-by-side on wide screens */
+    @media (min-width: 640px) {
+      .btn-row {
+        grid-template-columns: repeat(3, auto);
+        justify-content: start;
+      }
+    }
+
+    .btn {
+      /* Minimum 44 px tap target (Apple HIG / WCAG 2.5.5) */
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: transform 0.1s, opacity 0.2s, background 0.2s, border-color 0.2s, color 0.2s;
+      user-select: none;
+      /* let long labels break instead of overflowing */
+      white-space: nowrap;
+    }
+
+    .btn:active:not(:disabled) { transform: scale(0.96); }
+
+    .btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .btn-danger { background: var(--red); color: #fff; }
+    .btn-danger:hover:not(:disabled) { background: #dc2626; }
+    .btn-danger.recording {
+      background: #b91c1c;
+      animation: pulse 1.2s ease-in-out infinite;
+    }
+
+    .btn-primary { background: var(--blue-dim); color: #fff; }
+    .btn-primary:hover:not(:disabled) { background: var(--blue); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover:not(:disabled) { border-color: var(--blue); color: var(--blue); }
+    .btn-outline.active              { border-color: var(--amber); color: var(--amber); }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.6; }
+    }
+
+    /* ─────────────────────────────────────────────────────────────────
+       STATUS BAR
+    ───────────────────────────────────────────────────────────────── */
+    .status {
+      padding: 0.55rem 0.85rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      line-height: 1.4;
+      margin-top: 0.875rem;
+      border-left: 3px solid transparent;
+      background: var(--surface2);
+      /* don't clip long status messages on small screens */
+      word-break: break-word;
+    }
+
+    .status-info      { border-color: var(--blue);  color: var(--text); }
+    .status-ok        { border-color: var(--green); color: var(--green); }
+    .status-recording { border-color: var(--red);   color: var(--red);   }
+    .status-error     { border-color: var(--red);   color: #fca5a5;      }
+
+    /* ─────────────────────────────────────────────────────────────────
+       WAVEFORM
+    ───────────────────────────────────────────────────────────────── */
+    .canvas-wrap {
+      width: 100%;
+      /* shorter on mobile so it doesn't dominate the screen */
+      height: clamp(56px, 14vw, 90px);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    canvas {
+      /* CSS size — JS sets the pixel (buffer) dimensions */
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────
+       MEL SPECTROGRAM
+    ───────────────────────────────────────────────────────────────── */
+    .mel-wrap {
+      width: 100%;
+      height: clamp(80px, 20vw, 130px);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--bg);
+      position: relative;
+    }
+
+    .mel-labels {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3px 5px;
+      pointer-events: none;
+    }
+
+    .mel-label {
+      font-size: 0.55rem;
+      color: var(--muted);
+      line-height: 1;
+      /* subtle background so labels are readable over the spectrogram */
+      background: rgba(11, 17, 32, 0.55);
+      padding: 1px 3px;
+      border-radius: 2px;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────
+       PREDICTION — hero pick
+    ───────────────────────────────────────────────────────────────── */
+    .top-pick {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.2rem;
+      padding: 1.25rem 1rem 1rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      background: rgba(34, 197, 94, 0.06);
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .top-pick.empty {
+      border-color: var(--border);
+      background: var(--surface2);
+    }
+
+    .top-pick-emoji {
+      font-size: clamp(2.8rem, 11vw, 4.5rem);
+      line-height: 1;
+      /* keep emoji from clipping on Android */
+      overflow: visible;
+    }
+
+    .top-pick-label {
+      font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 0.1rem;
+      word-break: break-word;
+    }
+
+    .top-pick.empty .top-pick-label {
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+
+    .top-pick-conf {
+      font-size: clamp(1rem, 4vw, 1.3rem);
+      font-weight: 800;
+      color: var(--green);
+      font-variant-numeric: tabular-nums;
+      min-height: 1.4em;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────
+       PREDICTION — "could also be" chips with tooltips
+    ───────────────────────────────────────────────────────────────── */
+    .alt-section {
+      margin-top: 0.875rem;
+    }
+
+    .alt-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .alt-chips {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .alt-chip {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.82rem;
+      font-family: inherit;
+      cursor: pointer;
+      min-height: 36px;
+      transition: border-color 0.15s, background 0.15s;
+      /* tooltip anchor */
+      isolation: isolate;
+    }
+
+    .alt-chip:hover,
+    .alt-chip:focus-visible {
+      border-color: var(--blue);
+      background: rgba(56, 189, 248, 0.08);
+      outline: none;
+    }
+
+    .alt-chip.tooltip-open {
+      border-color: var(--blue);
+      background: rgba(56, 189, 248, 0.08);
+    }
+
+    .alt-chip-emoji { font-size: 0.95rem; line-height: 1; }
+    .alt-chip-label { white-space: nowrap; }
+
+    /* Tooltip bubble */
+    .alt-chip::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: calc(100% + 7px);
+      left: 50%;
+      transform: translateX(-50%) scale(0.92);
+      transform-origin: bottom center;
+      background: #0f1c30;
+      color: var(--text);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.55rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s, transform 0.15s;
+      z-index: 20;
+    }
+
+    /* Tooltip caret */
+    .alt-chip::before {
+      content: '';
+      position: absolute;
+      bottom: calc(100% + 2px);
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: var(--border);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s;
+      z-index: 20;
+    }
+
+    .alt-chip:hover::after,
+    .alt-chip:hover::before,
+    .alt-chip:focus-visible::after,
+    .alt-chip:focus-visible::before,
+    .alt-chip.tooltip-open::after,
+    .alt-chip.tooltip-open::before {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    /* Caret doesn't scale */
+    .alt-chip:hover::before,
+    .alt-chip:focus-visible::before,
+    .alt-chip.tooltip-open::before {
+      transform: translateX(-50%);
+    }
+
+    /* ─────────────────────────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.72rem;
+      margin-top: 1.5rem;
+      line-height: 1.7;
+      padding: 0 0.5rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── Header ─────────────────────────────────────────────────── -->
+  <header>
+    <span class="logo" aria-hidden="true">👶</span>
+    <h1>DeepInfant</h1>
+    <p>AI-powered infant cry classifier<br>runs entirely in your browser</p>
+    <div class="badges">
+      <span class="badge model-badge" id="model-badge">Loading model…</span>
+      <span class="badge">ONNX Runtime Web</span>
+      <span class="badge">VGGish CNN</span>
+      <span class="badge">9 classes</span>
+    </div>
+  </header>
+
+  <!-- ── Controls ───────────────────────────────────────────────── -->
+  <div class="card">
+    <div class="card-title">
+      <span aria-hidden="true">🎙</span> Capture
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-danger"  id="btn-record" disabled>
+        ⏺ Record 3s
+      </button>
+      <button class="btn btn-outline" id="btn-auto"   disabled>
+        🔄 Auto Mode
+      </button>
+      <button class="btn btn-primary" id="btn-file"   disabled>
+        📂 Upload Audio
+      </button>
+      <input type="file" id="file-input" accept="audio/*"
+             style="display:none" aria-hidden="true" />
+    </div>
+    <div class="status status-info" id="status" role="status" aria-live="polite">
+      Waiting for model…
+    </div>
+  </div>
+
+  <!-- ── Prediction ─────────────────────────────────────────────── -->
+  <div class="card">
+    <div class="card-title">
+      <span aria-hidden="true">🔍</span> Prediction
+    </div>
+
+    <!-- Hero: top pick -->
+    <div class="top-pick empty" id="top-pick" aria-live="polite" aria-atomic="true">
+      <div class="top-pick-emoji" id="top-pick-emoji" aria-hidden="true">🤔</div>
+      <div class="top-pick-label" id="top-pick-label">Waiting for prediction…</div>
+      <div class="top-pick-conf"  id="top-pick-conf"></div>
+    </div>
+
+    <!-- Could-also-be chips (hidden until first prediction) -->
+    <div class="alt-section" id="alt-section" hidden>
+      <div class="alt-title">Could also be</div>
+      <div class="alt-chips" id="alt-chips" role="list"></div>
+    </div>
+  </div>
+
+  <!-- ── Waveform ────────────────────────────────────────────────── -->
+  <div class="card">
+    <div class="card-title">
+      <span aria-hidden="true">📊</span> Waveform
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="waveform" aria-label="Audio waveform" role="img"></canvas>
+    </div>
+  </div>
+
+  <!-- ── Mel spectrogram ─────────────────────────────────────────── -->
+  <div class="card">
+    <div class="card-title">
+      <span aria-hidden="true">🌈</span>
+      Mel Spectrogram
+      <span style="font-weight:400;font-size:0.65rem;margin-left:0.2rem">
+        96 frames × 64 bins
+      </span>
+    </div>
+    <div class="mel-wrap">
+      <canvas id="mel-canvas" aria-label="Mel spectrogram" role="img"></canvas>
+      <div class="mel-labels" aria-hidden="true">
+        <span class="mel-label">7.5 kHz</span>
+        <span class="mel-label">3.7 kHz</span>
+        <span class="mel-label">125 Hz</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    All processing runs locally in your browser.<br>
+    No audio is sent to any server.<br>
+    DeepInfant V2 · VGGish CNN · Apache 2.0
+  </footer>
+
+</div>
+
+<!-- ONNX Runtime Web (local WASM) -->
+<script src="runtime/ort.min.js"></script>
+<!-- VGGish mel spectrogram -->
+<script src="js/mel.js"></script>
+<!-- Application logic -->
+<script src="js/app.js"></script>
+</body>
+</html>
