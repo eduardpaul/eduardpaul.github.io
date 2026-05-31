@@ -27,7 +27,6 @@ const Activity = () => {
           date(formatString: "MMMM DD, YYYY")
           title
           description
-          external
         }
       }
     }
@@ -78,7 +77,6 @@ const Activity = () => {
           {posts.map(post => {
             const title = post.frontmatter?.title || post.title
             const slug = post.fields?.slug || post.slug
-            const external = post.frontmatter?.external || post.external
             const description = post.frontmatter?.description || post.description
             const date = post.frontmatter?.date || post.date
 
@@ -117,15 +115,9 @@ const Activity = () => {
 
             return (
               <AnimatedSection key={slug}>
-                {external ? (
-                  <a href={external} target="_blank" rel="noopener noreferrer" className={cardClass}>
-                    {cardContent}
-                  </a>
-                ) : (
-                  <Link to={slug} className={cardClass}>
-                    {cardContent}
-                  </Link>
-                )}
+                <Link to={slug} className={cardClass}>
+                  {cardContent}
+                </Link>
               </AnimatedSection>
             )
           })}

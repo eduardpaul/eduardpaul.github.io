@@ -48,35 +48,26 @@ const ActivityPage = ({ data, location }) => {
             {posts.map(post => {
               const title = post.frontmatter?.title || post.title
               const slug = post.fields?.slug || post.slug
-              const external = post.frontmatter?.external || post.external
               const description = post.frontmatter?.description || post.excerpt
               const date = post.frontmatter?.date || post.date
 
-              const cardContent = (
-                <article key={slug} itemScope itemType="http://schema.org/Article">
-                  <header>
-                    <h2 className="text-xl font-semibold text-slate-800 hover:text-indigo-600" itemProp="headline">
-                      {title}
-                    </h2>
-                    <small className="text-slate-500">{date}</small>
-                  </header>
-                  <section>
-                    <p
-                      className="mt-2 text-slate-600"
-                      dangerouslySetInnerHTML={{ __html: description }}
-                      itemProp="description"
-                    />
-                  </section>
-                </article>
-              )
-
-              return external ? (
-                <a key={slug} href={external} target="_blank" rel="noopener noreferrer" className={cardClass}>
-                  {cardContent}
-                </a>
-              ) : (
+              return (
                 <Link key={slug} to={slug} className={cardClass}>
-                  {cardContent}
+                  <article itemScope itemType="http://schema.org/Article">
+                    <header>
+                      <h2 className="text-xl font-semibold text-slate-800 hover:text-indigo-600" itemProp="headline">
+                        {title}
+                      </h2>
+                      <small className="text-slate-500">{date}</small>
+                    </header>
+                    <section>
+                      <p
+                        className="mt-2 text-slate-600"
+                        dangerouslySetInnerHTML={{ __html: description }}
+                        itemProp="description"
+                      />
+                    </section>
+                  </article>
                 </Link>
               )
             })}
@@ -113,7 +104,6 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
-          external
         }
       }
     }
