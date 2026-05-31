@@ -1,0 +1,337 @@
+- generic [ref=e4]:
+  - banner "Main Navigation" [ref=e5]:
+    - navigation [ref=e6]:
+      - generic [ref=e7]:
+        - link "Eduard Paul Lakida" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - list [ref=e9]:
+          - listitem [ref=e10]:
+            - link "About me" [ref=e11] [cursor=pointer]:
+              - /url: /about/
+          - listitem [ref=e12]:
+            - link "Activity" [ref=e13] [cursor=pointer]:
+              - /url: /activity/
+  - main [ref=e15]:
+    - link "Print / Export CV" [ref=e17] [cursor=pointer]:
+      - /url: /cv-print/
+      - img [ref=e18]
+      - text: Print CV
+    - generic [ref=e24]:
+      - img [ref=e28]
+      - generic [ref=e29]:
+        - heading "Eduard Paul Lakida" [level=1] [ref=e30]
+        - heading "Lead Solutions Architect at NTT DATA Europe & LATAM" [level=2] [ref=e31]
+        - paragraph [ref=e32]: As a Lead Solutions Architect with nearly a decade of IT and software consulting experience, I specialize in architecting and delivering high-impact solutions for clients across diverse industries, sizes, and countries. My expertise centers on the Microsoft ecosystem—particularly SharePoint, Microsoft 365, and Azure—where I translate complex business needs into scalable, effective technologies. In addition to technical proficiency, I provide strong leadership in methodology, project management, and team guidance, fostering collaborative environments through mentorship and knowledge sharing. As a sociable, empathetic, and flexible professional, I am always eager to contribute both technically and personally. My core values—collaboration, proactivity, generosity, autonomy, organization, and clear communication—drive me to build mutually supportive teams that achieve outstanding results.
+    - generic [ref=e35]:
+      - generic [ref=e37]:
+        - heading "DevOps & Automation skills" [level=3] [ref=e38]
+        - list [ref=e39]:
+          - listitem [ref=e40]:
+            - strong [ref=e41]: "CI/CD:"
+            - text: Pipeline automation using
+            - strong [ref=e42]: Azure DevOps
+            - text: and Jenkins.
+          - listitem [ref=e43]:
+            - strong [ref=e44]: "Scripting:"
+            - text: Advanced
+            - strong [ref=e45]: PowerShell
+            - text: (PnPPowerShell, M365 CLI) to automate administrative tasks for both On-Premise and M365.
+          - listitem [ref=e46]:
+            - strong [ref=e47]: "Containerization:"
+            - text: Creation of Docker containers for development environments.
+      - generic [ref=e49]:
+        - heading "Leadership & Project Management skills" [level=3] [ref=e50]
+        - list [ref=e51]:
+          - listitem [ref=e52]:
+            - strong [ref=e53]: "Project Management:"
+            - text: 5+ years leading the full project lifecycle (planning, execution, monitoring, and closing).
+          - listitem [ref=e54]:
+            - strong [ref=e55]: "Stakeholder Management:"
+            - text: Coordinating deliverables between IT, security, and business areas to ensure project alignment.
+          - listitem [ref=e56]:
+            - strong [ref=e57]: "Methodology:"
+            - text: Deep practical application of
+            - strong [ref=e58]: Agile
+            - text: and
+            - strong [ref=e59]: DevOps
+            - text: principles.
+      - generic [ref=e61]:
+        - heading "Cloud & Infrastructure Architecture skills" [level=3] [ref=e62]
+        - list [ref=e63]:
+          - listitem [ref=e64]:
+            - strong [ref=e65]: "Microsoft 365:"
+            - text: Tenant-level administration, including licensing, security hardening, and compliance configuration.
+          - listitem [ref=e66]:
+            - strong [ref=e67]: "Microsoft Azure:"
+            - text: Deployment and management of cloud resources using
+            - strong [ref=e68]: Bicep
+            - text: and
+            - strong [ref=e69]: ARM templates
+            - text: .
+          - listitem [ref=e70]:
+            - strong [ref=e71]: "SharePoint On-Premise:"
+            - text: Expert-level farm architecture (2016/2019), performance optimization, and advanced troubleshooting.
+          - listitem [ref=e72]:
+            - strong [ref=e73]: "Identity & Access (IAM):"
+            - text: Configuration of SAML, OAuth, & OIDC protocols using Azure AD, ADFS, PingFederate, Keycloak, and Oracle OAM.
+          - listitem [ref=e74]:
+            - strong [ref=e75]: "Networking & Web:"
+            - text: Advanced configuration and deployment of on-premise load balancers (GLB), firewalls, and IIS web servers.
+      - generic [ref=e77]:
+        - heading "Application Development & Modernization skills" [level=3] [ref=e78]
+        - list [ref=e79]:
+          - listitem [ref=e80]:
+            - strong [ref=e81]: "M365 Development:"
+            - text: Custom solutions for SharePoint Online (SPFx) and MS Teams using Power Platform, Graph API, & CSOM.
+          - listitem [ref=e82]:
+            - strong [ref=e83]: "Migration & Modernization:"
+            - text: Proven experience migrating and modernizing SharePoint On-Premise solutions to SharePoint Online.
+          - listitem [ref=e84]:
+            - strong [ref=e85]: "Backend:"
+            - text: .NET & .NET Core (C#), ASP.NET MVC, Node.js (JavaScript/TypeScript), and REST API development.
+          - listitem [ref=e86]:
+            - strong [ref=e87]: "Frontend:"
+            - text: Single Page Application (SPA) development using React/TypeScript; IONIC web components (React/Angular).
+          - listitem [ref=e88]:
+            - strong [ref=e89]: "AI & Chatbots:"
+            - text: Architecting enterprise-grade RAG (Retrieval-Augmented Generation) solutions using Copilot Studio, Azure OpenAI Service, Azure AI Search (Vector Search), and Azure AI Foundry.
+          - listitem [ref=e90]:
+            - strong [ref=e91]: "Polyglot Experience:"
+            - text: Working knowledge of PHP, Go, and Java.
+    - generic [ref=e93]:
+      - generic [ref=e95]:
+        - heading "Certifications & Education" [level=2] [ref=e96]
+        - paragraph [ref=e97]: My commitment to continuous learning and professional development.
+      - generic [ref=e98]:
+        - 'link "Verify certification: Generative AI Leader Certification" [ref=e100] [cursor=pointer]':
+          - /url: https://www.credly.com/badges/8b87febf-a157-4586-8731-c51fb776a15d/public_url
+          - generic [ref=e101]:
+            - img [ref=e105]
+            - heading "Generative AI Leader Certification" [level=3] [ref=e106]
+            - paragraph [ref=e107]: Google Cloud
+        - 'link "Verify certification: Azure AI Engineer Associate (AI-102)" [ref=e109] [cursor=pointer]':
+          - /url: https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/B67C6AD893482526?sharingId=7C350C787AFD611C
+          - generic [ref=e110]:
+            - generic [ref=e111]:
+              - img "microsoft-certified-associate-badge.svg"
+            - heading "Azure AI Engineer Associate (AI-102)" [level=3] [ref=e112]
+            - paragraph [ref=e113]: Microsoft
+        - 'link "Verify certification: DevOps Engineer Expert (AZ-400)" [ref=e115] [cursor=pointer]':
+          - /url: https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/442AE42560346E7?sharingId=7C350C787AFD611C
+          - generic [ref=e116]:
+            - generic [ref=e117]:
+              - img "microsoft-certified-expert-badge.svg"
+            - heading "DevOps Engineer Expert (AZ-400)" [level=3] [ref=e118]
+            - paragraph [ref=e119]: Microsoft
+        - 'link "Verify certification: Azure Developer Associate (AZ-204)" [ref=e121] [cursor=pointer]':
+          - /url: https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/92670A2859E0331C?sharingId=7C350C787AFD611C
+          - generic [ref=e122]:
+            - img [ref=e126]
+            - heading "Azure Developer Associate (AZ-204)" [level=3] [ref=e127]
+            - paragraph [ref=e128]: Microsoft
+        - 'link "Verify certification: Azure AI Fundamentals (AI-900)" [ref=e130] [cursor=pointer]':
+          - /url: https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/704B5E9288E1AFB9?sharingId=7C350C787AFD611C
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - img "microsoft-certified-fundamentals-badge.svg"
+            - heading "Azure AI Fundamentals (AI-900)" [level=3] [ref=e133]
+            - paragraph [ref=e134]: Microsoft
+        - 'link "Verify certification: Security, Compliance, and Identity (SC-900)" [ref=e136] [cursor=pointer]':
+          - /url: https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/691268CEB82DF9F2?sharingId=7C350C787AFD611C
+          - generic [ref=e137]:
+            - img [ref=e141]
+            - heading "Security, Compliance, and Identity (SC-900)" [level=3] [ref=e142]
+            - paragraph [ref=e143]: Microsoft
+        - 'link "Verify certification: Microsoft 365 Fundamentals (MS-900)" [ref=e145] [cursor=pointer]':
+          - /url: https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/92DDBF3EF0B5AA47?sharingId=7C350C787AFD611C
+          - generic [ref=e146]:
+            - generic [ref=e147]:
+              - img "microsoft-certified-fundamentals-badge.svg"
+            - heading "Microsoft 365 Fundamentals (MS-900)" [level=3] [ref=e148]
+            - paragraph [ref=e149]: Microsoft
+        - 'generic "Verify certification: DevOps Foundation® Certification" [ref=e151]':
+          - generic [ref=e152]:
+            - img [ref=e156]
+            - heading "DevOps Foundation® Certification" [level=3] [ref=e157]
+            - paragraph [ref=e158]: DevOps Institute
+        - 'link "Verify certification: Microsoft 365 Developer Associate (MS-600)" [ref=e160] [cursor=pointer]':
+          - /url: https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/C6438294C98D58B0?sharingId=7C350C787AFD611C
+          - generic [ref=e161]:
+            - img [ref=e165]
+            - heading "Microsoft 365 Developer Associate (MS-600)" [level=3] [ref=e166]
+            - paragraph [ref=e167]: Microsoft
+        - 'link "Verify certification: Azure Fundamentals (AZ-900)" [ref=e169] [cursor=pointer]':
+          - /url: https://learn.microsoft.com/api/credentials/share/en-us/eduardpaul/45354E7739111838?sharingId=7C350C787AFD611C
+          - generic [ref=e170]:
+            - generic [ref=e171]:
+              - img "microsoft-certified-fundamentals-badge.svg"
+            - heading "Azure Fundamentals (AZ-900)" [level=3] [ref=e172]
+            - paragraph [ref=e173]: Microsoft
+        - 'link "Verify certification: Professional Scrum Master I" [ref=e175] [cursor=pointer]':
+          - /url: https://www.credly.com/badges/440ae803-d2a3-4d4e-83eb-a64428cd7d4a/public_url
+          - generic [ref=e176]:
+            - img [ref=e180]
+            - heading "Professional Scrum Master I" [level=3] [ref=e181]
+            - paragraph [ref=e182]: Scrum.org
+        - 'link "Verify certification: MCSA: Web Applications - Certified 2016" [ref=e184] [cursor=pointer]':
+          - /url: https://www.credly.com/badges/9dea252b-458c-4347-856a-d6e61b4e6c71
+          - generic [ref=e185]:
+            - img [ref=e189]
+            - 'heading "MCSA: Web Applications - Certified 2016" [level=3] [ref=e190]'
+            - paragraph [ref=e191]: Microsoft
+        - 'link "Verify certification: MCSD: App Builder — Certified 2016" [ref=e193] [cursor=pointer]':
+          - /url: https://www.credly.com/badges/f7b5b5fc-a22f-46c3-ad34-16d6a2f4ecef
+          - generic [ref=e194]:
+            - img [ref=e198]
+            - 'heading "MCSD: App Builder — Certified 2016" [level=3] [ref=e199]'
+            - paragraph [ref=e200]: Microsoft
+    - generic [ref=e202]:
+      - generic [ref=e204]:
+        - heading "Projects & Achievements" [level=2] [ref=e205]
+        - paragraph [ref=e206]: Recognitions and public contributions to the community.
+      - generic [ref=e207]:
+        - link "View details for Bizz Summit ES - Rockstar Speaker 2024" [ref=e209] [cursor=pointer]:
+          - /url: https://eu.badgr.com/public/assertions/iQgCp3-BSN6hJ4tSzKv0Tg?identity__email=eduardpaul@outlook.com
+          - generic [ref=e210]:
+            - img [ref=e214]
+            - heading "Bizz Summit ES - Rockstar Speaker 2024" [level=3] [ref=e215]
+            - paragraph [ref=e216]: Rockstar Speaker is a speaker who stands out exceptionally in their presentations, who manages to inspire, captivate, and leave a lasting impression on the audience.
+            - generic [ref=e218]: Microsoft Power Plataform
+        - link "View details for Community Contributor 2022/2023/2024" [ref=e220] [cursor=pointer]:
+          - /url: https://www.credly.com/badges/023ad512-a4bd-4931-9c39-e39ebdfed024?source=linked_in_profile
+          - generic [ref=e221]:
+            - img [ref=e225]
+            - heading "Community Contributor 2022/2023/2024" [level=3] [ref=e226]
+            - paragraph [ref=e227]: Community Contributor badge earners contributed to one or more M365 Platform Community (PnP) initiatives by completing at least one contribution to a PnP initiative.
+            - generic [ref=e228]:
+              - generic [ref=e229]: .NET
+              - generic [ref=e230]: .Net Core
+              - generic [ref=e231]: Microsoft Office 365
+              - generic [ref=e232]: Microsoft Sharepoint
+        - link "View details for MAP 2014 (Microsoft Active Professional 2014)" [ref=e234] [cursor=pointer]:
+          - /url: https://www.credly.com/badges/023ad512-a4bd-4931-9c39-e39ebdfed024?source=linked_in_profile
+          - generic [ref=e235]:
+            - heading "MAP 2014 (Microsoft Active Professional 2014)" [level=3] [ref=e236]
+            - paragraph [ref=e237]: This distinction is given to less than 5% of the professionals population , with in order to recognize their active participation in the community and commitment to keep in touch with the progress of our technologies.
+            - generic [ref=e239]: Microsoft
+        - generic "View details for Excellent achievement in Vocational Training" [ref=e241]:
+          - generic [ref=e242]:
+            - heading "Excellent achievement in Vocational Training" [level=3] [ref=e243]
+            - paragraph [ref=e244]: The award is given to the students with the higher grades of the graduating class.
+            - generic [ref=e245]:
+              - generic [ref=e246]: .NET
+              - generic [ref=e247]: CSS
+              - generic [ref=e248]: HTML
+              - generic [ref=e249]: Java
+              - generic [ref=e250]: JavaScript
+    - generic [ref=e252]:
+      - generic [ref=e254]:
+        - heading "Career Journey" [level=2] [ref=e255]
+        - paragraph [ref=e256]: My professional growth and key contributions over the years.
+      - generic [ref=e257]:
+        - generic [ref=e259]:
+          - img [ref=e261]
+          - generic [ref=e264]:
+            - generic [ref=e265]:
+              - heading "Lead Solutions Architect" [level=3] [ref=e266]
+              - time [ref=e267]: Sep 2021 - Present
+            - paragraph [ref=e268]: NTT DATA Europe & LATAM
+            - list [ref=e270]:
+              - listitem [ref=e271]:
+                - text: Provide
+                - strong [ref=e272]: technical leadership and mentorship
+                - text: to development teams, guiding the translation of complex stakeholder requirements into scalable Microsoft 365 and Azure Cloud architectures.
+              - listitem [ref=e273]:
+                - text: Serve as the key
+                - strong [ref=e274]: pre-sales technical authority
+                - text: in the sales cycle, securing new business by architecting PoCs, validating project scopes, and presenting solutions to C-level stakeholders.
+              - listitem [ref=e275]:
+                - text: Pioneer the enterprise adoption of Generative AI, leveraging Azure OpenAI and RAG methodologies to enhance internal team efficiency and develop
+                - strong [ref=e276]: new AI-driven service offerings
+                - text: .
+        - generic [ref=e278]:
+          - img [ref=e280]
+          - generic [ref=e283]:
+            - generic [ref=e284]:
+              - heading "Project Manager" [level=3] [ref=e285]
+              - time [ref=e286]: Sep 2016 - Sep 2021
+            - paragraph [ref=e287]: everis
+            - list [ref=e289]:
+              - listitem [ref=e290]:
+                - text: Managed the
+                - strong [ref=e291]: end-to-end project lifecycle
+                - text: for complex
+                - strong [ref=e292]: Digital Workplace and Employee Experience
+                - text: solutions, coordinating multidisciplinary and geographically distributed teams.
+              - listitem [ref=e293]:
+                - text: Oversaw all project phases, including planning, resource allocation, and monitoring, while leveraging a deep technical background to
+                - strong [ref=e294]: mentor staff
+                - text: and conduct architectural reviews.
+              - listitem [ref=e295]:
+                - text: Ensured all project deliverables met high-quality standards and were built on
+                - strong [ref=e296]: scalable, maintainable architectures.
+        - generic [ref=e298]:
+          - img [ref=e300]
+          - generic [ref=e303]:
+            - generic [ref=e304]:
+              - heading "Senior Consultant" [level=3] [ref=e305]
+              - time [ref=e306]: Sep 2014 - Sep 2016
+            - paragraph [ref=e307]: everis
+            - list [ref=e309]:
+              - listitem [ref=e310]:
+                - text: Analyzed, designed, and estimated end-to-end business solutions on Microsoft SharePoint, balancing complex business requirements against
+                - strong [ref=e311]: usability, performance, and cost.
+              - listitem [ref=e312]:
+                - text: Led and executed complex
+                - strong [ref=e313]: SharePoint 2007 to SharePoint 2013 migration
+                - text: projects.
+              - listitem [ref=e314]:
+                - text: Acted as team leader,
+                - strong [ref=e315]: mentoring colleagues and delivering internal training
+                - text: to reinforce development best practices. Conducted
+                - strong [ref=e316]: .NET and SharePoint solution audits
+                - text: to identify performance bottlenecks and enforce coding standards.
+        - generic [ref=e318]:
+          - img [ref=e320]
+          - generic [ref=e323]:
+            - generic [ref=e324]:
+              - heading "Software Developer" [level=3] [ref=e325]
+              - time [ref=e326]: Jul 2012 - Sep 2014
+            - paragraph [ref=e327]: everis
+            - list [ref=e329]:
+              - listitem [ref=e330]:
+                - text: Developed, maintained, and customized SharePoint and ASP.NET applications, leveraging the full range of platform models including
+                - strong [ref=e331]: SSOM, CSOM, REST
+                - text: ", and Sandbox solutions."
+              - listitem [ref=e332]:
+                - text: Managed the configuration and extension of key third-party tools, including
+                - strong [ref=e333]: Nintex Workflows 2010
+                - text: and the SharePoint 2010 FBA Pack.
+              - listitem [ref=e334]: Authored comprehensive functional and technical documentation and provided direct end-user support, ensuring solution adoption and stability.
+  - generic [ref=e335]:
+    - generic [ref=e336]:
+      - img [ref=e339]
+      - generic [ref=e340]:
+        - heading "Eduard Paul Lakida" [level=1] [ref=e341]
+        - paragraph [ref=e342]: Lead Solutions Architect at NTT DATA Europe & LATAM
+        - paragraph [ref=e343]: Architecting and delivering high-impact Microsoft 365 and Azure solutions that turn complex business needs into scalable results.
+    - link "Learn more" [ref=e345] [cursor=pointer]:
+      - /url: /about
+  - contentinfo [ref=e346]:
+    - generic [ref=e347]:
+      - heading "Let's Connect" [level=2] [ref=e348]
+      - paragraph [ref=e349]: I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.
+      - generic [ref=e350]:
+        - link "Visit my linkedin profile" [ref=e351] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/eduardpaul
+          - img [ref=e352]
+        - link "Visit my stackoverflow profile" [ref=e354] [cursor=pointer]:
+          - /url: https://stackoverflow.com/users/3178041/eduard-paul-lakida
+          - img [ref=e355]
+        - link "Visit my github profile" [ref=e357] [cursor=pointer]:
+          - /url: https://github.com/eduardpaul
+          - img [ref=e358]
+        - link "Visit my twitter profile" [ref=e360] [cursor=pointer]:
+          - /url: https://twitter.com/eduapauldev
+          - img [ref=e361]
+      - paragraph [ref=e364]: © 2026 Eduard Paul Lakida. All rights reserved.

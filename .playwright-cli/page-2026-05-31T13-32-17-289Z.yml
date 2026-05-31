@@ -1,0 +1,10 @@
+- alertdialog "Failed to compile" [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - heading "Failed to compile" [level=1] [ref=e5]
+      - text: ./src/pages/cv-print.js?export=default
+    - button "Open in editor" [ref=e8] [cursor=pointer]
+  - generic [ref=e9]:
+    - heading "Source" [level=2] [ref=e10]
+    - code [ref=e12]: "./src/pages/cv-print.js?export=default Syntax error: /home/eduapaul/repos/eduardpaul.github.io/src/pages/cv-print.js: Expected corresponding JSX closing tag for <>. (508:6) 506 | </div> 507 | </div> > 508 | </div> | ^ 509 | </> 510 | ); 511 | };"
+    - contentinfo [ref=e13]: This error occurred during the build process and can only be dismissed by fixing the error.

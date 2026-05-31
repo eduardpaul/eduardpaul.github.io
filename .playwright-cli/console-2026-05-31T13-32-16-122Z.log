@@ -1,0 +1,965 @@
+[     247ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:29890
+[     305ms] [LOG] [HMR] connected @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:92
+[     932ms] [LOG] [HMR] bundle 'develop' rebuilt in 268ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[     935ms] [LOG] %cModule build failed (from ./node_modules/gatsby/dist/utils/babel-loader.js):
+SyntaxError: /home/eduapaul/repos/eduardpaul.github.io/src/pages/cv-print.js: Expected corresponding JSX closing tag for <>. (508:6)
+
+  506 |           </div>
+  507 |         </div>
+> 508 |       </div>
+      |       ^
+  509 |     </>
+  510 |   );
+  511 | };
+    at constructor (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:365:19)
+    at JSXParserMixin.raise (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:6616:19)
+    at JSXParserMixin.jsxParseElementAt (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:4732:14)
+    at JSXParserMixin.jsxParseElement (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:4761:17)
+    at JSXParserMixin.parseExprAtom (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:4771:19)
+    at JSXParserMixin.parseExprSubscripts (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:11098:23)
+    at JSXParserMixin.parseUpdate (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:11083:21)
+    at JSXParserMixin.parseMaybeUnary (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:11063:23)
+    at JSXParserMixin.parseMaybeUnaryOrPrivate (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10916:61)
+    at JSXParserMixin.parseExprOps (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10921:23)
+    at JSXParserMixin.parseMaybeConditional (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10898:23)
+    at JSXParserMixin.parseMaybeAssign (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10848:21)
+    at /home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10817:39
+    at JSXParserMixin.allowInAnd (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:12443:12)
+    at JSXParserMixin.parseMaybeAssignAllowIn (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10817:17)
+    at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:12510:17)
+    at JSXParserMixin.parseParenAndDistinguishExpression (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:11692:28)
+    at JSXParserMixin.parseExprAtom (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:11348:23)
+    at JSXParserMixin.parseExprAtom (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:4776:20)
+    at JSXParserMixin.parseExprSubscripts (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:11098:23)
+    at JSXParserMixin.parseUpdate (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:11083:21)
+    at JSXParserMixin.parseMaybeUnary (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:11063:23)
+    at JSXParserMixin.parseMaybeUnaryOrPrivate (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10916:61)
+    at JSXParserMixin.parseExprOps (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10921:23)
+    at JSXParserMixin.parseMaybeConditional (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10898:23)
+    at JSXParserMixin.parseMaybeAssign (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10848:21)
+    at JSXParserMixin.parseExpressionBase (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10801:23)
+    at /home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10797:39
+    at JSXParserMixin.allowInAnd (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:12438:16)
+    at JSXParserMixin.parseExpression (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10797:17)
+    at JSXParserMixin.parseReturnStatement (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:13159:28)
+    at JSXParserMixin.parseStatementContent (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:12815:21)
+    at JSXParserMixin.parseStatementLike (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:12784:17)
+    at JSXParserMixin.parseStatementListItem (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:12764:17)
+    at JSXParserMixin.parseBlockOrModuleBlockBody (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:13333:61)
+    at JSXParserMixin.parseBlockBody (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:13326:10)
+    at JSXParserMixin.parseBlock (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:13314:10)
+    at JSXParserMixin.parseFunctionBody (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:12117:24)
+    at JSXParserMixin.parseArrowExpression (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:12092:10)
+    at JSXParserMixin.parseParenAndDistinguishExpression (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:11704:12)
+    at JSXParserMixin.parseExprAtom (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:11348:23)
+    at JSXParserMixin.parseExprAtom (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:4776:20)
+    at JSXParserMixin.parseExprSubscripts (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:11098:23)
+    at JSXParserMixin.parseUpdate (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:11083:21)
+    at JSXParserMixin.parseMaybeUnary (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:11063:23)
+    at JSXParserMixin.parseMaybeUnaryOrPrivate (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10916:61)
+    at JSXParserMixin.parseExprOps (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10921:23)
+    at JSXParserMixin.parseMaybeConditional (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10898:23)
+    at JSXParserMixin.parseMaybeAssign (/home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10848:21)
+    at /home/eduapaul/repos/eduardpaul.github.io/node_modules/@babel/parser/lib/index.js:10817:39
+
+/home/eduapaul/repos/eduardpaul.github.io/src/pages/cv-print.js
+  508:6  error  Parsing error: Expected corresponding JSX closing tag for <>. (508:6)
+
+✖ 1 problem (1 error, 0 warnings)
+ color: #ff0000; @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:193
+[     973ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    1007ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at CvPrintPage (webpack-internal:///./src/pages/cv-print.js?export=default:244:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at HTMLUnknownElement.callCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27486:7)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+[    1015ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at CvPrintPage (webpack-internal:///./src/pages/cv-print.js?export=default:244:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at HTMLUnknownElement.callCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27486:7)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+[    1018ms] [ERROR] The above error occurred in the <CvPrintPage> component:
+
+    at CvPrintPage (webpack-internal:///./src/pages/cv-print.js?export=default:244:81)
+    at PageRenderer (webpack-internal:///./.cache/page-renderer.js:22:97)
+    at PageQueryStore (webpack-internal:///./.cache/query-result-store.js:35:30)
+    at RouteHandler
+    at div
+    at re (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:9865)
+    at ee (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:9680)
+    at ae (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:10957)
+    at oe (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:10831)
+    at ScrollHandler (webpack-internal:///./node_modules/gatsby-react-router-scroll/scroll-handler.js:23:35)
+    at RouteUpdates (webpack-internal:///./.cache/navigation.js:243:32)
+    at EnsureResources (webpack-internal:///./.cache/ensure-resources.js:18:30)
+    at LocationHandler (webpack-internal:///./.cache/root.js:61:29)
+    at eval (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:8283)
+    at F (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7181)
+    at H (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7483)
+    at WithErrorBoundary()
+    at G (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:9074)
+    at Root
+    at StaticQueryStore (webpack-internal:///./.cache/query-result-store.js:130:32)
+    at SliceDataStore (webpack-internal:///./.cache/query-result-store.js:173:32)
+    at ErrorBoundary (webpack-internal:///./.cache/fast-refresh-overlay/components/error-boundary.js:20:35)
+    at DevOverlay (webpack-internal:///./.cache/fast-refresh-overlay/index.js:108:23)
+    at RootWrappedWithOverlayAndProvider
+    at App (webpack-internal:///./.cache/app.js:204:80)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, F. @ webpack-internal:///./.cache/head/head-export-handler-for-browser.js:79
+[    1022ms] [ERROR] Warning: Cannot update a component (`%s`) while rendering a different component (`%s`). To locate the bad setState() call inside `%s`, follow the stack trace as described in https://reactjs.org/link/setstate-in-render%s DevOverlay Unknown Unknown 
+    at eval (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:8283)
+    at F (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7181)
+    at H (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7483)
+    at WithErrorBoundary()
+    at G (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:9074)
+    at Root
+    at StaticQueryStore (webpack-internal:///./.cache/query-result-store.js:130:32)
+    at SliceDataStore (webpack-internal:///./.cache/query-result-store.js:173:32)
+    at ErrorBoundary (webpack-internal:///./.cache/fast-refresh-overlay/components/error-boundary.js:20:35)
+    at DevOverlay (webpack-internal:///./.cache/fast-refresh-overlay/index.js:108:23)
+    at RootWrappedWithOverlayAndProvider
+    at App (webpack-internal:///./.cache/app.js:204:80) @ webpack-internal:///./.cache/head/head-export-handler-for-browser.js:79
+[    1023ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at CvPrintPage (webpack-internal:///./src/pages/cv-print.js?export=default:244:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[    1024ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at CvPrintPage (webpack-internal:///./src/pages/cv-print.js?export=default:244:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[    1025ms] [ERROR] The above error occurred in one of your React components:
+
+    at eval (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:8283)
+    at F (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7181)
+    at H (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7483)
+    at WithErrorBoundary()
+    at G (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:9074)
+    at Root
+    at StaticQueryStore (webpack-internal:///./.cache/query-result-store.js:130:32)
+    at SliceDataStore (webpack-internal:///./.cache/query-result-store.js:173:32)
+    at ErrorBoundary (webpack-internal:///./.cache/fast-refresh-overlay/components/error-boundary.js:20:35)
+    at DevOverlay (webpack-internal:///./.cache/fast-refresh-overlay/index.js:108:23)
+    at RootWrappedWithOverlayAndProvider
+    at App (webpack-internal:///./.cache/app.js:204:80)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary. @ webpack-internal:///./.cache/head/head-export-handler-for-browser.js:79
+[    1628ms] [LOG] [HMR] bundle 'develop' rebuilt in 267ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    1660ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    2280ms] [LOG] [HMR] bundle 'develop' rebuilt in 248ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    2301ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    2916ms] [LOG] [HMR] bundle 'develop' rebuilt in 239ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    2933ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    3596ms] [LOG] [HMR] bundle 'develop' rebuilt in 284ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    3623ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    4334ms] [LOG] [HMR] bundle 'develop' rebuilt in 331ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    4349ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    4968ms] [LOG] [HMR] bundle 'develop' rebuilt in 259ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    4980ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    5594ms] [LOG] [HMR] bundle 'develop' rebuilt in 254ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    5610ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    6230ms] [LOG] [HMR] bundle 'develop' rebuilt in 249ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    6244ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    6909ms] [LOG] [HMR] bundle 'develop' rebuilt in 267ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    6938ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    7650ms] [LOG] [HMR] bundle 'develop' rebuilt in 303ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    7667ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    8298ms] [LOG] [HMR] bundle 'develop' rebuilt in 255ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    8319ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    8950ms] [LOG] [HMR] bundle 'develop' rebuilt in 254ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    8973ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    9607ms] [LOG] [HMR] bundle 'develop' rebuilt in 272ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    9626ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   10233ms] [LOG] [HMR] bundle 'develop' rebuilt in 247ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   10247ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   10841ms] [LOG] [HMR] bundle 'develop' rebuilt in 243ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   10867ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   11510ms] [LOG] [HMR] bundle 'develop' rebuilt in 259ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   11524ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   12170ms] [LOG] [HMR] bundle 'develop' rebuilt in 285ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   12190ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   12833ms] [LOG] [HMR] bundle 'develop' rebuilt in 252ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   12851ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   13475ms] [LOG] [HMR] bundle 'develop' rebuilt in 256ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   13510ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   14164ms] [LOG] [HMR] bundle 'develop' rebuilt in 271ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   14176ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   14795ms] [LOG] [HMR] bundle 'develop' rebuilt in 261ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   14817ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   15404ms] [LOG] [HMR] bundle 'develop' rebuilt in 196ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   15433ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   16010ms] [LOG] [HMR] bundle 'develop' rebuilt in 216ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   16044ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   16617ms] [LOG] [HMR] bundle 'develop' rebuilt in 216ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   16627ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   17212ms] [LOG] [HMR] bundle 'develop' rebuilt in 228ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   17238ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   17840ms] [LOG] [HMR] bundle 'develop' rebuilt in 234ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   17855ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   18429ms] [LOG] [HMR] bundle 'develop' rebuilt in 223ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   18453ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   19091ms] [LOG] [HMR] bundle 'develop' rebuilt in 264ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   19105ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   19692ms] [LOG] [HMR] bundle 'develop' rebuilt in 229ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   19725ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   20379ms] [LOG] [HMR] bundle 'develop' rebuilt in 275ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   20394ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   21017ms] [LOG] [HMR] bundle 'develop' rebuilt in 264ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   21038ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   21629ms] [LOG] [HMR] bundle 'develop' rebuilt in 234ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   21641ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   22210ms] [LOG] [HMR] bundle 'develop' rebuilt in 226ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   22227ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   22816ms] [LOG] [HMR] bundle 'develop' rebuilt in 219ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   22828ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   23402ms] [LOG] [HMR] bundle 'develop' rebuilt in 220ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   23424ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   24047ms] [LOG] [HMR] bundle 'develop' rebuilt in 257ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   24062ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   24632ms] [LOG] [HMR] bundle 'develop' rebuilt in 215ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   24653ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   25243ms] [LOG] [HMR] bundle 'develop' rebuilt in 220ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   25256ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   25832ms] [LOG] [HMR] bundle 'develop' rebuilt in 212ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   25852ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   26432ms] [LOG] [HMR] bundle 'develop' rebuilt in 208ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   26447ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   27093ms] [LOG] [HMR] bundle 'develop' rebuilt in 277ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   27117ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   27709ms] [LOG] [HMR] bundle 'develop' rebuilt in 214ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   27723ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   28284ms] [LOG] [HMR] bundle 'develop' rebuilt in 203ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   28325ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   29013ms] [LOG] [HMR] bundle 'develop' rebuilt in 287ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   29028ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   29595ms] [LOG] [HMR] bundle 'develop' rebuilt in 214ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   29618ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   30181ms] [LOG] [HMR] bundle 'develop' rebuilt in 196ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   30195ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   30873ms] [LOG] [HMR] bundle 'develop' rebuilt in 324ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   30890ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   31473ms] [LOG] [HMR] bundle 'develop' rebuilt in 223ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   31486ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   32204ms] [LOG] [HMR] bundle 'develop' rebuilt in 349ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   32229ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   32845ms] [LOG] [HMR] bundle 'develop' rebuilt in 232ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   32861ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   33478ms] [LOG] [HMR] bundle 'develop' rebuilt in 254ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   33520ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   34152ms] [LOG] [HMR] bundle 'develop' rebuilt in 245ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   34167ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   34759ms] [LOG] [HMR] bundle 'develop' rebuilt in 223ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   34795ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   35374ms] [LOG] [HMR] bundle 'develop' rebuilt in 221ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   35388ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   36291ms] [LOG] [HMR] bundle 'develop' rebuilt in 551ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   36293ms] [LOG] %c
+/home/eduapaul/repos/eduardpaul.github.io/src/components/ui/AnimatedSection.js
+  1:17  warning  'useMemo' is defined but never used  no-unused-vars
+
+✖ 1 problem (0 errors, 1 warning)
+ color: #999933; @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:193
+[   36296ms] [LOG] [HMR] Checking for updates on the server... @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:49
+[   36318ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   37218ms] [LOG] [HMR] bundle 'develop' rebuilt in 525ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   37257ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   37309ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at HTMLUnknownElement.callCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27486:7)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+[   37313ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at HTMLUnknownElement.callCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27486:7)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+[   37312ms] [ERROR] The above error occurred in the <Seo> component:
+
+    at Seo (webpack-internal:///./src/components/seo.js:17:26)
+    at Head (webpack-internal:///./src/pages/cv-print.js?export=head:1583:24)
+    at eval (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:8283)
+    at F (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7181)
+    at H (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7483)
+    at WithErrorBoundary()
+    at FireCallbackInEffect (webpack-internal:///./.cache/head/components/fire-callback-in-effect.js:19:23)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, F. @ webpack-internal:///./.cache/head/head-export-handler-for-browser.js:79
+[   37315ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[   37316ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[   37316ms] [ERROR] The above error occurred in one of your React components:
+
+    at eval (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:8283)
+    at F (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7181)
+    at H (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7483)
+    at WithErrorBoundary()
+    at FireCallbackInEffect (webpack-internal:///./.cache/head/components/fire-callback-in-effect.js:19:23)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ webpack-internal:///./.cache/head/head-export-handler-for-browser.js:79
+[   37318ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[   37825ms] [LOG] [HMR] bundle 'develop' rebuilt in 223ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   37852ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   37861ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   37861ms] [LOG] [HMR]  - ./src/pages/cv-print.js?export=head @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   37861ms] [LOG] [HMR]  - ./.cache/_this_is_virtual_fs_path_/$virtual/async-requires.js @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   37861ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   37861ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   37861ms] [LOG] [HMR]  - ./src/pages/cv-print.js?export=default @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   37892ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at HTMLUnknownElement.callCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27486:7)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+[   37893ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at HTMLUnknownElement.callCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27486:7)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+[   37893ms] [ERROR] The above error occurred in the <Seo> component:
+
+    at Seo (webpack-internal:///./src/components/seo.js:17:26)
+    at Head (webpack-internal:///./src/pages/cv-print.js?export=head:1583:24)
+    at eval (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:8283)
+    at F (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7181)
+    at H (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7483)
+    at WithErrorBoundary()
+    at FireCallbackInEffect (webpack-internal:///./.cache/head/components/fire-callback-in-effect.js:19:23)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, F. @ webpack-internal:///./.cache/head/head-export-handler-for-browser.js:79
+[   37897ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[   37897ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[   37897ms] [ERROR] The above error occurred in one of your React components:
+
+    at eval (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:8283)
+    at F (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7181)
+    at H (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7483)
+    at WithErrorBoundary()
+    at FireCallbackInEffect (webpack-internal:///./.cache/head/components/fire-callback-in-effect.js:19:23)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ webpack-internal:///./.cache/head/head-export-handler-for-browser.js:79
+[   37900ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[   37909ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   37910ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   38423ms] [LOG] [HMR] bundle 'develop' rebuilt in 214ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   38449ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   39018ms] [LOG] [HMR] bundle 'develop' rebuilt in 226ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   39046ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at HTMLUnknownElement.callCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27486:7)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+[   39047ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at HTMLUnknownElement.callCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27486:7)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+[   39047ms] [ERROR] The above error occurred in the <Seo> component:
+
+    at Seo (webpack-internal:///./src/components/seo.js:17:26)
+    at Head (webpack-internal:///./src/pages/cv-print.js?export=head:1583:24)
+    at eval (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:8283)
+    at F (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7181)
+    at H (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7483)
+    at WithErrorBoundary()
+    at FireCallbackInEffect (webpack-internal:///./.cache/head/components/fire-callback-in-effect.js:19:23)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, F. @ webpack-internal:///./.cache/head/head-export-handler-for-browser.js:79
+[   39048ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[   39049ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[   39048ms] [ERROR] The above error occurred in one of your React components:
+
+    at eval (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:8283)
+    at F (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7181)
+    at H (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7483)
+    at WithErrorBoundary()
+    at FireCallbackInEffect (webpack-internal:///./.cache/head/components/fire-callback-in-effect.js:19:23)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ webpack-internal:///./.cache/head/head-export-handler-for-browser.js:79
+[   39049ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[   39052ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   39615ms] [LOG] [HMR] bundle 'develop' rebuilt in 195ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   39629ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   40188ms] [LOG] [HMR] bundle 'develop' rebuilt in 203ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   40209ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at HTMLUnknownElement.callCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27486:7)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+[   40210ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at HTMLUnknownElement.callCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27486:7)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+[   40210ms] [ERROR] The above error occurred in the <Seo> component:
+
+    at Seo (webpack-internal:///./src/components/seo.js:17:26)
+    at Head (webpack-internal:///./src/pages/cv-print.js?export=head:1583:24)
+    at eval (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:8283)
+    at F (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7181)
+    at H (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7483)
+    at WithErrorBoundary()
+    at FireCallbackInEffect (webpack-internal:///./.cache/head/components/fire-callback-in-effect.js:19:23)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, F. @ webpack-internal:///./.cache/head/head-export-handler-for-browser.js:79
+[   40212ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[   40212ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[   40212ms] [ERROR] The above error occurred in one of your React components:
+
+    at eval (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:8283)
+    at F (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7181)
+    at H (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7483)
+    at WithErrorBoundary()
+    at FireCallbackInEffect (webpack-internal:///./.cache/head/components/fire-callback-in-effect.js:19:23)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ webpack-internal:///./.cache/head/head-export-handler-for-browser.js:79
+[   40214ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[   40217ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   40744ms] [LOG] [HMR] bundle 'develop' rebuilt in 180ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   40763ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   41343ms] [LOG] [HMR] bundle 'develop' rebuilt in 235ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   41366ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at HTMLUnknownElement.callCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27486:7)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+[   41367ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at HTMLUnknownElement.callCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+    at Object.invokeGuardedCallbackDev (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27486:7)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+[   41367ms] [ERROR] The above error occurred in the <Seo> component:
+
+    at Seo (webpack-internal:///./src/components/seo.js:17:26)
+    at Head (webpack-internal:///./src/pages/cv-print.js?export=head:1583:24)
+    at eval (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:8283)
+    at F (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7181)
+    at H (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7483)
+    at WithErrorBoundary()
+    at FireCallbackInEffect (webpack-internal:///./.cache/head/components/fire-callback-in-effect.js:19:23)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, F. @ webpack-internal:///./.cache/head/head-export-handler-for-browser.js:79
+[   41369ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[   41370ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[   41370ms] [ERROR] The above error occurred in one of your React components:
+
+    at eval (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:8283)
+    at F (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7181)
+    at H (webpack-internal:///./node_modules/@gatsbyjs/reach-router/dist/index.modern.mjs:36:7483)
+    at WithErrorBoundary()
+    at FireCallbackInEffect (webpack-internal:///./.cache/head/components/fire-callback-in-effect.js:19:23)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ webpack-internal:///./.cache/head/head-export-handler-for-browser.js:79
+[   41370ms] Error: The result of this StaticQuery could not be fetched.
+
+This is likely a bug in Gatsby and if refreshing the page does not fix it, please open an issue in https://github.com/gatsbyjs/gatsby/issues
+    at useStaticQuery (webpack-internal:///./.cache/static-query.js:102:11)
+    at Seo (webpack-internal:///./src/components/seo.js:23:81)
+    at renderWithHooks (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at mountIndeterminateComponent (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:20099:13)
+    at beginWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:21622:16)
+    at beginWork$1 (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:27461:14)
+    at performUnitOfWork (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26592:12)
+    at workLoopSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26501:5)
+    at renderRootSync (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:26469:7)
+    at recoverFromConcurrentError (webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:25885:20)
+[   41375ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   41954ms] [LOG] [HMR] bundle 'develop' rebuilt in 229ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   41984ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   42904ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:29890
+[   42959ms] [LOG] [HMR] connected @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:92
+[   43569ms] [LOG] [HMR] bundle 'develop' rebuilt in 283ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   43570ms] [LOG] %c
+/home/eduapaul/repos/eduardpaul.github.io/src/components/ui/AnimatedSection.js
+  1:17  warning  'useMemo' is defined but never used  no-unused-vars
+
+✖ 1 problem (0 errors, 1 warning)
+ color: #999933; @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:193
+[   43571ms] [LOG] [HMR] Checking for updates on the server... @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:49
+[   43586ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   44183ms] [LOG] [HMR] bundle 'develop' rebuilt in 230ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   44201ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   44205ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   44206ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   44206ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   44258ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   44260ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   44792ms] [LOG] [HMR] bundle 'develop' rebuilt in 219ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   44820ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   44830ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   44830ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   44830ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   44880ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   44880ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   45426ms] [LOG] [HMR] bundle 'develop' rebuilt in 230ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   45453ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   45461ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   45461ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   45461ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   45511ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   45511ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   46043ms] [LOG] [HMR] bundle 'develop' rebuilt in 240ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   46098ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   46100ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   46100ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   46100ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   46150ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   46150ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   46672ms] [LOG] [HMR] bundle 'develop' rebuilt in 234ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   46696ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   46698ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   46698ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   46698ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   46749ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   46749ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   47333ms] [LOG] [HMR] bundle 'develop' rebuilt in 269ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   47346ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   47984ms] [LOG] [HMR] bundle 'develop' rebuilt in 231ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   48011ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   48013ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   48013ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   48013ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   48063ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   48064ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   48595ms] [LOG] [HMR] bundle 'develop' rebuilt in 223ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   48616ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   49216ms] [LOG] [HMR] bundle 'develop' rebuilt in 241ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   49248ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   49250ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   49250ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   49250ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   49301ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   49301ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   49810ms] [LOG] [HMR] bundle 'develop' rebuilt in 220ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   49856ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   50515ms] [LOG] [HMR] bundle 'develop' rebuilt in 266ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   50546ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   50547ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   50548ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   50548ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   50598ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   50599ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   51150ms] [LOG] [HMR] bundle 'develop' rebuilt in 255ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   51168ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   51778ms] [LOG] [HMR] bundle 'develop' rebuilt in 246ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   51809ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   51811ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   51812ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   51812ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   51863ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   51864ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   52412ms] [LOG] [HMR] bundle 'develop' rebuilt in 246ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   52426ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   53027ms] [LOG] [HMR] bundle 'develop' rebuilt in 255ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   53054ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   53055ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   53055ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   53055ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   53106ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   53106ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   53676ms] [LOG] [HMR] bundle 'develop' rebuilt in 252ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   53715ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   53717ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   53717ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   53717ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   53768ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   53768ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   54296ms] [LOG] [HMR] bundle 'develop' rebuilt in 229ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   54311ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   54872ms] [LOG] [HMR] bundle 'develop' rebuilt in 197ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   54903ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   54904ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   54904ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   54905ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   54955ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   54955ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   55450ms] [LOG] [HMR] bundle 'develop' rebuilt in 193ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   55469ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   56016ms] [LOG] [HMR] bundle 'develop' rebuilt in 196ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   56031ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   56032ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   56033ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   56033ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   56083ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   56083ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   56561ms] [LOG] [HMR] bundle 'develop' rebuilt in 185ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   56600ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   56624ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   56624ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   56624ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   56675ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   56676ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   57290ms] [LOG] [HMR] bundle 'develop' rebuilt in 310ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   57339ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   57964ms] [LOG] [HMR] bundle 'develop' rebuilt in 272ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   57991ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   57995ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   57995ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   57995ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   58046ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   58047ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   58577ms] [LOG] [HMR] bundle 'develop' rebuilt in 214ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   58600ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   59156ms] [LOG] [HMR] bundle 'develop' rebuilt in 211ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   59179ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   59180ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   59181ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   59181ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   59231ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   59249ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   59761ms] [LOG] [HMR] bundle 'develop' rebuilt in 210ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   59780ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   59812ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   59812ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   59812ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   59863ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   59864ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   60332ms] [LOG] [HMR] bundle 'develop' rebuilt in 203ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   60347ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   60358ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   60358ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   60358ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   60422ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   60422ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   60916ms] [LOG] [HMR] bundle 'develop' rebuilt in 204ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   60949ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   60981ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   60981ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   60981ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   61032ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   61032ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   61527ms] [LOG] [HMR] bundle 'develop' rebuilt in 220ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   61544ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   61570ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   61570ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   61570ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   61622ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   61622ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   62123ms] [LOG] [HMR] bundle 'develop' rebuilt in 220ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   62159ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   62211ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   62211ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   62211ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   62263ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   62263ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   62728ms] [LOG] [HMR] bundle 'develop' rebuilt in 210ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   62745ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   62796ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   62796ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   62796ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   62857ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   62859ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   63339ms] [LOG] [HMR] bundle 'develop' rebuilt in 234ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   63358ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   64107ms] [LOG] [HMR] bundle 'develop' rebuilt in 322ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   64121ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   64727ms] [LOG] [HMR] bundle 'develop' rebuilt in 236ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   64747ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   64750ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   64751ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   64751ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   64808ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   64809ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   65310ms] [LOG] [HMR] bundle 'develop' rebuilt in 204ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   65339ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   65956ms] [LOG] [HMR] bundle 'develop' rebuilt in 240ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   65972ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   65997ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   65997ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   65997ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   66048ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   66049ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   66562ms] [LOG] [HMR] bundle 'develop' rebuilt in 223ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   66625ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[   66641ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[   66641ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   66641ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[   66696ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   66697ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[   67180ms] [LOG] [HMR] bundle 'develop' rebuilt in 219ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[   67254ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238

@@ -1,0 +1,92 @@
+[     275ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:29890
+[     338ms] [LOG] [HMR] connected @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:92
+[     902ms] [LOG] [HMR] bundle 'develop' rebuilt in 235ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[     904ms] [LOG] %c
+/home/eduapaul/repos/eduardpaul.github.io/src/components/ui/AnimatedSection.js
+  1:17  warning  'useMemo' is defined but never used  no-unused-vars
+
+✖ 1 problem (0 errors, 1 warning)
+ color: #999933; @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:193
+[     904ms] [LOG] [HMR] Checking for updates on the server... @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:49
+[     925ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    1531ms] [LOG] [HMR] bundle 'develop' rebuilt in 239ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    1557ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    2093ms] [LOG] [HMR] bundle 'develop' rebuilt in 197ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    2116ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    2131ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[    2131ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    2131ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    2181ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    2181ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    2652ms] [LOG] [HMR] bundle 'develop' rebuilt in 188ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    2685ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    3250ms] [LOG] [HMR] bundle 'develop' rebuilt in 219ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    3268ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    3270ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[    3270ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    3270ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    3320ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    3321ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    3895ms] [LOG] [HMR] bundle 'develop' rebuilt in 261ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    3915ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    3920ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[    3920ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    3920ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    3971ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    3972ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    4470ms] [LOG] [HMR] bundle 'develop' rebuilt in 195ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    4488ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    4500ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[    4500ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    4500ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    4551ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    4551ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    5040ms] [LOG] [HMR] bundle 'develop' rebuilt in 204ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    5068ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    5081ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[    5082ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    5082ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    5132ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    5132ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    5673ms] [LOG] [HMR] bundle 'develop' rebuilt in 225ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    5692ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    5704ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[    5704ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    5704ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    5755ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    5756ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    6309ms] [LOG] [HMR] bundle 'develop' rebuilt in 240ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    6326ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    6336ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[    6336ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    6336ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    6386ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    6386ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    6901ms] [LOG] [HMR] bundle 'develop' rebuilt in 222ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    6920ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    6939ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[    6940ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    6940ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    6990ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    6990ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    7533ms] [LOG] [HMR] bundle 'develop' rebuilt in 229ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    7580ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    7605ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[    7606ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    7606ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    7656ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    7656ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    8306ms] [LOG] [HMR] bundle 'develop' rebuilt in 311ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    8348ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    8350ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[    8350ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    8350ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    8400ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    8401ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    8979ms] [LOG] [HMR] bundle 'develop' rebuilt in 262ms @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:247
+[    9001ms] [LOG] [HMR] bundle rebuilding @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/client.js:238
+[    9013ms] [LOG] [HMR] Updated modules: @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:123
+[    9013ms] [LOG] [HMR]  - ./.cache/blank.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    9013ms] [LOG] [HMR]  - ./src/styles/global.css @ webpack-internal:///./node_modules/@gatsbyjs/webpack-hot-middleware/process-update.js:125
+[    9064ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212
+[    9064ms] [LOG] [HMR] css reload %s http://localhost:8000/commons.css @ webpack-internal:///./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js:212

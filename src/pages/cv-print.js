@@ -143,9 +143,9 @@ const CvPrintPage = () => {
   const github = relevantLinks.find(l => l.type === 'github')?.URL;
   const website = relevantLinks.find(l => l.type === 'other')?.URL;
 
-  // Page 1 shows 2 most recent roles, page 2 gets the rest
-  const recentJobs = jobs.slice(0, 2);
-  const olderJobs = jobs.slice(2);
+  // All roles on page 1
+  const recentJobs = jobs.slice(0, 4);
+  const olderJobs = [];
 
   const descriptionParagraphs = profile.description.split('\n\n').filter(Boolean);
 
@@ -266,20 +266,6 @@ const CvPrintPage = () => {
               </div>
             </div>
 
-            {/* Inline skill pills */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '16px' }}>
-              {hardSkills.map((hs, i) => (
-                <span key={i} style={{
-                  fontSize: '10px', fontWeight: '600',
-                  background: 'rgba(255,255,255,0.12)',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  color: '#e2e8f0',
-                  borderRadius: '20px', padding: '2px 9px',
-                }}>
-                  {hs.skill.name}
-                </span>
-              ))}
-            </div>
           </header>
 
           {/* Two-column body */}
@@ -411,17 +397,6 @@ const CvPrintPage = () => {
               </span>
             </div>
 
-            {/* Experience continued */}
-            <div style={{ marginBottom: '20px' }}>
-              <SectionTitle>Professional Experience (continued)</SectionTitle>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 24px' }}>
-                {olderJobs.map((job, ji) =>
-                  job.roles.map((role, ri) => (
-                    <RoleBlock key={`p2-${ji}-${ri}`} job={job} role={role} />
-                  ))
-                )}
-              </div>
-            </div>
 
             {/* Core Competencies */}
             <div style={{ marginBottom: '20px', pageBreakInside: 'avoid', breakInside: 'avoid' }}>

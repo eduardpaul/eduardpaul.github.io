@@ -1,0 +1,427 @@
+- generic [ref=e2]:
+  - generic [active] [ref=e3]:
+    - generic [ref=e419]:
+      - button "Print / Save PDF" [ref=e420] [cursor=pointer]:
+        - img [ref=e421]
+        - text: Print / Save PDF
+      - link "← Back" [ref=e425] [cursor=pointer]:
+        - /url: /about
+    - generic [ref=e427]:
+      - banner [ref=e428]:
+        - generic [ref=e429]:
+          - generic [ref=e430]:
+            - heading "Eduard Paul Lakida" [level=1] [ref=e431]
+            - paragraph [ref=e432]: Lead Solutions Architect at NTT DATA Europe & LATAM
+            - paragraph [ref=e433]: Madrid, Spain
+          - generic [ref=e434]:
+            - generic [ref=e435]: LinkedInwww.linkedin.com/in/eduardpaul
+            - generic [ref=e436]: GitHubgithub.com/eduardpaul
+            - generic [ref=e437]: Webeduardpaul.work
+        - generic [ref=e438]:
+          - generic [ref=e439]: .NET
+          - generic [ref=e440]: .Net Core
+          - generic [ref=e441]: Azure
+          - generic [ref=e442]: JavaScript
+          - generic [ref=e443]: Microsoft Active Directory
+          - generic [ref=e444]: Microsoft Office 365
+          - generic [ref=e445]: Microsoft Sharepoint
+          - generic [ref=e446]: React
+          - generic [ref=e447]: TypeScript
+      - generic [ref=e448]:
+        - complementary [ref=e449]:
+          - generic [ref=e450]:
+            - heading "Languages" [level=3] [ref=e451]
+            - generic [ref=e452]:
+              - generic [ref=e453]:
+                - generic [ref=e454]:
+                  - generic [ref=e455]: English
+                  - generic [ref=e456]: Fluent
+                - paragraph [ref=e459]: Full professional
+              - generic [ref=e460]:
+                - generic [ref=e461]:
+                  - generic [ref=e462]: Spanish
+                  - generic [ref=e463]: Native
+                - paragraph [ref=e466]: Native / bilingual
+              - generic [ref=e467]:
+                - generic [ref=e468]:
+                  - generic [ref=e469]: Russian
+                  - generic [ref=e470]: Fluent
+                - paragraph [ref=e473]: Full professional
+          - generic [ref=e474]:
+            - heading "Professional Traits" [level=3] [ref=e475]
+            - generic [ref=e476]:
+              - generic [ref=e477]:
+                - generic [ref=e478]: ●
+                - generic [ref=e479]: Analytical thinking
+              - generic [ref=e480]:
+                - generic [ref=e481]: ●
+                - generic [ref=e482]: Listening ability
+              - generic [ref=e483]:
+                - generic [ref=e484]: ●
+                - generic [ref=e485]: Proactivity
+          - generic [ref=e486]:
+            - heading "Competency Areas" [level=3] [ref=e487]
+            - generic [ref=e488]:
+              - generic [ref=e489]:
+                - generic [ref=e490]: ›
+                - generic [ref=e491]: DevOps & Automation
+              - generic [ref=e492]:
+                - generic [ref=e493]: ›
+                - generic [ref=e494]: Application Development & Modernization
+              - generic [ref=e495]:
+                - generic [ref=e496]: ›
+                - generic [ref=e497]: Cloud & Infrastructure Architecture
+              - generic [ref=e498]:
+                - generic [ref=e499]: ›
+                - generic [ref=e500]: Leadership & Project Management
+          - generic [ref=e501]:
+            - heading "Preferred Roles" [level=3] [ref=e502]
+            - generic [ref=e503]:
+              - generic [ref=e504]:
+                - generic [ref=e505]: ◆
+                - generic [ref=e506]: Software Architect
+              - generic [ref=e507]:
+                - generic [ref=e508]: ◆
+                - generic [ref=e509]: Engineering Management
+              - generic [ref=e510]:
+                - generic [ref=e511]: ◆
+                - generic [ref=e512]: Tech Lead
+        - main [ref=e513]:
+          - generic [ref=e514]:
+            - heading "Professional Summary" [level=2] [ref=e515]
+            - paragraph [ref=e516]: As a Lead Solutions Architect with nearly a decade of IT and software consulting experience, I specialize in architecting and delivering high-impact solutions for clients across diverse industries, sizes, and countries. My expertise centers on the Microsoft ecosystem—particularly SharePoint, Microsoft 365, and Azure—where I translate complex business needs into scalable, effective technologies.
+            - paragraph [ref=e517]: In addition to technical proficiency, I provide strong leadership in methodology, project management, and team guidance, fostering collaborative environments through mentorship and knowledge sharing. As a sociable, empathetic, and flexible professional, I am always eager to contribute both technically and personally. My core values—collaboration, proactivity, generosity, autonomy, organization, and clear communication—drive me to build mutually supportive teams that achieve outstanding results.
+          - generic [ref=e518]:
+            - heading "Professional Experience" [level=2] [ref=e519]
+            - generic [ref=e520]:
+              - generic [ref=e521]:
+                - generic [ref=e522]:
+                  - paragraph [ref=e523]: Lead Solutions Architect
+                  - paragraph [ref=e524]: NTT DATA Europe & LATAM
+                - generic [ref=e525]: Sep 2021 – Present
+              - list [ref=e526]:
+                - listitem [ref=e527]:
+                  - generic [ref=e528]: ▪
+                  - generic [ref=e529]:
+                    - text: Provide
+                    - strong [ref=e530]: technical leadership and mentorship
+                    - text: to development teams, guiding the translation of complex stakeholder requirements into scalable Microsoft 365 and Azure Cloud architectures.
+                - listitem [ref=e531]:
+                  - generic [ref=e532]: ▪
+                  - generic [ref=e533]:
+                    - text: Serve as the key
+                    - strong [ref=e534]: pre-sales technical authority
+                    - text: in the sales cycle, securing new business by architecting PoCs, validating project scopes, and presenting solutions to C-level stakeholders.
+                - listitem [ref=e535]:
+                  - generic [ref=e536]: ▪
+                  - generic [ref=e537]:
+                    - text: Pioneer the enterprise adoption of Generative AI, leveraging Azure OpenAI and RAG methodologies to enhance internal team efficiency and develop
+                    - strong [ref=e538]: new AI-driven service offerings
+                    - text: .
+            - generic [ref=e539]:
+              - generic [ref=e540]:
+                - generic [ref=e541]:
+                  - paragraph [ref=e542]: Project Manager
+                  - paragraph [ref=e543]: everis
+                - generic [ref=e544]: Sep 2016 – Sep 2021
+              - list [ref=e545]:
+                - listitem [ref=e546]:
+                  - generic [ref=e547]: ▪
+                  - generic [ref=e548]:
+                    - text: Managed the
+                    - strong [ref=e549]: end-to-end project lifecycle
+                    - text: for complex
+                    - strong [ref=e550]: Digital Workplace and Employee Experience
+                    - text: solutions, coordinating multidisciplinary and geographically distributed teams.
+                - listitem [ref=e551]:
+                  - generic [ref=e552]: ▪
+                  - generic [ref=e553]:
+                    - text: Oversaw all project phases, including planning, resource allocation, and monitoring, while leveraging a deep technical background to
+                    - strong [ref=e554]: mentor staff
+                    - text: and conduct architectural reviews.
+                - listitem [ref=e555]:
+                  - generic [ref=e556]: ▪
+                  - generic [ref=e557]:
+                    - text: Ensured all project deliverables met high-quality standards and were built on
+                    - strong [ref=e558]: scalable, maintainable architectures.
+      - generic [ref=e559]:
+        - generic [ref=e560]:
+          - generic [ref=e561]: Eduard Paul Lakida
+          - generic [ref=e562]: Lead Solutions Architect at NTT DATA Europe & LATAM
+        - generic [ref=e563]:
+          - heading "Professional Experience (continued)" [level=2] [ref=e564]
+          - generic [ref=e565]:
+            - generic [ref=e566]:
+              - generic [ref=e567]:
+                - generic [ref=e568]:
+                  - paragraph [ref=e569]: Senior Consultant
+                  - paragraph [ref=e570]: everis
+                - generic [ref=e571]: Sep 2014 – Sep 2016
+              - list [ref=e572]:
+                - listitem [ref=e573]:
+                  - generic [ref=e574]: ▪
+                  - generic [ref=e575]:
+                    - text: Analyzed, designed, and estimated end-to-end business solutions on Microsoft SharePoint, balancing complex business requirements against
+                    - strong [ref=e576]: usability, performance, and cost.
+                - listitem [ref=e577]:
+                  - generic [ref=e578]: ▪
+                  - generic [ref=e579]:
+                    - text: Led and executed complex
+                    - strong [ref=e580]: SharePoint 2007 to SharePoint 2013 migration
+                    - text: projects.
+                - listitem [ref=e581]:
+                  - generic [ref=e582]: ▪
+                  - generic [ref=e583]:
+                    - text: Acted as team leader,
+                    - strong [ref=e584]: mentoring colleagues and delivering internal training
+                    - text: to reinforce development best practices. Conducted
+                    - strong [ref=e585]: .NET and SharePoint solution audits
+                    - text: to identify performance bottlenecks and enforce coding standards.
+            - generic [ref=e586]:
+              - generic [ref=e587]:
+                - generic [ref=e588]:
+                  - paragraph [ref=e589]: Software Developer
+                  - paragraph [ref=e590]: everis
+                - generic [ref=e591]: Jul 2012 – Sep 2014
+              - list [ref=e592]:
+                - listitem [ref=e593]:
+                  - generic [ref=e594]: ▪
+                  - generic [ref=e595]:
+                    - text: Developed, maintained, and customized SharePoint and ASP.NET applications, leveraging the full range of platform models including
+                    - strong [ref=e596]: SSOM, CSOM, REST
+                    - text: ", and Sandbox solutions."
+                - listitem [ref=e597]:
+                  - generic [ref=e598]: ▪
+                  - generic [ref=e599]:
+                    - text: Managed the configuration and extension of key third-party tools, including
+                    - strong [ref=e600]: Nintex Workflows 2010
+                    - text: and the SharePoint 2010 FBA Pack.
+                - listitem [ref=e601]:
+                  - generic [ref=e602]: ▪
+                  - generic [ref=e603]: Authored comprehensive functional and technical documentation and provided direct end-user support, ensuring solution adoption and stability.
+        - generic [ref=e604]:
+          - heading "Core Competencies" [level=2] [ref=e605]
+          - generic [ref=e606]:
+            - generic [ref=e607]:
+              - paragraph [ref=e608]: DevOps & Automation skills
+              - list [ref=e609]:
+                - listitem [ref=e610]:
+                  - generic [ref=e611]: ▪
+                  - generic [ref=e612]:
+                    - strong [ref=e613]: "CI/CD:"
+                    - text: Pipeline automation using
+                    - strong [ref=e614]: Azure DevOps
+                    - text: and Jenkins.
+                - listitem [ref=e615]:
+                  - generic [ref=e616]: ▪
+                  - generic [ref=e617]:
+                    - strong [ref=e618]: "Scripting:"
+                    - text: Advanced
+                    - strong [ref=e619]: PowerShell
+                    - text: (PnPPowerShell, M365 CLI) to automate administrative tasks for both On-Premise and M365.
+                - listitem [ref=e620]:
+                  - generic [ref=e621]: ▪
+                  - generic [ref=e622]:
+                    - strong [ref=e623]: "Containerization:"
+                    - text: Creation of Docker containers for development environments.
+            - generic [ref=e624]:
+              - paragraph [ref=e625]: Application Development & Modernization skills
+              - list [ref=e626]:
+                - listitem [ref=e627]:
+                  - generic [ref=e628]: ▪
+                  - generic [ref=e629]:
+                    - strong [ref=e630]: "M365 Development:"
+                    - text: Custom solutions for SharePoint Online (SPFx) and MS Teams using Power Platform, Graph API, & CSOM.
+                - listitem [ref=e631]:
+                  - generic [ref=e632]: ▪
+                  - generic [ref=e633]:
+                    - strong [ref=e634]: "Migration & Modernization:"
+                    - text: Proven experience migrating and modernizing SharePoint On-Premise solutions to SharePoint Online.
+                - listitem [ref=e635]:
+                  - generic [ref=e636]: ▪
+                  - generic [ref=e637]:
+                    - strong [ref=e638]: "Backend:"
+                    - text: .NET & .NET Core (C#), ASP.NET MVC, Node.js (JavaScript/TypeScript), and REST API development.
+                - listitem [ref=e639]:
+                  - generic [ref=e640]: ▪
+                  - generic [ref=e641]:
+                    - strong [ref=e642]: "Frontend:"
+                    - text: Single Page Application (SPA) development using React/TypeScript; IONIC web components (React/Angular).
+                - listitem [ref=e643]:
+                  - generic [ref=e644]: ▪
+                  - generic [ref=e645]:
+                    - strong [ref=e646]: "AI & Chatbots:"
+                    - text: Architecting enterprise-grade RAG (Retrieval-Augmented Generation) solutions using Copilot Studio, Azure OpenAI Service, Azure AI Search (Vector Search), and Azure AI Foundry.
+                - listitem [ref=e647]:
+                  - generic [ref=e648]: ▪
+                  - generic [ref=e649]:
+                    - strong [ref=e650]: "Polyglot Experience:"
+                    - text: Working knowledge of PHP, Go, and Java.
+            - generic [ref=e651]:
+              - paragraph [ref=e652]: Cloud & Infrastructure Architecture skills
+              - list [ref=e653]:
+                - listitem [ref=e654]:
+                  - generic [ref=e655]: ▪
+                  - generic [ref=e656]:
+                    - strong [ref=e657]: "Microsoft 365:"
+                    - text: Tenant-level administration, including licensing, security hardening, and compliance configuration.
+                - listitem [ref=e658]:
+                  - generic [ref=e659]: ▪
+                  - generic [ref=e660]:
+                    - strong [ref=e661]: "Microsoft Azure:"
+                    - text: Deployment and management of cloud resources using
+                    - strong [ref=e662]: Bicep
+                    - text: and
+                    - strong [ref=e663]: ARM templates
+                    - text: .
+                - listitem [ref=e664]:
+                  - generic [ref=e665]: ▪
+                  - generic [ref=e666]:
+                    - strong [ref=e667]: "SharePoint On-Premise:"
+                    - text: Expert-level farm architecture (2016/2019), performance optimization, and advanced troubleshooting.
+                - listitem [ref=e668]:
+                  - generic [ref=e669]: ▪
+                  - generic [ref=e670]:
+                    - strong [ref=e671]: "Identity & Access (IAM):"
+                    - text: Configuration of SAML, OAuth, & OIDC protocols using Azure AD, ADFS, PingFederate, Keycloak, and Oracle OAM.
+                - listitem [ref=e672]:
+                  - generic [ref=e673]: ▪
+                  - generic [ref=e674]:
+                    - strong [ref=e675]: "Networking & Web:"
+                    - text: Advanced configuration and deployment of on-premise load balancers (GLB), firewalls, and IIS web servers.
+            - generic [ref=e676]:
+              - paragraph [ref=e677]: Leadership & Project Management skills
+              - list [ref=e678]:
+                - listitem [ref=e679]:
+                  - generic [ref=e680]: ▪
+                  - generic [ref=e681]:
+                    - strong [ref=e682]: "Project Management:"
+                    - text: 5+ years leading the full project lifecycle (planning, execution, monitoring, and closing).
+                - listitem [ref=e683]:
+                  - generic [ref=e684]: ▪
+                  - generic [ref=e685]:
+                    - strong [ref=e686]: "Stakeholder Management:"
+                    - text: Coordinating deliverables between IT, security, and business areas to ensure project alignment.
+                - listitem [ref=e687]:
+                  - generic [ref=e688]: ▪
+                  - generic [ref=e689]:
+                    - strong [ref=e690]: "Methodology:"
+                    - text: Deep practical application of
+                    - strong [ref=e691]: Agile
+                    - text: and
+                    - strong [ref=e692]: DevOps
+                    - text: principles.
+        - generic [ref=e693]:
+          - generic [ref=e694]:
+            - heading "Certifications" [level=2] [ref=e695]
+            - generic [ref=e696]:
+              - generic [ref=e697]:
+                - generic [ref=e698]:
+                  - paragraph [ref=e699]: Generative AI Leader Certification
+                  - paragraph [ref=e700]: Google Cloud
+                - generic [ref=e701]: "2026"
+              - generic [ref=e702]:
+                - generic [ref=e703]:
+                  - paragraph [ref=e704]: Azure AI Engineer Associate (AI-102)
+                  - paragraph [ref=e705]: Microsoft
+                - generic [ref=e706]: "2025"
+              - generic [ref=e707]:
+                - generic [ref=e708]:
+                  - paragraph [ref=e709]: DevOps Engineer Expert (AZ-400)
+                  - paragraph [ref=e710]: Microsoft
+                - generic [ref=e711]: "2023"
+              - generic [ref=e712]:
+                - generic [ref=e713]:
+                  - paragraph [ref=e714]: Azure Developer Associate (AZ-204)
+                  - paragraph [ref=e715]: Microsoft
+                - generic [ref=e716]: "2022"
+              - generic [ref=e717]:
+                - generic [ref=e718]:
+                  - paragraph [ref=e719]: Azure AI Fundamentals (AI-900)
+                  - paragraph [ref=e720]: Microsoft
+                - generic [ref=e721]: "2022"
+              - generic [ref=e722]:
+                - generic [ref=e723]:
+                  - paragraph [ref=e724]: Security, Compliance, and Identity (SC-900)
+                  - paragraph [ref=e725]: Microsoft
+                - generic [ref=e726]: "2022"
+              - generic [ref=e727]:
+                - generic [ref=e728]:
+                  - paragraph [ref=e729]: Microsoft 365 Fundamentals (MS-900)
+                  - paragraph [ref=e730]: Microsoft
+                - generic [ref=e731]: "2021"
+              - generic [ref=e732]:
+                - generic [ref=e733]:
+                  - paragraph [ref=e734]: DevOps Foundation® Certification
+                  - paragraph [ref=e735]: DevOps Institute
+                - generic [ref=e736]: "2021"
+              - generic [ref=e737]:
+                - generic [ref=e738]:
+                  - paragraph [ref=e739]: Microsoft 365 Developer Associate (MS-600)
+                  - paragraph [ref=e740]: Microsoft
+                - generic [ref=e741]: "2020"
+              - generic [ref=e742]:
+                - generic [ref=e743]:
+                  - paragraph [ref=e744]: Azure Fundamentals (AZ-900)
+                  - paragraph [ref=e745]: Microsoft
+                - generic [ref=e746]: "2020"
+              - generic [ref=e747]:
+                - generic [ref=e748]:
+                  - paragraph [ref=e749]: Professional Scrum Master I
+                  - paragraph [ref=e750]: Scrum.org
+                - generic [ref=e751]: "2019"
+              - generic [ref=e752]:
+                - generic [ref=e753]:
+                  - paragraph [ref=e754]: "MCSA: Web Applications - Certified 2016"
+                  - paragraph [ref=e755]: Microsoft
+                - generic [ref=e756]: "2016"
+              - generic [ref=e757]:
+                - generic [ref=e758]:
+                  - paragraph [ref=e759]: "MCSD: App Builder — Certified 2016"
+                  - paragraph [ref=e760]: Microsoft
+                - generic [ref=e761]: "2016"
+          - generic [ref=e762]:
+            - heading "Achievements" [level=2] [ref=e763]
+            - generic [ref=e764]:
+              - generic [ref=e765]:
+                - generic [ref=e766]:
+                  - paragraph [ref=e767]: Bizz Summit ES - Rockstar Speaker 2024
+                  - generic [ref=e768]: "2024"
+                - paragraph [ref=e769]: Rockstar Speaker is a speaker who stands out exceptionally in their presentations, who manages to in…
+              - generic [ref=e770]:
+                - generic [ref=e771]:
+                  - paragraph [ref=e772]: Community Contributor 2022/2023/2024
+                  - generic [ref=e773]: "2022"
+                - paragraph [ref=e774]: Community Contributor badge earners contributed to one or more M365 Platform Community (PnP) initiat…
+              - generic [ref=e775]:
+                - generic [ref=e776]:
+                  - paragraph [ref=e777]: MAP 2014 (Microsoft Active Professional 2014)
+                  - generic [ref=e778]: "2014"
+                - paragraph [ref=e779]: This distinction is given to less than 5% of the professionals population , with in order to recogni…
+              - generic [ref=e780]:
+                - generic [ref=e781]:
+                  - paragraph [ref=e782]: Excellent achievement in Vocational Training
+                  - generic [ref=e783]: "2012"
+                - paragraph [ref=e784]: The award is given to the students with the higher grades of the graduating class.
+          - generic [ref=e785]:
+            - heading "Education" [level=2] [ref=e786]
+            - generic [ref=e788]:
+              - paragraph [ref=e789]: Higher Technician in Multi-platform Applications Development
+              - paragraph [ref=e790]: IES Virgen de la Paloma
+              - paragraph [ref=e791]: 2010 – 2012
+            - generic [ref=e792]:
+              - heading "Languages" [level=2] [ref=e793]
+              - generic [ref=e794]:
+                - generic [ref=e795]:
+                  - generic [ref=e796]: English
+                  - generic [ref=e797]: Fluent (C1+)
+                - generic [ref=e798]:
+                  - generic [ref=e799]: Spanish
+                  - generic [ref=e800]: Native
+                - generic [ref=e801]:
+                  - generic [ref=e802]: Russian
+                  - generic [ref=e803]: Fluent (C1+)
+        - generic [ref=e804]:
+          - generic [ref=e805]: Eduard Paul Lakida · https://eduardpaul.work
+          - generic [ref=e806]: "Last updated: May 2026"
+  - generic [ref=e365]: Navigated to Eduard Paul Lakida
