@@ -1,9 +1,10 @@
-
-import React from 'react';
+import React, { useMemo } from 'react';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
-const AnimatedSection = ({ children, className }) => {
-  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.1 });
+const OBSERVER_OPTIONS = { threshold: 0.1 };
+
+const AnimatedSection = ({ children, className = '' }) => {
+  const [ref, isIntersecting] = useIntersectionObserver(OBSERVER_OPTIONS);
 
   return (
     <div

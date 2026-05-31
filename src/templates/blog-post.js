@@ -13,34 +13,34 @@ const BlogPostTemplate = ({
   return (
     <Layout location={location}>
 
-      <section id="blog-post" class="py-16 bg-slate-50">
-        <div class="container mx-auto px-6">
+      <section id="blog-post" className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6">
 
-          <header class="mb-10 text-center">
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4">
+          <header className="mb-10 text-center">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4">
               {post.frontmatter.title}
             </h1>
-            <div class="flex items-center justify-center mt-4 text-sm text-slate-500 space-x-3">
+            <div className="flex items-center justify-center mt-4 text-sm text-slate-500 space-x-3">
               <CvImage imageObject={profile.avatar} className="w-10 h-10 rounded-full object-cover shadow-sm" />
-              <span>By <span class="font-semibold text-blue-700">{profile.name} {profile.surnames}</span></span>
+              <span>By <span className="font-semibold text-blue-700">{profile.name} {profile.surnames}</span></span>
               <span>•</span>
               <span>{post.frontmatter.date}</span>
             </div>
           </header>
 
           {post.frontmatter.external && (
-            <div class="mb-8 bg-blue-50 border border-blue-100 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between text-center sm:text-left">
-              <div class="mb-3 sm:mb-0">
-                <h2 class="text-lg font-semibold text-blue-800">Also read on</h2>
-                <p class="text-slate-700 text-sm">This article is also available on my external publication platform.</p>
+            <div className="mb-8 bg-blue-50 border border-blue-100 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between text-center sm:text-left">
+              <div className="mb-3 sm:mb-0">
+                <h2 className="text-lg font-semibold text-blue-800">Also read on</h2>
+                <p className="text-slate-700 text-sm">This article is also available on my external publication platform.</p>
               </div>
-              <a href={post.frontmatter.external} target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-full hover:bg-blue-700 transition">
+              <a href={post.frontmatter.external} target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-full hover:bg-blue-700 transition">
                 Read on External Site
               </a>
             </div>
           )}
 
-          <article class="prose max-w-none mx-auto max-w-3xl">
+          <article className="prose mx-auto max-w-3xl">
             {children}
           </article>
 

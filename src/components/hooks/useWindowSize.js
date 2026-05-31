@@ -1,16 +1,11 @@
 import { useState, useEffect } from 'react';
 
 function useWindowSize() {
-  const [windowSize, setWindowSize] = useState({
-    width: typeof window !== 'undefined' ? window.innerWidth : 0,
-    height: typeof window !== 'undefined' ? window.innerHeight : 0,
-  });
+  // Start with 0/0 so server-rendered HTML matches the initial client render.
+  // The real dimensions are set in useEffect, which runs only after hydration.
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-    
     function handleResize() {
       setWindowSize({
         width: window.innerWidth,
@@ -19,7 +14,6 @@ function useWindowSize() {
     }
 
     window.addEventListener('resize', handleResize);
-    
     handleResize();
 
     return () => window.removeEventListener('resize', handleResize);

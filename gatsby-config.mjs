@@ -23,7 +23,7 @@ export default {
     },
     description: `Architecting and delivering high-impact Microsoft 365 and Azure solutions that turn complex business needs into scalable results.`,
     siteUrl: `https://eduardpaul.work`,
-    image: `/src/images/favicon.svg`,
+    image: `/favicon.svg`,
     social: {
       twitter: `@eduapauldev`,
     },
@@ -97,11 +97,11 @@ export default {
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
-                  description: node.excerpt, // You might want to use node.body here for MDX
+                  description: node.excerpt,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.body }],
                 })
               })
             },
@@ -109,6 +109,7 @@ export default {
               allMdx(sort: {frontmatter: {date: DESC}}) {
                 nodes {
                   excerpt
+                  body
                   fields {
                     slug
                   }

@@ -14,6 +14,8 @@ const ActivityPage = ({ data, location }) => {
 
   const posts = query ? results : data.allMdx.nodes
 
+  const cardClass = "block p-6 bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300"
+
   return (
     <Layout location={location} title={siteTitle}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -46,26 +48,35 @@ const ActivityPage = ({ data, location }) => {
             {posts.map(post => {
               const title = post.frontmatter?.title || post.title
               const slug = post.fields?.slug || post.slug
+              const external = post.frontmatter?.external || post.external
               const description = post.frontmatter?.description || post.excerpt
               const date = post.frontmatter?.date || post.date
 
-              return (
-                <Link to={slug} key={slug} className="block p-6 bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
-                  <article itemScope itemType="http://schema.org/Article">
-                    <header>
-                      <h2 className="text-xl font-semibold text-slate-800 hover:text-indigo-600" itemProp="headline">
-                        {title}
-                      </h2>
-                      <small className="text-slate-500">{date}</small>
-                    </header>
-                    <section>
-                      <p
-                        className="mt-2 text-slate-600"
-                        dangerouslySetInnerHTML={{ __html: description }}
-                        itemProp="description"
-                      />
-                    </section>
-                  </article>
+              const cardContent = (
+                <article key={slug} itemScope itemType="http://schema.org/Article">
+                  <header>
+                    <h2 className="text-xl font-semibold text-slate-800 hover:text-indigo-600" itemProp="headline">
+                      {title}
+                    </h2>
+                    <small className="text-slate-500">{date}</small>
+                  </header>
+                  <section>
+                    <p
+                      className="mt-2 text-slate-600"
+                      dangerouslySetInnerHTML={{ __html: description }}
+                      itemProp="description"
+                    />
+                  </section>
+                </article>
+              )
+
+              return external ? (
+                <a key={slug} href={external} target="_blank" rel="noopener noreferrer" className={cardClass}>
+                  {cardContent}
+                </a>
+              ) : (
+                <Link key={slug} to={slug} className={cardClass}>
+                  {cardContent}
                 </Link>
               )
             })}
@@ -102,6 +113,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          external
         }
       }
     }
