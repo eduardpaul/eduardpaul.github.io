@@ -11,3 +11,7 @@ npm-debug.log*
 .env.production
 # macOS-specific files
 .DS_Store
+
+# downloaded from cv.json at build time by scripts/fetch-media.mjs
+public/cv-media/
+src/assets/cv-media/

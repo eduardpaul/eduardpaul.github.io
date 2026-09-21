@@ -1,0 +1,54 @@
+---
+import { SITE } from '../config';
+import cv from '../data/cv';
+
+interface Props {
+  title?: string;
+  description?: string;
+  pathname?: string;
+  image?: string;
+  keywords?: string;
+}
+
+const { title, description, pathname, image, keywords } = Astro.props;
+
+const { name, surnames, title: jobTitle } = cv.aboutMe.profile;
+const mainStack = cv.manfredSpecificData.mainStackTechs.map((t) => t.name);
+const hardSkills = cv.knowledge.hardSkills.map((s) => s.skill.name);
+
+// Deduplicated keyword list built from CV data: identity -> role -> technologies
+const defaultKeywords = [
+  ...new Set([`${name} ${surnames}`, jobTitle, ...mainStack, ...hardSkills]),
+].join(', ');
+
+// `pathname` is optional the way it was in Gatsby, but Astro always knows the
+// current URL, so a page that omits it still canonicalises to itself rather
+// than collapsing onto the site root.
+const canonical = new URL(pathname ?? Astro.url.pathname, SITE.url);
+
+const seo = {
+  title: title || SITE.title,
+  description: description || SITE.description,
+  image: new URL(image || SITE.image, SITE.url).href,
+  url: canonical.href,
+  keywords: keywords || defaultKeywords,
+};
+---
+<title>{seo.title}</title>
+<meta name="description" content={seo.description} />
+<meta name="keywords" content={seo.keywords} />
+<meta name="image" content={seo.image} />
+
+<meta property="og:title" content={seo.title} />
+<meta property="og:description" content={seo.description} />
+<meta property="og:image" content={seo.image} />
+<meta property="og:url" content={seo.url} />
+<meta property="og:type" content="website" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:creator" content={SITE.social.twitter} />
+<meta name="twitter:title" content={seo.title} />
+<meta name="twitter:description" content={seo.description} />
+<meta name="twitter:image" content={seo.image} />
+
+<link rel="canonical" href={seo.url} />

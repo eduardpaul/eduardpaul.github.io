@@ -1,0 +1,83 @@
+---
+// Mobile-only truncation. The desktop case is pure CSS (`md:max-h-none`), so
+// unlike the React version this needs no JS at all above the md breakpoint.
+interface Props {
+  initialMaxHeight?: string;
+  gradientBackgroundClass?: string;
+}
+
+const { initialMaxHeight = 'max-h-40', gradientBackgroundClass = 'from-slate-50' } = Astro.props;
+const viaClass = gradientBackgroundClass.replace('from-', 'via-');
+---
+<div class="readmore">
+  <div
+    class:list={[
+      'readmore-content relative overflow-hidden transition-[max-height] duration-500 ease-in-out md:max-h-none',
+      initialMaxHeight,
+    ]}
+  >
+    <slot />
+    <div
+      class:list={[
+        'readmore-fade absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t to-transparent pointer-events-none hidden md:hidden',
+        gradientBackgroundClass,
+        viaClass,
+      ]}
+      aria-hidden="true"
+    >
+    </div>
+  </div>
+  <button
+    type="button"
+    class="readmore-btn mt-2 text-sm font-semibold text-blue-600 hover:text-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded hidden md:hidden"
+    aria-expanded="false"
+  >
+    Read More
+  </button>
+</div>
+
+<script>
+  // The expanded height is driven through `style.maxHeight` rather than by
+  // swapping Tailwind classes: two max-height utilities on one element leave
+  // the winner up to stylesheet order, which is exactly the class of bug this
+  // component used to have.
+  for (const wrap of document.querySelectorAll<HTMLElement>('.readmore')) {
+    const content = wrap.querySelector<HTMLElement>('.readmore-content')!;
+    const fade = wrap.querySelector<HTMLElement>('.readmore-fade')!;
+    const btn = wrap.querySelector<HTMLButtonElement>('.readmore-btn')!;
+
+    const isExpanded = () => btn.getAttribute('aria-expanded') === 'true';
+
+    const sync = () => {
+      // While expanded the content is unclamped, so scrollHeight and
+      // clientHeight match and the check below would wrongly hide the control.
+      if (isExpanded()) return;
+      const overflowing = content.scrollHeight > content.clientHeight + 1;
+      btn.classList.toggle('hidden', !overflowing);
+      fade.classList.toggle('hidden', !overflowing);
+    };
+
+    btn.addEventListener('click', () => {
+      const expanded = isExpanded();
+      btn.setAttribute('aria-expanded', String(!expanded));
+      btn.textContent = expanded ? 'Read More' : 'Read Less';
+      fade.classList.toggle('hidden', !expanded);
+
+      // An explicit pixel height is what makes the height transition animate;
+      // `none` does not interpolate. Whether the block overflows has not
+      // changed, so the button's own visibility is deliberately left alone --
+      // re-measuring here would read a height still mid-transition.
+      content.style.maxHeight = expanded ? '' : `${content.scrollHeight}px`;
+    });
+
+    // Once the open transition has finished, drop the pixel cap so later
+    // reflows (rotation, font swap, an image loading late) cannot clip it.
+    content.addEventListener('transitionend', (event) => {
+      if (event.propertyName !== 'max-height') return;
+      if (isExpanded()) content.style.maxHeight = 'none';
+    });
+
+    sync();
+    window.addEventListener('resize', sync, { passive: true });
+  }
+</script>

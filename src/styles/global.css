@@ -1,2 +1,30 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+/*
+ * Reveal-on-scroll primitive used by <AnimatedSection>.
+ *
+ * Written as real CSS rather than as Tailwind utilities that JavaScript swaps
+ * in and out: the hidden state then has exactly one owner and cannot be won by
+ * a competing opacity/transform utility depending on stylesheet order.
+ */
+.anim {
+  opacity: 0;
+  transform: translateY(2.5rem);
+  transition:
+    opacity 1s ease-out,
+    transform 1s ease-out;
+}
+
+.anim.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

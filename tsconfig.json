@@ -1,5 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  // public/ holds verbatim static assets, including a vendored demo app that
+  // is not this project's source.
+  "exclude": ["dist", "public"]
 }

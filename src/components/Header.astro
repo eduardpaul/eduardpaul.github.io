@@ -1,0 +1,101 @@
+---
+import { NAV_ITEMS, SITE } from '../config';
+
+const current = Astro.url.pathname;
+---
+<header
+  id="site-header"
+  class="not-prose sticky top-0 z-50 transition-all duration-300 bg-transparent"
+  aria-label="Main Navigation"
+>
+  <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <a href="/" class="text-xl font-bold text-slate-800 hover:text-blue-600 transition-colors">
+        {SITE.title}
+      </a>
+
+      <ul class="hidden md:flex items-center space-x-8">
+        {NAV_ITEMS.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              aria-current={current === item.href ? 'page' : undefined}
+              class="font-medium text-slate-600 hover:text-blue-600 transition-colors aria-[current=page]:text-blue-700 aria-[current=page]:font-semibold"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="md:hidden">
+        <button
+          id="menu-btn"
+          type="button"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          class="text-slate-800 p-2 rounded-md hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg id="icon-menu" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="transition-all duration-300 ease-in-out overflow-hidden md:hidden max-h-0">
+      <ul class="flex flex-col items-center space-y-6">
+        {NAV_ITEMS.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              aria-current={current === item.href ? 'page' : undefined}
+              class="font-medium text-slate-600 hover:text-blue-600 transition-colors text-lg aria-[current=page]:text-blue-700 aria-[current=page]:font-semibold"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Mirrors the isScrolled / isMenuOpen state the React header held: the bar is
+  // transparent over the hero and gains a shade once scrolled or once the
+  // mobile menu is open.
+  const header = document.getElementById('site-header')!;
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu')!;
+  const iconMenu = document.getElementById('icon-menu')!;
+  const iconClose = document.getElementById('icon-close')!;
+  const SHADED = ['bg-white/95', 'shadow-md', 'backdrop-blur-sm'];
+
+  let open = false;
+
+  const paint = () => {
+    const on = window.scrollY > 10 || open;
+    header.classList.toggle('bg-transparent', !on);
+    for (const c of SHADED) header.classList.toggle(c, on);
+  };
+
+  window.addEventListener('scroll', paint, { passive: true });
+
+  btn?.addEventListener('click', () => {
+    open = !open;
+    btn.setAttribute('aria-expanded', String(open));
+    menu.classList.toggle('max-h-0', !open);
+    menu.classList.toggle('max-h-96', open);
+    menu.classList.toggle('pt-4', open);
+    iconMenu.classList.toggle('hidden', open);
+    iconClose.classList.toggle('hidden', !open);
+    paint();
+  });
+
+  paint();
+</script>
