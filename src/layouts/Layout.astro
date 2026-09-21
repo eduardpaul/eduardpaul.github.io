@@ -68,9 +68,12 @@ const { profile } = cv.aboutMe;
                 class="w-24 h-24 rounded-full shadow-md object-cover mx-auto sm:mx-0"
               />
               <div class="text-center sm:text-left">
-                <h1 class="text-xl font-bold text-gray-900">
+                {/* Not an h1: this card repeats on every non-home page, and a
+                    post or /about already has its own. The classes set the
+                    size, so it renders identically. */}
+                <p class="text-xl font-bold text-gray-900">
                   {profile.name} {profile.surnames}
-                </h1>
+                </p>
                 <p class="text-blue-600 font-medium text-sm">{profile.title}</p>
                 <p class="text-gray-600 text-sm mt-2">{SITE.description}</p>
               </div>

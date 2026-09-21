@@ -1,49 +1,63 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal Starter
-</h1>
+# eduardpaul.work
 
-## 🚀 Quick start
+Personal CV and blog for Eduard Paul Lakida, built with [Astro](https://astro.build)
+and deployed to GitHub Pages at <https://eduardpaul.work>.
 
-1.  **Create a Gatsby site.**
+Everything is static: no backend, no API calls at runtime, and no client-side
+framework. The only JavaScript that ships is a few hundred bytes of inlined
+module script for the header, the reveal-on-scroll animation and the
+mobile-only "Read more" control, plus Pagefind — which is fetched only once a
+visitor focuses a search box.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## Content
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+| What | Where |
+|------|-------|
+| Professional profile (Manfred format) | `content/cv/cv.json` |
+| Blog posts | `content/blog/**/*.mdx` |
+| Files served verbatim | `public/` |
 
-2.  **Start developing.**
+Post URLs come from the filename: `content/blog/my-post.mdx` and
+`content/blog/my-post/index.mdx` both publish at `/my-post/`.
 
-    Navigate into your new site’s directory and start it up.
+Frontmatter is validated against a schema in `src/content.config.ts`, so a
+missing title or malformed date fails the build rather than reaching the site.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+```yaml
+---
+title: Post title
+date: "2024-02-29T00:00:00.000Z"   # ISO 8601
+description: "Shown in post cards and as the meta description."  # optional
+external: https://medium.com/...   # optional, if cross-published
+---
+```
 
-3.  **Open the code and start customizing!**
+## Commands
 
-    Your site is now running at http://localhost:8000!
+```bash
+npm install
+npm run dev        # dev server at http://localhost:4321
+npm run build      # prebuild media -> astro build -> pagefind, output in dist/
+npm run preview    # serve dist/ locally
+npm run check      # typecheck .astro templates and content schemas
+```
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+Search only works against a real build (`npm run build && npm run preview`);
+Pagefind indexes `dist/`, which `npm run dev` does not produce.
 
-4.  **Learn more**
+`npm run build` runs `scripts/fetch-media.mjs` first, which downloads the
+images `cv.json` points at and generates the web manifest icons. Those land in
+`src/assets/cv-media/`, `public/cv-media/` and `public/icons/`, all
+gitignored and all rebuilt on demand, so the first build needs network access.
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## Deployment
 
-## 🚀 Quick start (Netlify)
+Pushing to `main` runs `.github/workflows/deploy.yml`, which builds the site
+and publishes `dist/` to GitHub Pages. Pull requests run
+`.github/workflows/ci.yml`, which installs, typechecks and builds without
+deploying.
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+## Architecture notes
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+`CLAUDE.md` documents the conventions, the pitfalls specific to this codebase,
+and why particular choices were made.
