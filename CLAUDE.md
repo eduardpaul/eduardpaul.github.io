@@ -187,6 +187,32 @@ useEffect(() => {
 }, []);
 ```
 
+### Keep apostrophes and angle brackets out of JSX `<style>` blocks
+
+React escapes `'`, `"`, `&`, `<` and `>` when it server-renders the text
+inside a `<style>` element, but emits them raw when it hydrates on the client.
+The two strings then differ and React throws a hydration error (#425, then
+#418 and #423), which unmounts the tree.
+
+A single apostrophe in a CSS **comment** is enough to trigger it:
+
+```jsx
+// WRONG — "CV's" server-renders as "CV&#x27;s", hydrates as "CV's"
+<style>{`
+  /* keeps the toolbar off the CV's header */
+`}</style>
+
+// CORRECT
+<style>{`
+  /* keeps the toolbar off the CV header */
+`}</style>
+```
+
+This is easy to miss because the page still looks right — the CSS applies
+either way, and the only symptom is console errors plus a re-render.
+`src/pages/cv-print.js` is the only page with an inline `<style>` block, and
+it carries a note to this effect.
+
 ### Keep IntersectionObserver options stable
 
 Passing an inline object to `useIntersectionObserver` creates a new reference every render, causing the observer to be torn down and recreated — re-triggering animations on every state update.
@@ -415,6 +441,33 @@ Files in `src/images/` are processed by `gatsby-plugin-sharp` and `gatsby-plugin
 
 ---
 
+## /cv-print is scaled, not reflowed
+
+The preview is pinned to 794px (A4 at 96dpi) and scaled down to fit narrow
+screens, so what you see matches the PDF at every width. Letting it reflow
+instead would make the preview stop matching the thing it previews.
+
+The scale factor comes from a `useEffect`, because CSS cannot express it:
+`zoom` needs a unitless number and `calc()` cannot divide one length by
+another to produce one. `zoom` rather than `transform: scale()`, because it
+affects layout — the page height shrinks with the preview instead of leaving
+a tall blank gap.
+
+**The `zoom` declaration must stay inside `@media screen`,** reading a custom
+property that the effect sets on `:root`. An inline `style.zoom` on the paper
+would also apply when printing and would shrink the actual PDF. If you touch
+this, re-check that the generated PDF is still 2 A4 pages.
+
+---
+
+## The homepage post list is capped
+
+`Activity` renders the 6 most recent posts and links to `/activity` for the
+rest. Only the non-searching branch is capped — FlexSearch still queries every
+post, so a result past the cap is reachable from the homepage box.
+
+---
+
 ## Things to avoid
 
 - **Do not** use `class=` instead of `className=` in JSX — styling silently breaks
@@ -427,3 +480,5 @@ Files in `src/images/` are processed by `gatsby-plugin-sharp` and `gatsby-plugin
 - **Do not** hardcode the `keywords` meta tag content — it is derived from `cvJson` automatically; update `cv.json` instead
 - **Do not** change the deploy target from `public` back to `build`
 - **Do not** import from `src/components/core/socialicon.js` — file was deleted (was never used; footer uses lucide-react icons directly)
+- **Do not** put apostrophes, quotes, ampersands or angle brackets inside a JSX `<style>` block, comments included — it breaks hydration
+- **Do not** set `zoom` inline on `.cv-paper` — it would shrink the printed PDF, not just the preview

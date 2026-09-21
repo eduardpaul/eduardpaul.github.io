@@ -5,6 +5,11 @@ import AnimatedSection from './ui/AnimatedSection';
 import useSearchIndex from './hooks/useSearchIndex';
 import FlexSearchResults from './core/flexsearchresults';
 
+// The homepage is a preview -- "a glimpse into my latest posts" -- so it shows
+// the most recent few and sends the rest to /activity. Search is unaffected:
+// FlexSearch queries every post, not just the ones rendered here.
+const HOME_POST_LIMIT = 6;
+
 const Activity = () => {
   let { localSearchPages: { publicIndexURL, publicStoreURL }, allMdx } = useStaticQuery(
     graphql`
@@ -132,7 +137,34 @@ const Activity = () => {
             {results => renderGrid(results)}
           </FlexSearchResults>
         ) : (
-          renderGrid(allMdx.nodes)
+          <>
+            {renderGrid(allMdx.nodes.slice(0, HOME_POST_LIMIT))}
+            {allMdx.nodes.length > HOME_POST_LIMIT && (
+              <div className="mt-10 text-center">
+                <Link
+                  to="/activity"
+                  className="inline-flex items-center gap-2 rounded-full bg-blue-600 text-white font-semibold px-6 py-2.5 hover:bg-blue-700 transition"
+                >
+                  View all {allMdx.nodes.length} posts
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="currentColor"
+                    className="w-4 h-4"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            )}
+          </>
         )}
       </div>
     </section>
