@@ -246,6 +246,36 @@ It deliberately does **not** set `send_page_view: false`. The Gatsby plugin did,
 
 ---
 
+## /cv-print is scaled, not reflowed
+
+The preview is pinned to 794px (A4 at 96dpi) and scaled down to fit narrow
+screens, so what you see matches the PDF at every width. Letting it reflow
+instead would make the preview stop matching the thing it previews.
+
+The scale factor comes from a script, because CSS cannot express it: `zoom`
+needs a unitless number and `calc()` cannot divide one length by another to
+produce one. `zoom` rather than `transform: scale()`, because it affects
+layout — the page height shrinks with the preview instead of leaving a tall
+blank gap.
+
+**The `zoom` declaration must stay inside `@media screen`,** reading a custom
+property that the script sets on `:root`. An inline `style.zoom` on the paper
+would also apply when printing and would shrink the actual PDF. If you touch
+this, re-check that the generated PDF is still 2 A4 pages.
+
+---
+
+## The homepage post list is capped
+
+`Activity.astro` renders the 6 most recent posts and links to `/activity` for
+the rest. The cap limits the **listing only** — Pagefind still searches the
+whole archive, so a post past the cap is reachable from the homepage box.
+
+The "View all N posts" link lives inside `Search`'s default slot so it hides
+along with the static list while results are showing.
+
+---
+
 ## `public/sw.js` — do not delete yet
 
 The Gatsby site registered a Workbox service worker at `/sw.js`. Returning visitors still have it installed, and if the path 404'd they could keep being served the cached Gatsby site. `public/sw.js` is now a self-destroying worker: it clears every cache, unregisters itself, and reloads open tabs.
@@ -266,10 +296,8 @@ The custom domain is configured in the repository's Pages settings; the root `CN
 
 ## Known, pre-existing
 
-- `/cv-print` overflows a phone viewport by ~80px. It is a fixed 794px A4 preview and the Gatsby page had identical widths.
-- `content/blog/hello-world/index.mdx` references `https://via.placeholder.com/…`, a third-party service that has shut down. The image 404s on the live site too.
-- The homepage lists **every** post. Fine at two; worth capping before the archive grows.
 - `gatsby-remark-responsive-iframe` has no replacement. No post currently embeds an iframe; one that does will need a wrapper.
+- `hello-world` is a markdown syntax showcase that shows each construct rendered and then again as indented source. MDX disables indented code blocks, so those "source" samples render as real markdown instead of as code. The Gatsby page did the same.
 
 ---
 
