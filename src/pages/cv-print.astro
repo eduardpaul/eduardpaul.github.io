@@ -37,10 +37,13 @@ const PAGE = {
   fontFamily: "'Segoe UI', system-ui, -apple-system, sans-serif",
   color: '#1e293b',
   background: 'white',
-  maxWidth: '794px',
-  margin: '0 auto',
   boxShadow: '0 8px 40px rgba(0,0,0,0.15)',
 };
+
+// A4 portrait at 96dpi. The preview is pinned to this on screen so it shows
+// the real print layout at every viewport, and is scaled down to fit rather
+// than being allowed to reflow.
+const PAPER_WIDTH = 794;
 ---
 
 <!doctype html>
@@ -95,6 +98,43 @@ const PAGE = {
           background: #e2e8f0;
           padding: 32px 16px 64px;
           min-height: 100vh;
+          /* Fallback for when the fit script has not run: the preview scrolls
+             inside its own box instead of widening the page. */
+          overflow-x: auto;
+        }
+        .cv-paper {
+          width: 794px;
+          margin: 0 auto;
+          /* Set by the fit script below. `zoom` rather than `transform`
+             because it affects layout, so the page height shrinks with the
+             preview instead of leaving a tall blank gap beneath it.
+
+             Declared only inside @media screen: an inline style.zoom would
+             also apply when printing and would shrink the actual PDF. */
+          zoom: var(--cv-zoom, 1);
+        }
+      }
+
+      .cv-toolbar {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        z-index: 100;
+        display: flex;
+        gap: 8px;
+      }
+
+      @media screen and (max-width: 858px) {
+        .cv-root {
+          padding: 16px 8px 48px;
+        }
+        /* Once the preview is scaled to fit, a toolbar pinned top-right sits
+           on top of the CV's own header. Bottom-right keeps it clear of the
+           page and within thumb reach, matching the Print CV button on
+           /about. */
+        .cv-toolbar {
+          top: auto;
+          bottom: 16px;
         }
       }
       body {
@@ -110,17 +150,7 @@ const PAGE = {
     <Analytics />
   </head>
   <body>
-    <div
-      class="no-print"
-      style={{
-        position: 'fixed',
-        top: '16px',
-        right: '16px',
-        zIndex: '100',
-        display: 'flex',
-        gap: '8px',
-      }}
-    >
+    <div class="no-print cv-toolbar">
       <button
         id="print-btn"
         type="button"
@@ -599,8 +629,30 @@ const PAGE = {
       </div>
     </div>
 
-    <script>
+    <script is:inline define:vars={{ PAPER_WIDTH }}>
       document.getElementById('print-btn')?.addEventListener('click', () => window.print());
+
+      // Scale the A4 preview down to whatever width is available. CSS cannot
+      // express this on its own: `zoom` needs a unitless number, and calc()
+      // cannot divide one length by another to produce one.
+      (() => {
+        const root = document.querySelector('.cv-root');
+        if (!root) return;
+
+        const fit = () => {
+          const style = getComputedStyle(root);
+          const available =
+            root.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+          // Never scale up: on a wide screen the preview stays at 1:1.
+          const scale = Math.min(1, available / PAPER_WIDTH);
+          document.documentElement.style.setProperty('--cv-zoom', String(scale));
+        };
+
+        // Zooming the paper does not change the root's own width, so this
+        // cannot feed back into itself.
+        fit();
+        window.addEventListener('resize', fit, { passive: true });
+      })();
     </script>
   </body>
 </html>
