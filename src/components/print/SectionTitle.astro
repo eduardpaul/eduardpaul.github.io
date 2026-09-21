@@ -1,0 +1,21 @@
+---
+// Astro serializes a style object the same way React did, so the print
+// layout's inline styles port across unchanged. They stay inline rather than
+// becoming Tailwind classes because this page is sized in absolute units for
+// A4 and must not inherit the site's screen styles.
+---
+<h2
+  style={{
+    fontSize: '9px',
+    fontWeight: '800',
+    textTransform: 'uppercase',
+    letterSpacing: '0.12em',
+    color: '#1a2e4a',
+    borderBottom: '2px solid #2563eb',
+    paddingBottom: '4px',
+    marginBottom: '10px',
+    marginTop: '0',
+  }}
+>
+  <slot />
+</h2>

@@ -1,4 +1,8 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+// Imported directly rather than through astro:content's re-export, which is
+// deprecated. Declared in package.json so the version is not left to
+// whatever Astro happens to hoist.
+import { z } from 'zod';
 import { glob } from 'astro/loaders';
 
 // Replaces gatsby-source-filesystem + gatsby-plugin-mdx. The loader reads the
@@ -15,7 +19,7 @@ const blog = defineCollection({
     description: z.string().optional(),
     // Set when the post is cross-published; the post page links out to the
     // original and this site keeps the canonical copy.
-    external: z.string().url().optional(),
+    external: z.url().optional(),
   }),
 });
 

@@ -1,0 +1,27 @@
+---
+import Seo from '../components/Seo.astro';
+import '../styles/global.css';
+
+const title = 'DeepInfant — Baby Cry Classifier';
+const description =
+  'AI-powered infant cry classifier running entirely in your browser using ONNX Runtime Web.';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <Seo title={title} description={description} />
+  </head>
+  <body>
+    <!-- The demo app is a self-contained bundle in public/; this page is only
+         the frame around it, so it deliberately skips the site chrome. -->
+    <iframe
+      src="/deepinfant-app/index.html"
+      title={title}
+      allow="microphone"
+      style="position:fixed;inset:0;width:100%;height:100%;border:none"></iframe>
+  </body>
+</html>

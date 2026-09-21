@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+<div style={{ marginBottom: '16px' }}>
+  <h3
+    style={{
+      fontSize: '8px',
+      fontWeight: '800',
+      textTransform: 'uppercase',
+      letterSpacing: '0.12em',
+      color: '#1a2e4a',
+      borderBottom: '2px solid #2563eb',
+      paddingBottom: '3px',
+      marginBottom: '8px',
+      marginTop: '0',
+    }}
+  >
+    {title}
+  </h3>
+  <slot />
+</div>

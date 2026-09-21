@@ -1,0 +1,35 @@
+---
+interface Props {
+  text: string;
+  tight?: boolean;
+  fontSize?: string;
+}
+
+const { text, tight = false, fontSize = '11px' } = Astro.props;
+
+// Same markdown subset as MarkdownParser, but styled for print. The source is
+// cv.json, which is repo content rather than user input.
+const items = text
+  .split('\n')
+  .filter((line) => line.trim().startsWith('- '))
+  .map((line) => line.slice(2).replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'));
+---
+<ul style={{ margin: '0', padding: '0', listStyle: 'none' }}>
+  {
+    items.map((html) => (
+      <li
+        style={{
+          display: 'flex',
+          gap: '6px',
+          alignItems: 'flex-start',
+          marginBottom: tight ? '1px' : '4px',
+        }}
+      >
+        <span style={{ color: '#2563eb', flexShrink: '0', marginTop: '1px', fontSize: '9px' }}>
+          ▪
+        </span>
+        <span style={{ fontSize, lineHeight: '1.35', color: '#334155' }} set:html={html} />
+      </li>
+    ))
+  }
+</ul>
