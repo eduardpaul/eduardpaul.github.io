@@ -1,0 +1,51 @@
+---
+import { postPath, formatDate, type Post } from '../lib/posts';
+import { excerpt } from '../lib/excerpt';
+
+interface Props {
+  post: Post;
+  /** The homepage cards carry a "View post" affordance; /activity's do not. */
+  cta?: boolean;
+}
+
+const { post, cta = false } = Astro.props;
+const description = post.data.description || excerpt(post.body);
+---
+<a
+  href={postPath(post)}
+  class="block p-6 bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300"
+>
+  <article itemscope itemtype="http://schema.org/Article">
+    <header>
+      <h2 class="text-xl font-semibold text-slate-800 hover:text-indigo-600" itemprop="headline">
+        {post.data.title}
+      </h2>
+      <small class="text-slate-500">{formatDate(post.data.date)}</small>
+    </header>
+    <section>
+      <p class="mt-2 text-slate-600" itemprop="description">{description}</p>
+      {
+        cta && (
+          <div class="mt-4 inline-flex items-center text-blue-600 font-medium hover:underline">
+            View post
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-4 h-4 ml-1"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+              />
+            </svg>
+          </div>
+        )
+      }
+    </section>
+  </article>
+</a>

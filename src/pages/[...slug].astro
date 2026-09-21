@@ -51,7 +51,12 @@ const description = post.data.description || excerpt(post.body);
             By <span class="font-semibold text-blue-700">{profile.name} {profile.surnames}</span>
           </span>
           <span>•</span>
-          <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+          {/* data-pagefind-meta lets the search results show the same date
+              string as the post cards; Pagefind picks the title up from the
+              h1 on its own. */}
+          <time datetime={post.data.date.toISOString()} data-pagefind-meta="date">
+            {formatDate(post.data.date)}
+          </time>
         </div>
       </header>
 

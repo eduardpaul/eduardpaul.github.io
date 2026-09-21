@@ -1,0 +1,173 @@
+---
+// Pagefind-backed post search, replacing gatsby-plugin-local-search +
+// FlexSearch. Nothing is downloaded until the field is focused: the index is
+// chunked on disk and Pagefind fetches only the chunks a query touches, which
+// is what keeps this flat as the archive grows. The FlexSearch index was a
+// single blob inlined into the page data -- 40x the size of the content it
+// indexed, prefetched from every page on the site.
+//
+// The default slot is the full post list, shown whenever the box is empty.
+interface Props {
+  placeholder?: string;
+  /** Tailwind classes for the results grid, so it matches the static list. */
+  gridClass: string;
+  inputClass: string;
+  wrapperClass?: string;
+  icon?: boolean;
+}
+
+const {
+  placeholder = 'Search posts...',
+  gridClass,
+  inputClass,
+  wrapperClass = '',
+  icon = false,
+} = Astro.props;
+---
+<div class="search-root" data-grid-class={gridClass}>
+  <div class:list={['relative', wrapperClass]}>
+    <input
+      type="search"
+      class={inputClass}
+      placeholder={placeholder}
+      aria-label={placeholder}
+      aria-controls="search-results"
+      autocomplete="off"
+    />
+    {
+      icon && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="w-5 h-5 text-slate-400 absolute right-4 top-2.5 pointer-events-none"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z"
+          />
+        </svg>
+      )
+    }
+  </div>
+
+  <div class="search-results" role="region" aria-live="polite" style="display:none"></div>
+  <div class="search-list"><slot /></div>
+</div>
+
+<script is:inline>
+  // Inline on purpose: this imports /pagefind/pagefind.js, which Pagefind
+  // generates from dist/ *after* astro build. Letting Vite process the import
+  // would make it try to resolve a file that does not exist yet.
+  (() => {
+    const CARD =
+      'block p-6 bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300';
+    const MAX_RESULTS = 30;
+
+    const escapeHtml = (value) =>
+      String(value ?? '').replace(
+        /[&<>"']/g,
+        (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c],
+      );
+
+    let pagefind;
+    let loading;
+
+    const load = () => {
+      if (pagefind) return Promise.resolve(pagefind);
+      loading ??= import('/pagefind/pagefind.js')
+        .then(async (mod) => {
+          await mod.options({ excerptLength: 30 });
+          mod.init();
+          pagefind = mod;
+          return mod;
+        })
+        .catch((error) => {
+          // The index only exists in a production build. `astro dev` has no
+          // dist/, so say so instead of failing silently.
+          loading = undefined;
+          throw error;
+        });
+      return loading;
+    };
+
+    const card = (result) => {
+      const title = escapeHtml(result.meta?.title || result.url);
+      const date = escapeHtml(result.meta?.date || '');
+      // Pagefind's excerpt is the text around the match with <mark> on the
+      // hits, which is more useful in a result list than the post's static
+      // description. It is generated from this site's own content.
+      const body = result.excerpt;
+
+      return `<a href="${escapeHtml(result.url)}" class="${CARD}">
+        <article>
+          <header>
+            <h2 class="text-xl font-semibold text-slate-800 hover:text-indigo-600">${title}</h2>
+            <small class="text-slate-500">${date}</small>
+          </header>
+          <section><p class="mt-2 text-slate-600">${body}</p></section>
+        </article>
+      </a>`;
+    };
+
+    for (const root of document.querySelectorAll('.search-root')) {
+      const input = root.querySelector('input');
+      const results = root.querySelector('.search-results');
+      const list = root.querySelector('.search-list');
+      const gridClass = root.dataset.gridClass;
+
+      // display is driven inline rather than by toggling Tailwind classes:
+      // two display utilities on one element leave the winner to stylesheet
+      // order, and the static list would then render underneath the results.
+      const showList = () => {
+        results.style.display = 'none';
+        results.innerHTML = '';
+        list.style.display = '';
+      };
+
+      const showResults = (html) => {
+        list.style.display = 'none';
+        results.style.display = '';
+        results.innerHTML = html;
+      };
+
+      // Keystrokes resolve out of order, so a stale response must not
+      // overwrite a newer one.
+      let latest = 0;
+
+      const run = async (query) => {
+        const ticket = ++latest;
+        if (!query) return showList();
+
+        let data;
+        try {
+          const pf = await load();
+          const search = await pf.search(query);
+          if (ticket !== latest) return;
+          data = await Promise.all(search.results.slice(0, MAX_RESULTS).map((r) => r.data()));
+        } catch {
+          if (ticket !== latest) return;
+          return showResults(
+            '<p class="text-center text-slate-500">Search is unavailable here. It is generated at build time, so try <code>npm run build &amp;&amp; npm run preview</code>.</p>',
+          );
+        }
+        if (ticket !== latest) return;
+
+        showResults(
+          data.length
+            ? `<div class="${gridClass}">${data.map(card).join('')}</div>`
+            : '<p class="text-center text-slate-500">No posts found. Try a different search term.</p>',
+        );
+      };
+
+      input.addEventListener('input', () => run(input.value.trim()));
+      // Warm the index on focus, the way the FlexSearch version did, so the
+      // first keystroke is not the one that pays for the download.
+      input.addEventListener('focus', () => load().catch(() => {}), { once: true });
+    }
+  })();
+</script>

@@ -1,0 +1,38 @@
+---
+import AnimatedSection from './AnimatedSection.astro';
+import PostCard from './PostCard.astro';
+import Search from './Search.astro';
+import { getPosts } from '../lib/posts';
+
+const posts = await getPosts();
+const GRID = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8';
+---
+<section id="online-activity" class="py-12 bg-slate-50">
+  <div class="container mx-auto px-6">
+    <AnimatedSection>
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-extrabold text-slate-900 sm:text-5xl">My Online Activity</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          A glimpse into my latest posts, shares, and insights.
+        </p>
+      </div>
+    </AnimatedSection>
+
+    <Search
+      gridClass={GRID}
+      wrapperClass="max-w-md mx-auto mb-10"
+      inputClass="w-full rounded-full border border-slate-300 py-2.5 px-5 pr-10 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 shadow-sm"
+      icon
+    >
+      <div class={GRID}>
+        {
+          posts.map((post) => (
+            <AnimatedSection>
+              <PostCard post={post} cta />
+            </AnimatedSection>
+          ))
+        }
+      </div>
+    </Search>
+  </div>
+</section>
