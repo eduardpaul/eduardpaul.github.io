@@ -2,6 +2,7 @@
 // Deliberately minimal: no Layout, no site chrome. GitHub Pages serves this
 // for any unknown path.
 import Seo from '../components/Seo.astro';
+import Analytics from '../components/Analytics.astro';
 ---
 
 <!doctype html>
@@ -11,6 +12,7 @@ import Seo from '../components/Seo.astro';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <Seo title="Not found" description="The page you were looking for does not exist." />
+    <Analytics />
   </head>
   <body>
     <main>

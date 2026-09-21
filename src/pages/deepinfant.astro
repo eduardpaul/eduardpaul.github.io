@@ -1,5 +1,6 @@
 ---
 import Seo from '../components/Seo.astro';
+import Analytics from '../components/Analytics.astro';
 import '../styles/global.css';
 
 const title = 'DeepInfant — Baby Cry Classifier';
@@ -14,6 +15,7 @@ const description =
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <Seo title={title} description={description} />
+    <Analytics />
   </head>
   <body>
     <!-- The demo app is a self-contained bundle in public/; this page is only

@@ -15,3 +15,4 @@ npm-debug.log*
 # downloaded from cv.json at build time by scripts/fetch-media.mjs
 public/cv-media/
 src/assets/cv-media/
+public/icons/

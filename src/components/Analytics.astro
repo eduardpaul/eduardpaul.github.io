@@ -1,0 +1,20 @@
+---
+// Replaces gatsby-plugin-google-gtag.
+//
+// The Gatsby plugin set send_page_view:false because Gatsby is a single-page
+// app and reported page views itself on client-side route changes. This site
+// is plain static pages, so every navigation is a real page load and gtag's
+// own page_view is the thing that records it. Keeping the flag off here would
+// silently stop page views being recorded at all.
+const MEASUREMENT_ID = 'GTM-NVH7BJBQ';
+---
+<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}`}
+></script>
+<script is:inline define:vars={{ MEASUREMENT_ID }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', MEASUREMENT_ID);
+</script>

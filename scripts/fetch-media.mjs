@@ -80,3 +80,23 @@ for (const url of urls) {
 }
 
 console.log(`fetch-media: ${urls.size} image(s) ready (${downloaded} downloaded, ${cached} cached)`);
+
+// gatsby-plugin-manifest rasterized the favicon into a set of PNG icons.
+// Nothing in Astro does that, so generate the two sizes the install prompt
+// actually asks for; the SVG in site.webmanifest covers every other case.
+const ICON_SIZES = [192, 512];
+const ICON_SRC = new URL('../public/favicon.svg', import.meta.url);
+const ICON_DIR = new URL('../public/icons/', import.meta.url);
+
+await mkdir(ICON_DIR, { recursive: true });
+
+for (const size of ICON_SIZES) {
+  const dest = new URL(`icon-${size}x${size}.png`, ICON_DIR);
+  if (existsSync(dest)) continue;
+  await sharp(fileURLToPath(ICON_SRC), { density: 384 })
+    .resize(size, size, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 } })
+    .png()
+    .toFile(fileURLToPath(dest));
+}
+
+console.log(`icons: ${ICON_SIZES.length} manifest icon(s) ready`);
