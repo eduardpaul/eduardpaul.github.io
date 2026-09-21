@@ -1,8 +1,9 @@
 # Build check for pull requests.
 #
-# Kept separate from gatsby.yml on purpose: that workflow holds `pages: write`
+# Kept separate from deploy.yml on purpose: that workflow holds `pages: write`
 # and `id-token: write` and runs in the shared "pages" concurrency group, so
-# running it on pull requests would queue PR builds against production deploys.
+# running it on pull requests would queue PR builds against production
+# deploys.
 name: CI
 
 on:
@@ -24,7 +25,7 @@ defaults:
 
 jobs:
   build:
-    name: Install and build
+    name: Install, check and build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,6 +41,11 @@ jobs:
       # That exact desync reached main and broke the deploy before this existed.
       - name: Install dependencies
         run: npm ci
+
+      # Typechecks the .astro templates and the content collection schema.
+      # The Gatsby codebase had no equivalent check at all.
+      - name: Typecheck
+        run: npm run check
 
       - name: Build
         run: npm run build
