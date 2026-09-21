@@ -4,7 +4,7 @@
 
 Static portfolio/CV site for Eduard Paul Lakida. Deployed to GitHub Pages at `https://eduardpaul.work`.
 
-Built with Gatsby 5 (SSG), React 19, Tailwind CSS v4, and MDX. All professional profile data lives in `content/cv/cv.json` (Manfred format). Blog posts are MDX files in `content/blog/`. The site is fully static — no backend, no API calls at runtime.
+Built with Gatsby 5 (SSG), React 18, Tailwind CSS v4, and MDX. All professional profile data lives in `content/cv/cv.json` (Manfred format). Blog posts are MDX files in `content/blog/`. The site is fully static — no backend, no API calls at runtime.
 
 ---
 
@@ -201,6 +201,22 @@ const OBSERVER_OPTIONS = { threshold: 0.1 };
 const AnimatedSection = ({ children, className = '' }) => {
   const [ref, isIntersecting] = useIntersectionObserver(OBSERVER_OPTIONS);
 ```
+
+---
+
+## React version — pinned to 18 on purpose
+
+`react` and `react-dom` are held at 18.3.1. Gatsby 5.16 accepts React 19 in its peer
+range and the site builds and hydrates fine on it, but `gatsby-plugin-image`'s
+`lazy-hydrate` module imports `react-dom/server`, and Gatsby's webpack `framework`
+cacheGroup deliberately excludes `react-dom-server` files from the framework chunk.
+React 19 dropped the pre-minified `.min.js` production builds, so those server modules
+now exceed the 160 KB `lib` cacheGroup threshold and each gets its own chunk — which is
+then loaded eagerly on every page.
+
+Measured cost: homepage JS goes from 344 KB to 537 KB (+56%), all of it React DOM's
+server renderer, which a browser never usefully runs. Nothing in this site uses a
+React 19 feature. Re-test with the numbers above before bumping.
 
 ---
 
