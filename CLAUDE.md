@@ -253,6 +253,22 @@ const description = post.frontmatter?.description || post.description || post.ex
 const date = post.frontmatter?.date || post.date
 ```
 
+### Search index must stay lazily loaded
+
+Query `localSearchPages { publicIndexURL publicStoreURL }` — never
+`{ index store }`. Selecting `index`/`store` inlines the whole FlexSearch index
+into that page's data, and because `/activity` is in the header nav, Gatsby then
+prefetches it from every page on the site. Measured at 52 posts, that put ~5 MB
+on a `/about` visit that never uses search.
+
+The URLs are fetched on first focus/keystroke via `useSearchIndex`, and
+`FlexSearchResults` wraps `useFlexSearch` because that hook **throws** when the
+index or store is falsy, so it cannot be called while the data is still loading.
+
+The index is served as `.txt` and must be fetched with `res.text()`, not
+`res.json()` — FlexSearch's `import()` parses the string itself, and handing it
+a parsed object makes it stringify to `"[object Object]"` and throw.
+
 ### External post routing
 
 Post cards always link to the internal Gatsby page, including for cross-published posts.
