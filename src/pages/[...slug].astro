@@ -1,0 +1,144 @@
+---
+import { render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import CvImage from '../components/CvImage.astro';
+import { getPosts, postPath, formatDate, type Post } from '../lib/posts';
+import { excerpt } from '../lib/excerpt';
+import cv from '../data/cv';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+
+  // getPosts() is newest-first. Gatsby walked the oldest-first list, so
+  // "previous" is the older post and "next" the newer one; keep that, because
+  // it is what the arrows on the page mean.
+  return posts.map((post, index) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      previous: posts[index + 1] ?? null,
+      next: posts[index - 1] ?? null,
+    },
+  }));
+}
+
+interface Props {
+  post: Post;
+  previous: Post | null;
+  next: Post | null;
+}
+
+const { post, previous, next } = Astro.props;
+const { Content } = await render(post);
+
+const { profile } = cv.aboutMe;
+const description = post.data.description || excerpt(post.body);
+---
+
+<Layout title={post.data.title} description={description}>
+  <section id="blog-post" class="py-16 bg-slate-50">
+    <div class="container mx-auto px-6">
+      <header class="mb-10 text-center">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4">{post.data.title}</h1>
+        <div class="flex items-center justify-center mt-4 text-sm text-slate-500 space-x-3">
+          <CvImage
+            imageObject={profile.avatar}
+            alt={`${profile.name} ${profile.surnames}`}
+            width={80}
+            class="w-10 h-10 rounded-full object-cover shadow-sm"
+          />
+          <span>
+            By <span class="font-semibold text-blue-700">{profile.name} {profile.surnames}</span>
+          </span>
+          <span>•</span>
+          <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+        </div>
+      </header>
+
+      {
+        post.data.external && (
+          <div class="mb-8 bg-blue-50 border border-blue-100 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between text-center sm:text-left">
+            <div class="mb-3 sm:mb-0">
+              <h2 class="text-lg font-semibold text-blue-800">Also read on</h2>
+              <p class="text-slate-700 text-sm">
+                This article is also available on my external publication platform.
+              </p>
+            </div>
+            <a
+              href={post.data.external}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-full hover:bg-blue-700 transition"
+            >
+              Read on External Site
+            </a>
+          </div>
+        )
+      }
+
+      <article class="prose mx-auto max-w-3xl" data-pagefind-body>
+        <Content />
+      </article>
+
+      <nav class="flex items-center justify-between border-t border-gray-200 mt-12 pt-6">
+        {
+          previous && (
+            <a
+              href={postPath(previous)}
+              rel="prev"
+              class="flex items-center max-w-[45%] sm:max-w-[40%] text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 flex-shrink-0 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              <span class="truncate sm:whitespace-normal sm:line-clamp-2">
+                {previous.data.title}
+              </span>
+            </a>
+          )
+        }
+
+        {
+          next && (
+            <a
+              href={postPath(next)}
+              rel="next"
+              class="flex items-center justify-end text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base max-w-[45%] sm:max-w-[40%] ml-auto text-right"
+            >
+              <span class="truncate sm:whitespace-normal sm:line-clamp-2 mr-2">
+                {next.data.title}
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          )
+        }
+      </nav>
+    </div>
+  </section>
+</Layout>
