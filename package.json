@@ -1,64 +1,22 @@
 {
-  "name": "eduard-paul-lakida",
-  "version": "1.0.0",
+  "name": "eduardpaul-work",
+  "type": "module",
+  "version": "0.0.1",
   "private": true,
-  "description": "eduard-paul-lakida",
-  "keywords": [
-    "gatsby"
-  ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d public",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@mdx-js/react": "2.3.0",
-    "@tailwindcss/postcss": "4.3.3",
-    "@tailwindcss/typography": "0.5.20",
-    "gatsby": "5.16.1",
-    "gatsby-plugin-feed": "5.16.0",
-    "gatsby-plugin-google-gtag": "5.16.0",
-    "gatsby-plugin-image": "3.16.0",
-    "gatsby-plugin-local-search": "2.0.1",
-    "gatsby-plugin-manifest": "5.16.0",
-    "gatsby-plugin-mdx": "5.16.0",
-    "gatsby-plugin-offline": "6.16.0",
-    "gatsby-plugin-postcss": "6.16.0",
-    "gatsby-plugin-sharp": "5.16.0",
-    "gatsby-plugin-sitemap": "6.16.0",
-    "gatsby-remark-images": "7.16.0",
-    "gatsby-remark-prismjs": "7.16.0",
-    "gatsby-remark-responsive-iframe": "6.16.0",
-    "gatsby-source-filesystem": "5.16.0",
-    "gatsby-transformer-json": "5.16.0",
-    "gatsby-transformer-sharp": "5.16.0",
-    "lucide-react": "1.47.0",
-    "postcss": "8.5.28",
-    "prismjs": "1.30.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-use-flexsearch": "0.1.1"
-  },
-  "devDependencies": {
-    "gh-pages": "6.3.0",
-    "prettier": "3.9.8"
-  },
-  "overrides": {
-    "react-server-dom-webpack": {
-      "react": "18.3.1"
-    },
-    "cookie": "0.7.2",
-    "file-type": "21.3.4",
-    "lodash": "4.18.1",
-    "path-to-regexp": "0.1.13",
-    "serialize-javascript": "7.1.1",
-    "tmp": "0.2.7",
-    "uuid": "11.1.1",
-    "webpack": "5.111.1"
+    "@astrojs/markdown-satteri": "^0.4.1",
+    "@astrojs/mdx": "^8.0.1",
+    "@astrojs/sitemap": "^3.7.4",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.3",
+    "sharp": "^0.35.4",
+    "tailwindcss": "^4.3.3"
   }
 }
