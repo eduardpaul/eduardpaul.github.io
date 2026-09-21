@@ -1,0 +1,59 @@
+---
+import AnimatedSection from './AnimatedSection.astro';
+import CvImage from './CvImage.astro';
+import cv from '../data/cv';
+
+const { publicArtifacts } = cv.experience;
+---
+<section id="projects" class="bg-white py-12">
+  <div class="container mx-auto px-6">
+    <AnimatedSection>
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-extrabold text-slate-900 sm:text-5xl">Projects &amp; Achievements</h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Recognitions and public contributions to the community.
+        </p>
+      </div>
+    </AnimatedSection>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+      {
+        publicArtifacts.map((artifact) => (
+          <AnimatedSection>
+            <a
+              href={artifact.details.URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block h-full group"
+              aria-label={`View details for ${artifact.details.name}`}
+            >
+              <div class="bg-slate-50 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-6 h-full flex flex-col">
+                {artifact.details.image && (
+                  <div class="mb-6 overflow-hidden rounded-lg flex items-center justify-center bg-black/5">
+                    <CvImage
+                      imageObject={artifact.details.image}
+                      alt={artifact.details.name}
+                      width={400}
+                      class="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                )}
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  {artifact.details.name}
+                </h3>
+                <p class="text-slate-600 mt-2 flex-grow">{artifact.details.description}</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  {artifact.relatedCompetences.map((comp) => (
+                    <span class="text-xs font-medium bg-blue-100 text-blue-800 px-2 py-1 rounded-md">
+                      {comp.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          </AnimatedSection>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+---
+// Renders the small markdown subset the CV uses: one bullet per line, with
+// **bold** runs. The input is cv.json, which is repo content rather than user
+// input, so the generated HTML is injected directly.
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+
+const items = text
+  .split('\n')
+  .filter((line) => line.trim() !== '')
+  .map((line) =>
+    line
+      .replace(/^- /, '')
+      .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-blue-700">$1</strong>'),
+  );
+---
+<ul class="list-disc pl-5 text-slate-700 leading-relaxed space-y-2">
+  {items.map((html) => <li set:html={html} />)}
+</ul>
