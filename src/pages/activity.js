@@ -1,20 +1,56 @@
 import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
-import { useFlexSearch } from "react-use-flexsearch"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import useSearchIndex from "../components/hooks/useSearchIndex"
+import FlexSearchResults from "../components/core/flexsearchresults"
 
 const ActivityPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { localSearchPages } = data
-  const { index, store } = localSearchPages
+  const { publicIndexURL, publicStoreURL } = data.localSearchPages
   const [query, setQuery] = useState("")
-  const results = useFlexSearch(query, index, store)
+  const [searchData, loadSearchIndex] = useSearchIndex(publicIndexURL, publicStoreURL)
 
-  const posts = query ? results : data.allMdx.nodes
+  const isSearching = Boolean(query) && Boolean(searchData)
 
   const cardClass = "block p-6 bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300"
+
+  const renderGrid = posts =>
+    posts.length === 0 ? (
+      <p className="text-center text-slate-500">
+        No posts found. Try a different search term.
+      </p>
+    ) : (
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {posts.map(post => {
+          const title = post.frontmatter?.title || post.title
+          const slug = post.fields?.slug || post.slug
+          const description = post.frontmatter?.description || post.excerpt
+          const date = post.frontmatter?.date || post.date
+
+          return (
+            <Link key={slug} to={slug} className={cardClass}>
+              <article itemScope itemType="http://schema.org/Article">
+                <header>
+                  <h2 className="text-xl font-semibold text-slate-800 hover:text-indigo-600" itemProp="headline">
+                    {title}
+                  </h2>
+                  <small className="text-slate-500">{date}</small>
+                </header>
+                <section>
+                  <p
+                    className="mt-2 text-slate-600"
+                    dangerouslySetInnerHTML={{ __html: description }}
+                    itemProp="description"
+                  />
+                </section>
+              </article>
+            </Link>
+          )
+        })}
+      </div>
+    )
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -34,44 +70,21 @@ const ActivityPage = ({ data, location }) => {
             type="search"
             placeholder="Search all posts..."
             value={query}
-            onChange={e => setQuery(e.target.value)}
+            onFocus={loadSearchIndex}
+            onChange={e => {
+              loadSearchIndex()
+              setQuery(e.target.value)
+            }}
             className="block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
           />
         </div>
 
-        {posts.length === 0 ? (
-          <p className="text-center text-slate-500">
-            No posts found. Try a different search term.
-          </p>
+        {isSearching ? (
+          <FlexSearchResults query={query} index={searchData.index} store={searchData.store}>
+            {results => renderGrid(results)}
+          </FlexSearchResults>
         ) : (
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {posts.map(post => {
-              const title = post.frontmatter?.title || post.title
-              const slug = post.fields?.slug || post.slug
-              const description = post.frontmatter?.description || post.excerpt
-              const date = post.frontmatter?.date || post.date
-
-              return (
-                <Link key={slug} to={slug} className={cardClass}>
-                  <article itemScope itemType="http://schema.org/Article">
-                    <header>
-                      <h2 className="text-xl font-semibold text-slate-800 hover:text-indigo-600" itemProp="headline">
-                        {title}
-                      </h2>
-                      <small className="text-slate-500">{date}</small>
-                    </header>
-                    <section>
-                      <p
-                        className="mt-2 text-slate-600"
-                        dangerouslySetInnerHTML={{ __html: description }}
-                        itemProp="description"
-                      />
-                    </section>
-                  </article>
-                </Link>
-              )
-            })}
-          </div>
+          renderGrid(data.allMdx.nodes)
         )}
       </div>
     </Layout>
@@ -90,8 +103,8 @@ export const pageQuery = graphql`
       }
     }
     localSearchPages {
-      index
-      store
+      publicIndexURL
+      publicStoreURL
     }
     allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {

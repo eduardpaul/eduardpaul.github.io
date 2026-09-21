@@ -19,7 +19,7 @@ npm run deploy    # gatsby build + gh-pages -d public → pushes to gh-pages bra
 npm run format    # prettier across all JS/JSX/JSON/MD files
 ```
 
-**When to run `gatsby clean`:** always after changing `gatsby-config.mjs`, `gatsby-node.js`, or adding/removing plugins. Stale cache causes confusing build errors.
+**When to run `gatsby clean`:** always after changing `gatsby-config.mjs`, `gatsby-node.js`, `gatsby-ssr.js`, or adding/removing plugins. Stale cache causes confusing build errors.
 
 ---
 
@@ -204,9 +204,25 @@ const AnimatedSection = ({ children, className = '' }) => {
 
 ---
 
+## React version — pinned to 18 on purpose
+
+`react` and `react-dom` are held at 18.3.1. Gatsby 5.16 accepts React 19 in its peer
+range and the site builds and hydrates fine on it, but `gatsby-plugin-image`'s
+`lazy-hydrate` module imports `react-dom/server`, and Gatsby's webpack `framework`
+cacheGroup deliberately excludes `react-dom-server` files from the framework chunk.
+React 19 dropped the pre-minified `.min.js` production builds, so those server modules
+now exceed the 160 KB `lib` cacheGroup threshold and each gets its own chunk — which is
+then loaded eagerly on every page.
+
+Measured cost: homepage JS goes from 344 KB to 537 KB (+56%), all of it React DOM's
+server renderer, which a browser never usefully runs. Nothing in this site uses a
+React 19 feature. Re-test with the numbers above before bumping.
+
+---
+
 ## Tailwind CSS v4
 
-This project uses **Tailwind v4** (`tailwindcss: 4.3.0`) with `@tailwindcss/postcss`. The v4 API is different from v3:
+This project uses **Tailwind v4** (`tailwindcss: 4.3.3`) with `@tailwindcss/postcss`. The v4 API is different from v3:
 
 - Config is minimal (`tailwind.config.js` only sets `content` paths)
 - The `@tailwind base/components/utilities` directives are replaced with `@import "tailwindcss"` in CSS
@@ -237,20 +253,32 @@ const description = post.frontmatter?.description || post.description || post.ex
 const date = post.frontmatter?.date || post.date
 ```
 
+### Search index must stay lazily loaded
+
+Query `localSearchPages { publicIndexURL publicStoreURL }` — never
+`{ index store }`. Selecting `index`/`store` inlines the whole FlexSearch index
+into that page's data, and because `/activity` is in the header nav, Gatsby then
+prefetches it from every page on the site. Measured at 52 posts, that put ~5 MB
+on a `/about` visit that never uses search.
+
+The URLs are fetched on first focus/keystroke via `useSearchIndex`, and
+`FlexSearchResults` wraps `useFlexSearch` because that hook **throws** when the
+index or store is falsy, so it cannot be called while the data is still loading.
+
+The index is served as `.txt` and must be fetched with `res.text()`, not
+`res.json()` — FlexSearch's `import()` parses the string itself, and handing it
+a parsed object makes it stringify to `"[object Object]"` and throw.
+
 ### External post routing
 
-Posts with an `external` frontmatter field should open the external URL directly, not navigate to an internal Gatsby page:
+Post cards always link to the internal Gatsby page, including for cross-published posts.
+The `external` frontmatter field is not read by the cards — it is consumed by
+`src/templates/blog-post.js`, which renders an "Also read on" banner linking out to the
+original. This keeps the canonical copy on this site and still credits the other platform.
 
 ```jsx
-external ? (
-  <a href={external} target="_blank" rel="noopener noreferrer" className={cardClass}>
-    {cardContent}
-  </a>
-) : (
-  <Link to={slug} className={cardClass}>
-    {cardContent}
-  </Link>
-)
+// post cards — always internal
+<Link to={slug} className={cardClass}>{cardContent}</Link>
 ```
 
 ---
@@ -287,7 +315,20 @@ Images inside posts go in the same folder as the `.mdx` file and are referenced 
 ### ESM vs CJS
 
 - `gatsby-config.mjs` uses ES Modules (`export default`, `import`)
-- `gatsby-node.js` uses CommonJS (`require`, `module.exports`) — Gatsby 5 supports both but they must not be mixed within a file
+- `gatsby-node.js` and `gatsby-ssr.js` use CommonJS (`require`, `module.exports`) — Gatsby 5 supports both but they must not be mixed within a file
+- `gatsby-browser.js` uses ES Modules (it is bundled by webpack, not run by Node)
+
+### gatsby-ssr.js
+
+`onRenderBody` sets `lang="en"` on `<html>`. Gatsby's default `html.js` emits no `lang`
+attribute, which both screen readers and search engines depend on. Do not remove it
+without adding a `src/html.js` that sets `lang` instead.
+
+### Prism syntax highlighting
+
+`gatsby-remark-prismjs` only emits `.token` markup — the colours come from a theme
+stylesheet imported in `gatsby-browser.js` (`prismjs/themes/prism-tomorrow.css`).
+Without that import, code blocks render as unstyled plain text.
 
 ### RSS feed
 
@@ -299,7 +340,7 @@ The feed uses `node.body` (the raw MDX string) for `content:encoded`. `node.html
 
 ### GitHub Actions (primary — automatic)
 
-Every push to `main` triggers the workflow in `.github/workflows/`. It builds the site and deploys to GitHub Pages using the official `actions/deploy-pages` action. Node 20 is required.
+Every push to `main` triggers the workflow in `.github/workflows/`. It builds the site and deploys to GitHub Pages using the official `actions/deploy-pages` action. The workflow runs `npm ci`, so `package-lock.json` must always stay in sync with `package.json` — an out-of-sync lockfile fails the deploy before the build even starts. Node 24 is used.
 
 ### Manual deploy (fallback)
 
@@ -336,6 +377,11 @@ export const Head = ({ location }) => (
 ```
 
 Props: `title`, `description`, `pathname`, `image`, `keywords` — all optional.
+
+**Always pass `pathname`.** It is what builds the canonical URL and `og:url`. A `Head`
+that omits it makes the page self-canonicalise to the site root, which tells search
+engines the page is a duplicate of the homepage. `Head` receives `location` as a prop on
+every page and template, so there is never a reason to leave it out.
 
 The component emits: `<title>`, description, keywords, OG tags, Twitter card tags, and a canonical link.
 
