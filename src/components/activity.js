@@ -8,11 +8,6 @@ const Activity = () => {
   let { localSearchPages: { index, store }, allMdx } = useStaticQuery(
     graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     localSearchPages {
       index
       store
@@ -23,6 +18,7 @@ const Activity = () => {
         fields {
           slug
         }
+        excerpt
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
@@ -77,7 +73,7 @@ const Activity = () => {
           {posts.map(post => {
             const title = post.frontmatter?.title || post.title
             const slug = post.fields?.slug || post.slug
-            const description = post.frontmatter?.description || post.description
+            const description = post.frontmatter?.description || post.description || post.excerpt
             const date = post.frontmatter?.date || post.date
 
             const cardContent = (

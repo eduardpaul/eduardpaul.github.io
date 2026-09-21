@@ -104,11 +104,12 @@ const BlogPostTemplate = ({
   )
 }
 
-export const Head = ({ data: { mdx: post } }) => {
+export const Head = ({ data: { mdx: post }, location }) => {
   return (
     <Seo
       title={post.frontmatter.title}
       description={post.frontmatter.description || post.excerpt}
+      pathname={location.pathname}
     />
   )
 }

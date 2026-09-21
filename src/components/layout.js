@@ -2,7 +2,7 @@ import * as React from "react"
 
 import Header from "./header"
 import Footer from "./footer"
-import { useStaticQuery, graphql } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import CvImage from "./core/cvimage";
 
 const Layout = ({ location, children }) => {
@@ -62,10 +62,10 @@ query {
           </div>
 
           <div className="flex justify-center md:justify-end">
-            <a href="/about"
+            <Link to="/about"
               className="bg-blue-600 text-white font-semibold px-5 py-2 rounded-full hover:bg-blue-700 transition">
               Learn more
-            </a>
+            </Link>
           </div>
         </section>
       )}
