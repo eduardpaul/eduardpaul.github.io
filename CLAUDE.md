@@ -309,7 +309,6 @@ Images inside posts go in the same folder as the `.mdx` file and are referenced 
 
 ### Plugin ordering matters
 
-- `gatsby-plugin-offline` must be **last** in the `plugins` array (it wraps the service worker around everything else)
 - `gatsby-remark-prismjs` must be **last** in `gatsbyRemarkPlugins` inside `gatsby-plugin-mdx`
 
 ### ESM vs CJS
@@ -333,6 +332,52 @@ Without that import, code blocks render as unstyled plain text.
 ### RSS feed
 
 The feed uses `node.body` (the raw MDX string) for `content:encoded`. `node.html` does not exist on MDX nodes. The `body` field must be explicitly requested in the feed GraphQL query.
+
+---
+
+## Cache busting and versioning
+
+The goal is that a deploy reaches everyone who has already visited. Three
+layers matter, and only one of them needed fixing.
+
+**Assets are already versioned by content hash.** Gatsby emits
+`app-8a7556a551578bcb23a7.js`, `component---src-pages-index-js-<hash>.js` and
+so on. A changed file gets a new filename, so a stale copy can never be served
+for new content, and an unchanged file keeps its URL and stays cached.
+
+**Do not add `?v=` query-string tokens to assets.** It is a real technique, but
+it is for build pipelines that emit stable filenames. Here it would be strictly
+worse: the hash already busts exactly what changed, whereas a global token
+busts every asset on every deploy even when nothing about them changed.
+
+**Response headers are not ours to set.** GitHub Pages does not support a
+`_headers` file or any per-path cache configuration. It serves HTML and
+`page-data/*.json` with `max-age=600` and hashed assets with `max-age=14400`.
+Ten minutes on the HTML entry point is the floor on how long a deploy takes to
+reach a returning visitor, and it is fine, because the HTML is what points at
+the hashed assets.
+
+**The service worker was the actual problem, and is gone.**
+`gatsby-plugin-offline` precached the app shell and served it cache-first.
+Measured with a two-build experiment — visit on build V1, deploy V2, return —
+the visitor still got V1 through a reload *and* a full navigation, and only
+saw V2 on the load after that. Gatsby's documented remedy,
+`onServiceWorkerUpdateReady` calling `window.location.reload()`, did not fix
+the first stale load and hung a navigation for 30s when the reload fired
+mid-flight.
+
+The plugin was removed. `static/sw.js` is a self-destroying worker that retires
+the Workbox registration still resident in returning visitors' browsers: it
+clears every cache, unregisters, and reloads open tabs. With it in place, the
+same experiment shows the returning visitor on V2 on their **first** load, with
+zero registrations and zero caches.
+
+**Do not delete `static/sw.js`** until enough time has passed that nobody is
+still carrying the old Workbox worker, and do not move it — `/sw.js` is the
+exact path the old registration polls.
+
+The site keeps `gatsby-plugin-manifest`, so it is still installable; it is no
+longer offline-capable, which is the deliberate trade.
 
 ---
 
@@ -411,7 +456,7 @@ Files in `src/images/` are processed by `gatsby-plugin-sharp` and `gatsby-plugin
 
 ## 404 page
 
-`src/pages/404.js` is intentionally minimal (no Layout wrapper, no Tailwind). Do not add the full site layout to it — Gatsby's offline plugin uses this page as a fallback shell.
+`src/pages/404.js` is intentionally minimal (no Layout wrapper, no Tailwind). It is what GitHub Pages serves for an unknown path.
 
 ---
 
@@ -427,3 +472,6 @@ Files in `src/images/` are processed by `gatsby-plugin-sharp` and `gatsby-plugin
 - **Do not** hardcode the `keywords` meta tag content — it is derived from `cvJson` automatically; update `cv.json` instead
 - **Do not** change the deploy target from `public` back to `build`
 - **Do not** import from `src/components/core/socialicon.js` — file was deleted (was never used; footer uses lucide-react icons directly)
+- **Do not** re-add `gatsby-plugin-offline` — it is what made deploys invisible to returning visitors
+- **Do not** delete or move `static/sw.js` — it is retiring the service worker that plugin left behind
+- **Do not** add `?v=` cache-busting tokens to assets — Gatsby already content-hashes them
