@@ -203,6 +203,9 @@ export default {
     },
     `gatsby-plugin-postcss`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-offline`, // This should be the last plugin.
+    // `gatsby-plugin-offline` was removed deliberately: it precached the app
+    // shell and served it cache-first, so a visitor who had been here before a
+    // deploy got the previous build on their next visit. static/sw.js retires
+    // the worker it left behind. See CLAUDE.md, "Cache busting and versioning".
   ],
 }
