@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Seo from '../components/seo';
 
 const LANG_NAMES = { EN: 'English', ES: 'Spanish', RU: 'Russian' };
+
+// A4 portrait at 96dpi. The preview is pinned to this on screen so it shows
+// the real print layout at every viewport, and is scaled down to fit rather
+// than being allowed to reflow.
+const PAPER_WIDTH = 794;
 
 const formatDate = (d) => {
   if (!d) return 'Present';
@@ -158,10 +163,31 @@ const CvPrintPage = () => {
       fontFamily: "'Segoe UI', system-ui, -apple-system, sans-serif",
       color: '#1e293b',
       background: 'white',
-      maxWidth: '794px',
-      margin: '0 auto',
     },
   };
+
+  // Scale the A4 preview down to whatever width is available. CSS cannot
+  // express this on its own: `zoom` needs a unitless number, and calc()
+  // cannot divide one length by another to produce one.
+  useEffect(() => {
+    const root = document.querySelector('.cv-root');
+    if (!root) return undefined;
+
+    const fit = () => {
+      const style = window.getComputedStyle(root);
+      const available =
+        root.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+      // Never scale up: on a wide screen the preview stays at 1:1.
+      const scale = Math.min(1, available / PAPER_WIDTH);
+      document.documentElement.style.setProperty('--cv-zoom', String(scale));
+    };
+
+    // Zooming the paper does not change the root's own width, so this cannot
+    // feed back into itself.
+    fit();
+    window.addEventListener('resize', fit, { passive: true });
+    return () => window.removeEventListener('resize', fit);
+  }, []);
 
   return (
     <>
@@ -177,17 +203,45 @@ const CvPrintPage = () => {
           strong { font-weight: 700 !important; }
         }
         @media screen {
-          .cv-root { background: #e2e8f0; padding: 32px 16px 64px; min-height: 100vh; }
+          .cv-root {
+            background: #e2e8f0; padding: 32px 16px 64px; min-height: 100vh;
+            /* Fallback for before the fit effect runs, or without JS: the
+               preview scrolls inside its own box instead of widening the page. */
+            overflow-x: auto;
+          }
+          .cv-paper {
+            width: ${PAPER_WIDTH}px;
+            margin: 0 auto;
+            /* Set by the fit effect. \`zoom\` rather than \`transform\` because it
+               affects layout, so the page height shrinks with the preview
+               instead of leaving a tall blank gap.
+
+               Declared only inside @media screen: an inline style.zoom would
+               also apply when printing and would shrink the actual PDF. */
+            zoom: var(--cv-zoom, 1);
+          }
+        }
+        .cv-toolbar {
+          position: fixed; top: 16px; right: 16px; z-index: 100;
+          display: flex; gap: 8px;
+        }
+        @media screen and (max-width: 858px) {
+          .cv-root { padding: 16px 8px 48px; }
+          /* Once the preview is scaled to fit, a toolbar pinned top-right
+             lands on top of the CV header.
+
+             NOTE: keep apostrophes, quotes, ampersands and angle brackets out
+             of this whole style block. React escapes them when it
+             server-renders the style element text but not when it hydrates,
+             and the resulting text mismatch throws a hydration error. */
+          .cv-toolbar { top: auto; bottom: 16px; }
         }
         strong { font-weight: 600; }
         .cv-paper * { box-sizing: border-box; }
       `}</style>
 
       {/* Screen-only toolbar */}
-      <div className="no-print" style={{
-        position: 'fixed', top: '16px', right: '16px', zIndex: 100,
-        display: 'flex', gap: '8px',
-      }}>
+      <div className="no-print cv-toolbar">
         <button
           onClick={handlePrint}
           style={{
