@@ -1,49 +1,46 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal Starter
-</h1>
+# Eduard Paul Lakida
 
-## 🚀 Quick start
+Personal portfolio, CV, and technical blog: [eduardpaul.work](https://eduardpaul.work).
 
-1.  **Create a Gatsby site.**
+The site is a statically generated Gatsby application built with React, Tailwind CSS, and MDX. Profile and career information is maintained in Manfred-format JSON; blog articles are Markdown/MDX files.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## Development
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+Requirements: Node.js 24 and npm.
 
-2.  **Start developing.**
+```sh
+npm ci
+npm run develop
+```
 
-    Navigate into your new site’s directory and start it up.
+Gatsby serves the site at [http://localhost:8000](http://localhost:8000).
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+Useful commands:
 
-3.  **Open the code and start customizing!**
+```sh
+npm run build     # create the production site in public/
+npm run serve     # serve the production build at http://localhost:9000
+npm run clean     # clear Gatsby's cache and generated output
+npm run format    # format JavaScript, JSON, and Markdown files
+```
 
-    Your site is now running at http://localhost:8000!
+Run `npm run clean` after changing Gatsby configuration or plugins if the development server or build behaves unexpectedly.
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+## Content
 
-4.  **Learn more**
+- `content/cv/cv.json` contains the profile, experience, education, skills, and contact details used across the site.
+- `content/blog/` contains blog posts as `.mdx` files. Each post needs `title`, `date`, and `description` frontmatter. Posts can include images stored alongside the MDX file and referenced with a relative path.
+- `src/pages/` contains the site's fixed pages; `src/templates/blog-post.js` renders generated article pages.
+- `static/` contains files copied directly to the published site, including stable-URL assets and the embedded DeepInfant demo.
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## Deployment
 
-## 🚀 Quick start (Netlify)
+GitHub Actions builds and deploys the site to GitHub Pages when changes are pushed to `main`. The workflow installs dependencies with `npm ci`, runs the Gatsby production build, and publishes `public/`. It can also be run manually from the repository's Actions tab.
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+For a manual deployment, run:
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+```sh
+npm run deploy
+```
+
+This builds the site and publishes `public/` using `gh-pages`.
